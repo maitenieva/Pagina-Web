@@ -1,0 +1,436 @@
+@font-face {
+    font-family: "Gotham";
+    src: url(../fuentes/Gotham-Medium.otf);
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Gotham";
+    src: url(../fuentes/Gotham-MediumItalic.otf);
+    font-weight: 600;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "Gotham";
+    src: url(../fuentes/Gotham-LightItalic.otf);
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+  font-family: 'Gotham';
+  src: url(../fuentes/Gotham-Light.otf) format('opentype');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gotham';
+  src: url(../fuentes/Gotham-Book.otf) format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gotham';
+  src: url(../fuentes/Gotham-BookItalic.otf) format('opentype');
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Gotham';
+  src: url(../fuentes/Gotham-Bold.otf) format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gotham';
+  src: url(../fuentes/Gotham-Black.otf) format('opentype');
+  font-weight: 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gotham';
+  src: url(../fuentes/Gotham-BlackItalic.otf) format('opentype');
+  font-weight: 900;
+  font-style: italic;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{ /*Custom Properties, variables globales que centralizan valores*/
+    --padding-container:100px 0;
+
+    --font-size-s: 0.9rem;
+    --font-size-n: 1rem;
+    --font-size-m: 1.12rem;
+    --font-size-l: 1.5rem;
+    --font-size-xl: 2rem;
+    --font-size-xxl: 2.3rem;
+
+    --font-weight-light: 300;
+    --font-weigth-normal: 400;
+    --font-weigth-medium: 500;
+    --font-weigth-semibold: 600;
+    --font-weight-bold: 800;
+    
+    --white-color: #fff;
+    --alice-blue: #D8EBFF;
+    --ruddy-blue: #79A4D0;
+    --lake-blue:#508BBB;
+    --bice-blue: #386E9B;
+    --universo-blue:#1E4E7A;
+
+    --border-radius-s: 8px;
+    --border-radius-m: 30px;
+    --border-radius-circle: 50%;
+
+    --site-max-width:1300px;
+}
+
+.container{
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden; /*para que todo lo que salga del espacio que marque se esconda*/
+    padding: var(--padding-container); 
+
+}
+
+body{
+    margin: 0;
+    font-family: "Gotham", sans-serif;
+    font-weight: 400;
+}
+
+h1{
+    font-size: var(--font-size-xxl);
+    font-weight: var(--font-weight-bold)
+}
+
+h2{
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weigth-semibold)
+}
+
+h3{
+    font-size: var(--font-size-m);
+    font-weight: var(--font-weigth-medium);
+}
+
+p{
+    font-size: var(--font-size-n);
+    font-weight: var(--font-weigth-normal);
+}
+/*estilo navbar*/
+
+.menu-toggle {
+    display: none; /* Oculto en desktop */
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+header{
+    background: var(--universo-blue);
+    position:fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: var(--universo-blue);
+    z-index: 1000;
+}
+
+header .navbar{
+    display: flex;
+    padding: 20px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar .nav-menu{
+    display: flex;
+    gap: 10px;
+}
+
+.navbar .nav-menu .nav-link{
+    padding: 10px 18px;
+    color: var(--white-color);
+    font-size: var(--font-size-m);
+    border-radius: var(--border-radius-m);
+    transition: 0.3s ease;
+}
+
+.navbar .nav-menu .nav-link:hover {
+    color: var(--alice-blue);
+    background-color: var(--lake-blue);
+
+}
+
+.navbar .nav_img{
+    width: 100px; 
+    height: auto;
+    align-content: center;
+    transition: 0.3s ease;
+}
+
+
+/*estilo seccion hero*/
+
+.hero-section {
+    width: 100vw; 
+    height: 150vh;
+    min-height: 600px;
+    max-height: 800px; 
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(../imagenes/universo-banner.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Estilo servicios*/
+
+/* Estilo para el contenedor de cartas */
+.cartas-contenedor {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
+}
+
+/* Estilo base para todas las cartas */
+/* --- Contenedor de Cartas --- */
+.cartas-contenedor {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin: 40px 0;
+}
+
+/*estilo cartas servicios*/
+/* Estilo para el contenedor de cartas */
+.cartas-contenedor {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
+    margin-bottom: 15px;
+}
+
+/* Estilo base para todas las cartas */
+.carta {
+    background: var(--white-color);
+    border-radius: var(--border-radius-m);
+    padding: 30px 25px;
+    box-shadow: 0 5px 15px rgba(30, 78, 122, 0.1);
+    transition: all 0.3s ease;
+    text-align: center;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid rgba(216, 235, 255, 0.5);
+}
+
+/* Efecto hover para las cartas */
+.carta:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(30, 78, 122, 0.2);
+    border-color: var(--ruddy-blue);
+}
+
+/* Estilo para los títulos de las cartas */
+.carta h3 {
+    color: var(--universo-blue);
+    margin-bottom: 15px;
+    font-weight: var(--font-weigth-semibold);
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.carta h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 2px;
+    background: var(--lake-blue);
+    transition: width 0.3s ease;
+}
+
+.carta:hover h3::after {
+    width: 80px;
+}
+
+/* Colores específicos para cada carta */
+#branding {
+    border-top: 4px solid var(--bice-blue);
+}
+
+#disenio-grafico {
+    border-top: 4px solid var(--lake-blue);
+}
+
+#disenio-web {
+    border-top: 4px solid var(--ruddy-blue);
+}
+
+#redes-sociales {
+    border-top: 4px solid var(--lake-blue);
+}
+
+#estrategia {
+    border-top: 4px solid var(--bice-blue);
+}
+
+/* ----- ESTILOS GENERALES PARA ICONOS ----- */
+.carta img.iconos{ 
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+    margin: 0 auto 20px;
+    display: block;
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+/* ----- EFECTOS HOVER ----- */
+.carta:hover img.iconos,
+.carta:hover img.icoonos {
+    transform: scale(1.15) translateY(-5px);
+}
+/* ----- AJUSTES PARA CARTA ----- */
+.carta {
+    padding: 35px 25px; /* Aumenté el padding para mejor espaciado */
+    text-align: center;
+}
+
+/* ----- BOTÓN MÁS INFORMACIÓN ----- */
+.boton {
+    margin-top: 30px;
+}
+
+.mas-info {
+    padding: 16px 40px;
+    font-size: 1.1rem;
+}
+
+
+/* Estilo para el botón "Más Información" */
+.boton {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.mas-info {
+    display: inline-block;
+    padding: 15px 35px;
+    background: var(--universo-blue);
+    color: var(--white-color);
+    border: 2px solid transparent;
+    border-radius: var(--border-radius-m);
+    font-weight: var(--font-weigth-semibold);
+    transition: all 0.3s ease;
+}
+
+.mas-info:hover {
+    background: transparent;
+    color: var(--bice-blue);
+    border: 2px solid;
+    border-color: var(--bice-blue);
+    box-shadow: 0 5px 15px rgba(30, 78, 122, 0.3);
+}
+
+/*estilo para toda la pagina*/
+
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+img{
+    width: 100%;
+}
+
+.section-content{
+    margin: 0 auto;
+    padding: 0 20px;
+    max-width: var(--site-max-width);
+}
+
+/* Para que se adapte a celulares*/
+@media screen and (max-width: 900px){
+    :root{
+        --font-size-n: 0.9rem;
+        --font-size-m: 1rem;
+        --font-size-l: 1.3rem;
+        --font-size-xl: 1.5rem;
+        --font-size-xxl: 1.9rem;
+    }
+
+    body.menu-open {
+        overflow: hidden; /* bloquea el scroll */
+        position: fixed; 
+        width: 100%;
+    }
+
+    .navbar .nav-menu{
+        display: none;
+    }
+
+    .navbar{
+        position: relative;
+    }
+
+    .navbar .nav-menu.active{
+        display: block;
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 70%;
+        max-width: 300px;
+        height: 100hv;
+        background: var(--white-color);
+        z-index: 1000;
+        padding: 20px;
+        box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+        transition: transform 0.3 ease;
+    }
+
+    .navbar .nav-menu.active.show {
+        transform: translateX(0); /*mueve el menu a 0, con el show se muestra cuando pasa de escritorio a celu*/
+    }
+
+     .navbar .nav-menu .nav-item {
+        margin-bottom: 15px;
+    }
+
+    .navbar .nav-menu .nav-link{
+        font-size: var(--font-size-l);
+        color: var(--universo-blue);
+        padding: 10px;
+        display: block;
+    }
+
+    .menu-toggle {
+        display: block;
+        cursor: pointer;
+        z-index: 1001;
+    }
+}
