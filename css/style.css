@@ -73,9 +73,9 @@
     --font-size-xxl: 2.3rem;
 
     --font-weight-light: 300;
-    --font-weigth-normal: 400;
-    --font-weigth-medium: 500;
-    --font-weigth-semibold: 600;
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
     --font-weight-bold: 800;
     
     --white-color: #fff;
@@ -109,12 +109,14 @@ body{
 
 h1{
     font-size: var(--font-size-xxl);
-    font-weight: var(--font-weight-bold)
+    font-weight: var(--font-weight-bold);
+    color: var(--universo-blue);
 }
 
 h2{
     font-size: var(--font-size-xl);
-    font-weight: var(--font-weigth-semibold)
+    font-weight: var(--font-weigth-semibold);
+    color: var(--bice-blue)
 }
 
 h3{
@@ -140,7 +142,6 @@ header{
     top: 0;
     left: 0;
     width: 100%;
-    background: var(--universo-blue);
     z-index: 1000;
 }
 
