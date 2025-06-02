@@ -110,6 +110,71 @@
             <button id="next" class="carousel-boton">›</button>
         </div>
     </section>
+    <section class="contacto contaioner">
+        <h2>Contacto</h2>
+        <div class="contacto-contenido">
+            <div class="contacto-formulario">
+                <form id="form-contacto">
+                    <div class="form-grupo">
+                        <label for="name">Nombre</label>
+                        <input type="text" id="nombre" required>
+                    </div>
+                    <div class="form-grupo">
+                        <label for="apellido">Apellido</label>
+                        <input type="text" id="apellido" required>
+                    </div>
+                    <div class="form-grupo">
+                        <label for="email">Teléfono</label>
+                        <input type="text" id="telefono" required>
+                    </div>
+                    <div class="form-grupo">
+                        <label for="name">Mail de contacto</label>
+                        <input type="text" id="mail" required>
+                    </div>
+                    <div class="form-grupo">
+                        <label for="name">Nombre de la empresa</label>
+                        <input type="text" id="nombre-empresa" required>
+                    </div>
+                    <div class="form-grupo">
+                        <label for="rubro">Rubro de la empresa</label>
+                        <input type="text" id="rubro" required>
+                    </div>
+                    <div class="form-grupo">
+                        <label>¿Tenés actualmente una página web?</label>
+                        <div class="radio-group">
+                            <label><input type="radio" name="tieneWeb" value="si" required/>Sí</label>
+                            <label><input type="radio" name="tieneWeb" value="no"/>No</label>
+                        </div>
+                    </div>
+                    <div class="form-grupo" id="webExiste" hidden> <!--Va a estar oculto salvo que elija SI en lo anterior-->
+                        <label for="paginaWeb">Link de tu web</label>
+                        <input type="url" id="paginWeb" placeholder="https://ejemplo.com"/>
+                    </div>
+                    <div class="form-grupo">
+                        <label>¿Tenés una cuenta empresarial en Instagram?</label>
+                        <div class="radio-group">
+                            <label><input type="radio" name="tieneIg" value="si" required/>Sí</label>
+                            <label><input type="radio" name="tieneIg" value="no"/>No</label>
+                        </div>
+                    </div>
+                    <div class="form-grupo" id="igExiste" hidden> <!--Va a estar oculto salvo que elija SI en lo anterior-->
+                        <label for="igUsuario">Link de tu web</label>
+                        <input type="url" id="igUsuario" placeholder="https://instagram.com/ejemploUsuario/"/>
+                    </div>
+                    <div class="form-grupo">
+                        <label for="mensaje">Mensaje</label>
+                        <textarea id="mensaje" rows="5"></textarea>
+                    </div>
+
+                    <button type="submit">Enviar</button>
+                    <p id="status" class="status"></p> <!--Para mostrar mensajes al usuario-->
+                </form>
+            </div>
+            <div class="contacto-visual">
+                <img src="./imagenes/contacto-img.jpg" alt="ilustracion de Contacto">
+            </div>
+        </div>
+    </section>
     <script src="./javaScript/script.js"></script>
 </body>
 </html>

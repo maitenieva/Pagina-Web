@@ -457,6 +457,176 @@ img{
     max-width: var(--site-max-width);
 }
 
+/*Css para el formulario*/
+
+section.contacto{
+    padding: var(--padding-container);
+}
+
+section.contacto h2{
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-semibold);
+    color: var(--universo-blue);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.contacto-contenido{
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+    justify-content: center;
+}
+.contacto-formulario{
+    flex: 1;
+    max-width: 500px;
+    background: var(--alice-blue);
+    padding: 2rem;
+    border-radius: var(--border-radius-m);
+    box-shadow: 0 4px 12px rgba(30, 78, 122, 0.08);
+    box-sizing: border-box;
+}
+
+.contacto-visual{
+    flex: 1;
+    max-width: 400px;
+    background: var(--white-color) ;
+    padding: 1.5rem;
+    border-radius: var(--border-radius-m);
+    box-shadow: 0 4px 12px rgba(30, 78, 122, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contacto-visual img{
+    max-width: 70%;
+    height: auto;
+}
+
+#form-contacto {
+    background: var(--white-color);
+    padding: 2rem;
+    border-radius: var(--border-radius-m);
+    box-shadow: 0 4px 12px rgba(30, 78, 122, 0.08);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Cada grupo de campos */
+#form-contacto .form-grupo {
+    margin-bottom: 1.25rem;
+}
+
+/* Etiquetas (labels) */
+#form-contacto label {
+    display: block;
+    font-size: var(--font-size-n);
+    font-weight: var(--font-weight-semibold);
+    color: var(--bice-blue);
+    margin-bottom: 0.5rem;
+}
+
+/* Inputs y Textarea */
+#form-contacto input[type="text"],
+#form-contacto input[type="url"],
+#form-contacto textarea {
+    width: 100%;
+    font-family: "Gotham", sans-serif;
+    font-size: var(--font-size-n);
+    font-weight: var(--font-weight-normal);
+    color: #333;
+    padding: 0.65rem 0.75rem;
+    border: 1px solid rgba(30, 78, 122, 0.2);
+    border-radius: var(--border-radius-s);
+    transition: border-color 0.2s;
+    background: #fafafa;
+}
+
+/* Placeholder en inputs */
+#form-contacto input::placeholder,
+#form-contacto textarea::placeholder {
+    color: #999;
+    font-style: italic;
+}
+
+/* Focus en Inputs y Textarea */
+#form-contacto input:focus,
+#form-contacto textarea:focus {
+    outline: none;
+    border-color: var(--ruddy-blue);
+    background: #fff;
+}
+
+/* Grupo de radios (flex) */
+#form-contacto .radio-group {
+    display: flex;
+    gap: 1.5rem;
+}
+
+#form-contacto .radio-group label {
+    font-size: var(--font-size-n);
+    font-weight: var(--font-weight-normal);
+    color: var(--universo-blue);
+}
+
+/* Campo condicional de Link de Web o IG */
+#webExiste,
+#igExiste {
+    margin-top: 0.75rem;
+}
+
+/* Botón Enviar */
+#form-contacto button[type="submit"] {
+    width: 100%;
+    background: var(--universo-blue);
+    color: var(--white-color);
+    border: none;
+    padding: 0.75rem 1rem;
+    font-size: var(--font-size-n);
+    font-weight: var(--font-weight-semibold);
+    border-radius: var(--border-radius-s);
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+    margin-top: 1rem;
+}
+
+#form-contacto button[type="submit"]:hover {
+    background: var(--lake-blue);
+    transform: translateY(-1px);
+}
+
+#form-contacto button[type="submit"]:active {
+    transform: translateY(0);
+}
+
+/* Mensaje de estado (error o éxito) */
+#form-contacto .status {
+    margin-top: 0.75rem;
+    font-size: var(--font-size-s);
+    text-align: center;
+    display: block;
+}
+
+/* Para diferenciar estados */
+#form-contacto .status.error {
+    color: crimson;
+}
+
+#form-contacto .status.success {
+    color: green;
+}
+
+/* Media query para pantallas pequeñas */
+@media screen and (max-width: 768px) {
+    .contacto-contenido{
+        flex-direction: column;
+    }
+    .contacto-visual{
+        margin-top: 2rem;
+    }
+}
+
 /* Para que se adapte a celulares*/
 @media screen and (max-width: 900px){
     :root{
