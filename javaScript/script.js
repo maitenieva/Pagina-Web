@@ -14,6 +14,47 @@ document.querySelector('.menu-toggle').addEventListener('click', function() {
 // Detectar scroll para cambiar el fondo de la header
 const header = document.querySelector('.header');
 
+// 1) Esperamos a que el DOM esté cargado
+document.addEventListener('DOMContentLoaded', () => {
+  // 2) Seleccionamos todos los slides y los botones prev/next
+  const slides = document.querySelectorAll('.carousel-clientes .slide');
+  const btnPrev = document.getElementById('prev');
+  const btnNext = document.getElementById('next');
+
+  // 3) Índice del slide actualmente activo (inicia en 0)
+  let currentIndex = 0;
+
+  // 4) Función para mostrar el slide en currentIndex
+  function showSlide(index) {
+    // 4.1) Nos aseguramos que index esté en rango (circular)
+    if (index < 0) {
+      index = slides.length - 1; // si pasamos antes del primero, vamos al último
+    } else if (index >= slides.length) {
+      index = 0; // si pasamos después del último, regresamos al primero
+    }
+
+    // 4.2) Quitamos la clase 'active' a todos los slides
+    slides.forEach(slide => slide.classList.remove('active'));
+
+    // 4.3) Agregamos la clase 'active' al slide correspondiente
+    slides[index].classList.add('active');
+
+    // 4.4) Actualizamos currentIndex
+    currentIndex = index;
+  }
+
+  // 5) Eventos para los botones
+  btnPrev.addEventListener('click', () => {
+    showSlide(currentIndex - 1);
+  });
+
+  btnNext.addEventListener('click', () => {
+    showSlide(currentIndex + 1);
+  });
+
+});
+
+
 window.addEventListener('scroll', () => {
   // Si ya hicimos scroll hacia abajo más de 50px (puedes ajustar ese valor)
   if (window.scrollY > 50) {
