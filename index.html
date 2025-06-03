@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Universo Agencia</title>
     <link rel="stylesheet" href="./css/style.css">
-</head>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous"></head>
 <body>
     <header> <!--Seccion principal, portada de la pagina-->
         <nav class="navbar section-content"> <!--Menu de navegacio limitado en un contenedor-->
@@ -38,7 +39,7 @@
             </div>
         </section>
     </main>
-    <section class="nuestros-servicios container">
+    <section class="nuestros-servicios my-container">
         <h2>Nuestros Servicios</h2>
         <div class="cartas-contenedor">
             <div class="carta" id="branding">
@@ -66,7 +67,7 @@
             <a href="#" class="button mas-info">Mas Informacion</a>
         </div>
     </section>
-    <section class="nuestros-clientes container">
+    <section class="nuestros-clientes my-container">
         <div class="clientes">
         <h2>Conoce a nuestros clientes</h2>
         <div class="carousel-clientes-wrapper">
@@ -110,71 +111,86 @@
             <button id="next" class="carousel-boton">›</button>
         </div>
     </section>
-    <section class="contacto contaioner">
+    <section class="contacto">
         <h2>Contacto</h2>
         <div class="contacto-contenido">
             <div class="contacto-formulario">
                 <form id="form-contacto">
-                    <div class="form-grupo">
-                        <label for="name">Nombre</label>
-                        <input type="text" id="nombre" required>
+                    <div class="form-row">
+                        <div class="form-grupo">
+                            <label for="name">Nombre</label>
+                            <input type="text" id="nombre" required>
+                        </div>
+                        <div class="form-grupo">
+                            <label for="apellido">Apellido</label>
+                            <input type="text" id="apellido" required>
+                        </div>
                     </div>
-                    <div class="form-grupo">
-                        <label for="apellido">Apellido</label>
-                        <input type="text" id="apellido" required>
+                    <div class="form-row">
+                        <div class="form-grupo">
+                            <label for="email">Teléfono</label>
+                            <input type="telefono" id="telefono" required>
+                        </div>
+                        <div class="form-grupo">
+                            <label for="name">Mail de contacto</label>
+                            <input type="email" id="mail"  placeholder="ejemplo@gmail.com" required>
+                        </div>
                     </div>
-                    <div class="form-grupo">
-                        <label for="email">Teléfono</label>
-                        <input type="text" id="telefono" required>
-                    </div>
-                    <div class="form-grupo">
-                        <label for="name">Mail de contacto</label>
-                        <input type="text" id="mail" required>
-                    </div>
-                    <div class="form-grupo">
-                        <label for="name">Nombre de la empresa</label>
-                        <input type="text" id="nombre-empresa" required>
-                    </div>
-                    <div class="form-grupo">
-                        <label for="rubro">Rubro de la empresa</label>
-                        <input type="text" id="rubro" required>
+                    <div class="form-row">
+                        <div class="form-grupo">
+                            <label for="name">Nombre de la empresa</label>
+                            <input type="text" id="nombre-empresa" required>
+                        </div>
+                        <div class="form-grupo">
+                            <label for="rubro">Rubro de la empresa</label>
+                            <input type="text" id="rubro" required>
+                        </div>
                     </div>
                     <div class="form-grupo">
                         <label>¿Tenés actualmente una página web?</label>
                         <div class="radio-group">
-                            <label><input type="radio" name="tieneWeb" value="si" required/>Sí</label>
-                            <label><input type="radio" name="tieneWeb" value="no"/>No</label>
+                            <label class="radio-label"><input type="radio" name="tieneWeb" value="si" required/>Sí</label>
+                            <label class="radio-label"> <input type="radio" name="tieneWeb" value="no"/>No</label>
                         </div>
                     </div>
-                    <div class="form-grupo" id="webExiste" hidden> <!--Va a estar oculto salvo que elija SI en lo anterior-->
+                    <div class="form-grupo" id="webExiste" style="display:none;"> <!--Va a estar oculto salvo que elija SI en lo anterior-->
                         <label for="paginaWeb">Link de tu web</label>
-                        <input type="url" id="paginWeb" placeholder="https://ejemplo.com"/>
+                        <input type="url" id="paginaWeb" placeholder="https://ejemplo.com"/>
                     </div>
                     <div class="form-grupo">
                         <label>¿Tenés una cuenta empresarial en Instagram?</label>
                         <div class="radio-group">
-                            <label><input type="radio" name="tieneIg" value="si" required/>Sí</label>
-                            <label><input type="radio" name="tieneIg" value="no"/>No</label>
+                            <label class="radio-label"><input type="radio" name="tieneIg" value="si" required/>Sí</label>
+                            <label class="radio-label"><input type="radio" name="tieneIg" value="no"/>No</label>
                         </div>
                     </div>
-                    <div class="form-grupo" id="igExiste" hidden> <!--Va a estar oculto salvo que elija SI en lo anterior-->
-                        <label for="igUsuario">Link de tu web</label>
-                        <input type="url" id="igUsuario" placeholder="https://instagram.com/ejemploUsuario/"/>
+                    <div class="form-grupo" id="igExiste" style = "display: none;"> <!--Va a estar oculto salvo que elija SI en lo anterior-->
+                        <label for="igUsuario">Link a tu perfil</label>
+                        <input type="url" id="igUsuario" placeholder="https://instagram.com/tuempresa/"/>
                     </div>
                     <div class="form-grupo">
                         <label for="mensaje">Mensaje</label>
-                        <textarea id="mensaje" rows="5"></textarea>
+                        <textarea id="mensaje" rows="5" placeholder="¡Contanos sobre tu proyecto o consulta!"></textarea>
                     </div>
 
                     <button type="submit">Enviar</button>
-                    <p id="status" class="status"></p> <!--Para mostrar mensajes al usuario-->
                 </form>
             </div>
             <div class="contacto-visual">
-                <img src="./imagenes/contacto-img.jpg" alt="ilustracion de Contacto">
+                <img src="./imagenes/team.jpeg" alt="ilustracion de Contacto">
             </div>
         </div>
     </section>
+    <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 1100; /* encima de casi todo */">
+        <div id="contactToast"class="toast align-items-center text-white bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="d-flex">
+                <div class="toast-body">¡Gracias! Tu consulta ha sido enviada. Nos pondremos en contacto pronto.</div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Cerrar"></button>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-qAN4xtpHbHhJlrYp1i8Y+M1yXw9SQ+6CIqY4FYoj2F0i0FxKoqPMXYDFP5dN9I3z" crossorigin="anonymous"></script>
     <script src="./javaScript/script.js"></script>
+
 </body>
 </html>

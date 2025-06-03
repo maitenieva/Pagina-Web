@@ -92,13 +92,12 @@
     --site-max-width:1300px;
 }
 
-.container{
+.my-container{
     width: 90%;
-    max-width: 1200px;
+    max-width: var(--site-max-width, 1200px);
     margin: 0 auto;
     overflow: hidden; /*para que todo lo que salga del espacio que marque se esconda*/
     padding: var(--padding-container); 
-
 }
 
 body{
@@ -459,11 +458,14 @@ img{
 
 /*Css para el formulario*/
 
-section.contacto{
+section.contacto {
+    width: 100%;
+    margin: var(--padding-container) auto;
     padding: var(--padding-container);
+    background-color: var(--alice-blue);
 }
 
-section.contacto h2{
+section.contacto h2 {
     font-size: var(--font-size-xl);
     font-weight: var(--font-weight-semibold);
     color: var(--universo-blue);
@@ -471,160 +473,213 @@ section.contacto h2{
     margin-bottom: 2rem;
 }
 
-.contacto-contenido{
+.contacto-contenido {
     display: flex;
-    gap: 2rem;
-    align-items: flex-start;
-    justify-content: center;
-}
-.contacto-formulario{
-    flex: 1;
-    max-width: 500px;
-    background: var(--alice-blue);
-    padding: 2rem;
-    border-radius: var(--border-radius-m);
-    box-shadow: 0 4px 12px rgba(30, 78, 122, 0.08);
+    align-items: flex-start;           /* misma altura en ambas columnas */
+    gap: 2rem;  
+    max-width: var(--site-max-width);
+    margin: 0 auto;
     box-sizing: border-box;
 }
 
-.contacto-visual{
-    flex: 1;
-    max-width: 400px;
-    background: var(--white-color) ;
-    padding: 1.5rem;
+.contacto-formulario {
+    flex: 2.5;              /* 2.5 de cada 4 partes para el formulario */
+    max-width: 850px;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#form-contacto {
+    background: var(--white-color); /* Fondo blanco para el formulario */
+    padding: 2.5rem; 
     border-radius: var(--border-radius-m);
-    box-shadow: 0 4px 12px rgba(30, 78, 122, 0.08);
+    box-shadow: 0 8px 25px rgba(30, 78, 122, 0.12);
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem; 
+}
+
+.form-row{
+    display: flex;
+    gap: 1rem;
+}
+
+.form-row .form-grupo{
+    flex: 1;
+    margin-bottom: 0
+;
+}
+
+.contacto-visual {
+    flex: 1;           /* 1.5 de cada 4 partes para la imagen */
+    max-width: 550px;
+    padding: 0;
+    overflow: hidden;
+    border-radius: var(--border-radius-s);
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.contacto-visual img{
-    max-width: 70%;
-    height: auto;
+.contacto-visual img {
+    width: 100%;                
+    height: 100%;                
+    object-fit: cover;           
+    border-radius: var(--border-radius-s);
 }
 
-#form-contacto {
-    background: var(--white-color);
-    padding: 2rem;
-    border-radius: var(--border-radius-m);
-    box-shadow: 0 4px 12px rgba(30, 78, 122, 0.08);
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-/* Cada grupo de campos */
 #form-contacto .form-grupo {
-    margin-bottom: 1.25rem;
+    margin-bottom: 0;
 }
 
-/* Etiquetas (labels) */
+/* Etiquetas */
 #form-contacto label {
     display: block;
     font-size: var(--font-size-n);
-    font-weight: var(--font-weight-semibold);
+    font-weight: var(--font-weight-m);
     color: var(--bice-blue);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.6rem;
 }
 
 /* Inputs y Textarea */
 #form-contacto input[type="text"],
+#form-contacto input[type="email"],
+#form-contacto input[type="telefono"],
 #form-contacto input[type="url"],
 #form-contacto textarea {
     width: 100%;
     font-family: "Gotham", sans-serif;
     font-size: var(--font-size-n);
     font-weight: var(--font-weight-normal);
-    color: #333;
-    padding: 0.65rem 0.75rem;
-    border: 1px solid rgba(30, 78, 122, 0.2);
+    color: var(--universo-blue);
+    padding: 0.8rem 1rem;
+    border: 1px solid var(--alice-blue);
     border-radius: var(--border-radius-s);
-    transition: border-color 0.2s;
-    background: #fafafa;
+    transition: border-color 0.2s ease-in-out, box-shado2 o.2s ease-in-out;
+    background: var(--white-color);
+}
+
+#form-contacto textarea {
+    min-height: 120px; 
+    resize: vertical; 
 }
 
 /* Placeholder en inputs */
 #form-contacto input::placeholder,
 #form-contacto textarea::placeholder {
-    color: #999;
+    color: var(--ruddy-blue);
+    font-weight: var(--font-weight-light);
     font-style: italic;
 }
 
-/* Focus en Inputs y Textarea */
 #form-contacto input:focus,
 #form-contacto textarea:focus {
     outline: none;
-    border-color: var(--ruddy-blue);
+    border-color: var(--lake-blue);
     background: #fff;
+    box-shadow: 0 0 0 0.15rem rgba(80, 139, 187, 0.25); 
 }
 
 /* Grupo de radios (flex) */
 #form-contacto .radio-group {
     display: flex;
     gap: 1.5rem;
+    margin-top: 0.5rem;
 }
 
-#form-contacto .radio-group label {
+#form-contacto .radio-label {
+    display: flex;
+    align-items: center;
     font-size: var(--font-size-n);
     font-weight: var(--font-weight-normal);
     color: var(--universo-blue);
+    cursor: pointer;
 }
 
-/* Campo condicional de Link de Web o IG */
-#webExiste,
-#igExiste {
-    margin-top: 0.75rem;
+#form-contacto .radio-label input[type="radio"]{
+    margin-right: 0.6rem;
+    accent-color: var(--universo-blue);
+    width: 16px;
+    height: 16px;
 }
 
 /* Botón Enviar */
 #form-contacto button[type="submit"] {
-    width: 100%;
+    align-self: flex-start;
     background: var(--universo-blue);
     color: var(--white-color);
     border: none;
-    padding: 0.75rem 1rem;
-    font-size: var(--font-size-n);
+    padding: 0.9rem 2rem;
+    font-size: var(--font-size-m);
     font-weight: var(--font-weight-semibold);
     border-radius: var(--border-radius-s);
     cursor: pointer;
-    transition: background 0.2s, transform 0.1s;
+    transition: background-color 0.2s ease-in-out, transform 0.1s ease, box-shadow 0.2s ease-in-out;
     margin-top: 1rem;
+    box-shadow: 0 2px 4px rgba(30, 78, 122, 0.2);;
 }
 
 #form-contacto button[type="submit"]:hover {
     background: var(--lake-blue);
-    transform: translateY(-1px);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(30, 78, 122, 0.3);
+   
 }
 
 #form-contacto button[type="submit"]:active {
     transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(30, 78, 122, 0.2);
+
 }
 
 /* Mensaje de estado (error o éxito) */
 #form-contacto .status {
-    margin-top: 0.75rem;
+    margin-top: 1em;
+    padding: 0.8rem;
+    border-radius: var(--border-radius-s);
     font-size: var(--font-size-s);
+    font-weight: var(--font-weight-normal);
     text-align: center;
     display: block;
 }
 
-/* Para diferenciar estados */
 #form-contacto .status.error {
-    color: crimson;
+    background-color:#fdecea;
+    color: #b71c1c;
+    border: 1px solid #f8d7da;
 }
 
 #form-contacto .status.success {
-    color: green;
+    background-color: #e6f4ea; 
+    color: #348a47;
+    border: 1px solid #c3e0c9;
 }
 
 /* Media query para pantallas pequeñas */
 @media screen and (max-width: 768px) {
-    .contacto-contenido{
-        flex-direction: column;
-    }
-    .contacto-visual{
-        margin-top: 2rem;
-    }
+  .contacto-contenido {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .contacto-visual {
+    max-width: 100%;
+    height: auto;
+  }
+  .contacto-visual img {
+    width: 100%;
+    height: auto;
+  }
+  #form-contacto {
+    padding: 1.5rem;
+  }
+  .form-row {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  #form-contacto button[type="submit"] {
+    width: 100%;
+    align-self: center;
+  }
 }
 
 /* Para que se adapte a celulares*/
