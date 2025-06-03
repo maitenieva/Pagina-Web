@@ -188,7 +188,7 @@ header .navbar{
 
 .hero-section {
     width: 100%; 
-    height: 40vh;
+    height: 60vh;
     position: relative;
     overflow: hidden;
 }
@@ -240,6 +240,7 @@ header .navbar{
     display: flex;
     align-items: center;
     text-align: center;
+    justify-content: center;
     padding: 0 1rem;     /* Espacio horizontal en móviles */
 }
 
@@ -254,17 +255,18 @@ header .navbar{
 
 .hero_subtitle {
     font-family: "Gotham", sans-serif;
-    font-size: var(--font-size-m);
+    font-size: var(--font-size-l);
     font-weight: var(--font-weight-semibold);
     color: var(--alice-blue);
-    max-width: 600px;
+    max-width: 900px;
 }
 
 /*FORMULARIO*/
 .contacto {
-    background-color: #D8EBFF;
-    padding: 6rem 2rem;
+    padding: 4rem 1rem;
     width: 100%;
+    margin: var(--padding-container) auto;
+    background-color: var(--alice-blue);
 }
 
 .contacto h2 {
@@ -279,13 +281,13 @@ header .navbar{
 
 .contacto-contenido {
     display: flex;
-    justify-content: center;
-    align-items: center; /* centrado vertical */
-    gap: 4rem;
-    max-width: 1200px;
+    align-items: stretch;
+    gap: 2rem;  
+    max-width: var(--site-max-width);
     margin: 0 auto;
-    padding: 2rem;
-    flex-wrap: wrap;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    box-sizing: border-box;
 }
 
 .contacto-formulario{
@@ -295,6 +297,7 @@ header .navbar{
 .contacto-visual {
     flex: 1 1 350px; /* más pequeño */
 }
+
 
 #form-contacto {
     background: white;
@@ -446,6 +449,23 @@ button[type="submit"]:hover {
     gap: 1.2rem;
     align-items: center;
 }
+
+.contacto-whatsapp {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: var(--universo-blue);
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+
+.contacto-whatsapp .social-icon {
+  width: 24px;
+  height: 24px;
+}
+
 
 .redes-contacto li a {
     display: flex;
