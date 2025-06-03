@@ -11,6 +11,19 @@ document.querySelector('.menu-toggle').addEventListener('click', function() {
   }
 });
 
+// Detectar scroll para cambiar el fondo de la header
+const header = document.querySelector('.header');
+
+window.addEventListener('scroll', () => {
+  // Si ya hicimos scroll hacia abajo más de 50px (puedes ajustar ese valor)
+  if (window.scrollY > 50) {
+    header.classList.add('header--scrolled');
+  } else {
+    header.classList.remove('header--scrolled');
+  }
+});
+
+
 // Remueve el bloqueo si se redimensiona a escritorio
 window.addEventListener('resize', function() {
   if (window.innerWidth > 900) {
@@ -19,8 +32,63 @@ window.addEventListener('resize', function() {
   }
 });
 
-//Boton formulario y mensaje si hay algun error o algo asi
-document.addEventListener('DOMContentLoaded', function() {
+let toastInstance = null;
+
+function initToast() {
+  const toastEl = document.getElementById('liveToast');
+  if (!toastEl) {
+    console.error("No se encontró <div id='liveToast' class='toast'> en el DOM.");
+    return;
+  }
+
+  if (typeof bootstrap === 'undefined') {
+    console.error("'bootstrap' no está definido. Asegúrate de cargar bootstrap.bundle.min.js antes de este script.");
+    return;
+  }
+
+  toastInstance = new bootstrap.Toast(toastEl, {
+    delay: 3500 // Duración antes de ocultarse (en ms)
+  });
+}
+
+/**
+ * Muestra un mensaje dinámico en el toast.
+ * @param {string} message — Texto que quieres mostrar.
+ * @param {'success'|'danger'|'warning'|'info'} [type='success'] — Clase de color de fondo.
+ */
+
+function showToast(message, type = 'success') {
+  const toastEl = document.getElementById('liveToast');
+  const toastBody = document.getElementById('toast-message');
+
+  if (!toastEl || !toastBody) {
+    console.error("No se encontró #liveToast o #toast-message en el DOM.");
+    return;
+  }
+
+  // Si ya había una instancia previa, la destruimos
+  if (toastInstance) {
+    toastInstance.dispose();
+  }
+
+  // Actualizamos el texto
+  toastBody.textContent = message;
+
+  const bgClasses = ['text-bg-success', 'text-bg-danger', 'text-bg-warning', 'text-bg-info'];
+  toastEl.classList.remove(...bgClasses);
+
+  // Asignamos la clase de color adecuada
+  let toastClass = 'text-bg-success';
+  if (type === 'danger') toastClass = 'text-bg-danger';
+  else if (type === 'warning') toastClass = 'text-bg-warning';
+  else if (type === 'info') toastClass = 'text-bg-info';
+  toastEl.classList.add(toastClass);
+
+  toastInstance = new bootstrap.Toast(toastEl, { delay: 3500 });
+  toastInstance.show();
+}
+
+function initForm() {
   const form = document.getElementById('form-contacto');
   const tieneWebRadios = document.querySelectorAll('input[name="tieneWeb"]');
   const webExisteDiv = document.getElementById('webExiste');
@@ -30,29 +98,20 @@ document.addEventListener('DOMContentLoaded', function() {
   const igExisteDiv = document.getElementById('igExiste');
   const igUsuarioInput = document.getElementById('igUsuario');
 
-  const toastEl = document.getElementById('contactToast');
-  let toastInstance = null; // Inicializar como null
-
-  if (toastEl) { // Solo inicializar si el elemento existe
-    toastInstance = new bootstrap.Toast(toastEl, {
-      delay: 7000 // Puedes configurar opciones aquí también
-    });
-  } else {
-    console.error("Elemento Toast con id 'contactToast' no encontrado.");
+  if (!form || !webExisteDiv || !paginaWebInput || !igExisteDiv || !igUsuarioInput) {
+    console.error("Faltan elementos esenciales para el formulario.");
+    return;
   }
 
-  // Función para mostrar/ocultar campo de URL de la web
+  // Auxiliar: devuelve el valor del radio seleccionado
+  function getCheckedRadioValue(name) {
+    const sel = document.querySelector(`input[name="${name}"]:checked`);
+    return sel ? sel.value : null;
+  }
+
+  // Mostrar/ocultar campo
   function toggleWebField() {
-    if (document.querySelector('input[name="tieneWeb"]:checked').value === 'si') {
-      webExisteDiv.style.display = 'block';
-      paginaWebInput.required = true; 
-      } else {
-        webExisteDiv.style.display = 'none';
-        paginaWebInput.required = false; 
-        paginaWebInput.value = ''; 
-      }
-    const radioChecked = document.querySelector('input[name="tieneWeb"]:checked');
-    if (radioChecked && radioChecked.value === 'si') {
+    if (getCheckedRadioValue('tieneWeb') === 'si') {
       webExisteDiv.style.display = 'block';
       paginaWebInput.required = true;
     } else {
@@ -63,17 +122,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   function toggleIgField() {
-    if (document.querySelector('input[name="tieneIg"]:checked').value === 'si') {
-      igExisteDiv.style.display = 'block';
-      igUsuarioInput.required = true; 
-    } else {
-      igExisteDiv.style.display = 'none';
-      igUsuarioInput.required = false; 
-      igUsuarioInput.value = ''; 
-    }
-
-    const radioChecked = document.querySelector('input[name="tieneIg"]:checked');
-    if (radioChecked && radioChecked.value === 'si') {
+    if (getCheckedRadioValue('tieneIg') === 'si') {
       igExisteDiv.style.display = 'block';
       igUsuarioInput.required = true;
     } else {
@@ -83,24 +132,22 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
 
-  // Event listeners para los radio buttons de la web
-  tieneWebRadios.forEach(radio => {
-    radio.addEventListener('change', toggleWebField);
-  });
+  // Asociar listeners 
+  tieneWebRadios.forEach(radio =>
+    radio.addEventListener('change', toggleWebField)
+  );
 
-  // Event listeners para los radio buttons de Instagram
-  tieneIgRadios.forEach(radio => {
-    radio.addEventListener('change', toggleIgField);
-  });
+  tieneIgRadios.forEach(radio =>
+    radio.addEventListener('change', toggleIgField)
+  );
 
-  webExisteDiv.style.display = 'none';
-  paginaWebInput.required = false;
-  igExisteDiv.style.display = 'none';
-  igUsuarioInput.required = false;
+  // Estado inicial al cargar
+  toggleWebField();
+  toggleIgField();
 
   // Manejo del envío del formulario
   form.addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevenir el envío real para este ejemplo
+    event.preventDefault();
 
     if (!form.checkValidity()) {
       form.reportValidity();
@@ -108,23 +155,22 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     form.reset();
+    toggleWebField();
+    toggleIgField();
 
-    // Ocultar campos condicionales después de resetear
-    webExisteDiv.style.display = 'none';
-    paginaWebInput.required = false;
-    igExisteDiv.style.display = 'none';
-    igUsuarioInput.required = false;
-
-    if (toastInstance) { // Verificar que la instancia del toast exista
-      const toastBody = toastEl.querySelector('.toast-body');
-      if (toastBody) { // Verificar que el body del toast exista
-        toastBody.textContent = '¡Gracias! Tu consulta ha sido enviada. Nos pondremos en contacto pronto.';
-      }
-      toastInstance.show();
-    } else {
-      console.error("La instancia del Toast no se pudo crear o el elemento no fue encontrado.");
-      // Como fallback, podrías usar un alert o un mensaje en el DOM si el toast falla
-      alert('¡Gracias! Tu consulta ha sido enviada. Nos pondremos en contacto pronto.');
-    }
+    // Mostrar el toast de confirmación
+    showToast('¡Gracias! Tu consulta ha sido enviada.', 'success');
   });
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  initToast();
+  initForm();
 });
+
+
+
+
+
+
+

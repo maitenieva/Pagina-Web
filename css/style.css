@@ -83,7 +83,7 @@
     --ruddy-blue: #79A4D0;
     --lake-blue:#508BBB;
     --bice-blue: #386E9B;
-    --universo-blue:#1E4E7A;
+    --universo-blue:rgb(30, 78, 122);
 
     --border-radius-s: 8px;
     --border-radius-m: 30px;
@@ -135,13 +135,19 @@ p{
     font-size: 1.5rem;
 }
 
-header{
-    background: var(--universo-blue);
-    position:fixed;
+.header {
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
+    background: transparent;
+    transition: background 0.3s ease;       
     z-index: 1000;
+}
+
+.header.header--scrolled {
+    background-color: var(--universo-blue); /* o #1e3a8a directamente */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 header .navbar{
@@ -153,7 +159,7 @@ header .navbar{
 
 .navbar .nav-menu{
     display: flex;
-    gap: 10px;
+    gap: 20px;
 }
 
 .navbar .nav-menu .nav-link{
@@ -181,43 +187,87 @@ header .navbar{
 /*estilo seccion hero*/
 
 .hero-section {
-    width: 100vw; 
-    height: 150vh;
-    min-height: 600px;
-    max-height: 800px; 
+    width: 100%; 
+    height: 100vh;
     position: relative;
     overflow: hidden;
 }
 
-.hero-img{
+.hero_video{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: auto;
+    height: 100%;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    min-width: 100%;
+    z-index: -2;
+}
+
+.hero_overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url(../imagenes/universo-banner.png);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background-color: rgb(30, 78, 122, 0.6);
+    z-index: -1;         /* Sobre el video, pero debajo del contenido */
+}
+
+.hero_content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    flex-direction: column;
+    z-index: 0;          /* Sobre el overlay */
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding: 0 1rem;     /* Espacio horizontal en móviles */
+}
+
+.hero_content img {
+    width: 400px;       
+    height: auto; 
+    display: block;  
+    margin: 0 auto 1.5rem;
+    margin-bottom: 30px;
+}
+
+.hero_subtitle {
+    font-family: "Gotham", sans-serif;
+    font-size: var(--font-size-m);
+    font-weight: var(--font-weight-semibold);
+    color: var(--white-color);
+    max-width: 600px;
 }
 
 /* Estilo servicios*/
 
-/* Estilo para el contenedor de cartas */
-.cartas-contenedor {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 25px;
-    margin-top: 40px;
+.nuestros-servicios{
+    padding: 4rem 1rem;
+    background-color: var(--white-color);
+    text-align: center;
 }
 
-/* Estilo base para todas las cartas */
-/* --- Contenedor de Cartas --- */
-.cartas-contenedor {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-    margin: 40px 0;
+.nuestros-servicios h2 {
+    font-family: "Gotham", sans-serif;
+    color: var(--universo-blue);
+    font-size: 1.7rem;           
+    font-weight: 700;
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+}
+
+.nuestros-servicios .servicios-texto {
+    font-family: "Gotham", sans-serif;
+    max-width: 1200px;
+    margin: 1.5rem auto;        
+    font-size: 1.125rem;       
+    line-height: 1.7;
+    color: #2d2f4f;               
 }
 
 /*estilo cartas servicios*/
@@ -256,7 +306,8 @@ header .navbar{
 .carta h3 {
     color: var(--universo-blue);
     margin-bottom: 15px;
-    font-weight: var(--font-weigth-semibold);
+    font-size: 1.45rem;
+    font-weight: var(--font-weigth-normal);
     position: relative;
     padding-bottom: 10px;
 }
@@ -267,14 +318,14 @@ header .navbar{
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 50px;
+    width: 40px;
     height: 2px;
     background: var(--lake-blue);
     transition: width 0.3s ease;
 }
 
 .carta:hover h3::after {
-    width: 80px;
+    width: 60px;
 }
 
 /* Colores específicos para cada carta */
@@ -308,26 +359,9 @@ header .navbar{
     transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
 }
 /* ----- EFECTOS HOVER ----- */
-.carta:hover img.iconos,
-.carta:hover img.icoonos {
+.carta:hover img.iconos {
     transform: scale(1.15) translateY(-5px);
 }
-/* ----- AJUSTES PARA CARTA ----- */
-.carta {
-    padding: 35px 25px; /* Aumenté el padding para mejor espaciado */
-    text-align: center;
-}
-
-/* ----- BOTÓN MÁS INFORMACIÓN ----- */
-.boton {
-    margin-top: 30px;
-}
-
-.mas-info {
-    padding: 16px 40px;
-    font-size: 1.1rem;
-}
-
 
 /* Estilo para el botón "Más Información" */
 .boton {
@@ -337,6 +371,8 @@ header .navbar{
 
 .mas-info {
     display: inline-block;
+    font-family: "Gotham", sans-serif;
+    text-decoration: none;
     padding: 15px 35px;
     background: var(--universo-blue);
     color: var(--white-color);
@@ -475,7 +511,7 @@ section.contacto h2 {
 
 .contacto-contenido {
     display: flex;
-    align-items: flex-start;           /* misma altura en ambas columnas */
+    align-items: stretch;
     gap: 2rem;  
     max-width: var(--site-max-width);
     margin: 0 auto;
@@ -497,6 +533,8 @@ section.contacto h2 {
     display: flex;
     flex-direction: column;
     gap: 1.2rem; 
+    height: 100%;
+    box-sizing: border-box;
 }
 
 .form-row{
@@ -511,14 +549,11 @@ section.contacto h2 {
 }
 
 .contacto-visual {
-    flex: 1;           /* 1.5 de cada 4 partes para la imagen */
+    flex: 1;        
     max-width: 550px;
-    padding: 0;
     overflow: hidden;
     border-radius: var(--border-radius-s);
     display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .contacto-visual img {
@@ -526,6 +561,7 @@ section.contacto h2 {
     height: 100%;                
     object-fit: cover;           
     border-radius: var(--border-radius-s);
+    filter: brightness(0.75)
 }
 
 #form-contacto .form-grupo {
@@ -544,7 +580,7 @@ section.contacto h2 {
 /* Inputs y Textarea */
 #form-contacto input[type="text"],
 #form-contacto input[type="email"],
-#form-contacto input[type="telefono"],
+#form-contacto input[type="tel"],
 #form-contacto input[type="url"],
 #form-contacto textarea {
     width: 100%;
@@ -657,29 +693,36 @@ section.contacto h2 {
 
 /* Media query para pantallas pequeñas */
 @media screen and (max-width: 768px) {
-  .contacto-contenido {
-    flex-direction: column;
-    gap: 2rem;
-  }
-  .contacto-visual {
-    max-width: 100%;
-    height: auto;
-  }
-  .contacto-visual img {
-    width: 100%;
-    height: auto;
-  }
-  #form-contacto {
-    padding: 1.5rem;
-  }
-  .form-row {
-    flex-direction: column;
-    gap: 1rem;
-  }
-  #form-contacto button[type="submit"] {
-    width: 100%;
-    align-self: center;
-  }
+    .hero__title {
+        font-size: 2rem;
+    }
+    .hero__subtitle {
+        font-size: 1rem;
+    }
+
+    .contacto-contenido {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .contacto-visual {
+        max-width: 100%;
+        height: auto;
+    }
+    .contacto-visual img {
+        width: 100%;
+        height: auto;
+    }
+    #form-contacto {
+        padding: 1.5rem;
+    }
+    .form-row {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    #form-contacto button[type="submit"] {
+        width: 100%;
+        align-self: center;
+    }
 }
 
 /* Para que se adapte a celulares*/
