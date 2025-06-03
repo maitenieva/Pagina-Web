@@ -14,6 +14,24 @@ document.querySelector('.menu-toggle').addEventListener('click', function() {
 // Detectar scroll para cambiar el fondo de la header
 const header = document.querySelector('.header');
 
+window.addEventListener('scroll', () => {
+  // Si ya hicimos scroll hacia abajo más de 50px (puedes ajustar ese valor)
+  if (window.scrollY > 50) {
+    header.classList.add('header--scrolled');
+  } else {
+    header.classList.remove('header--scrolled');
+  }
+});
+
+
+// Remueve el bloqueo si se redimensiona a escritorio
+window.addEventListener('resize', function() {
+  if (window.innerWidth > 900) {
+    document.body.classList.remove('menu-open');
+    document.querySelector('.nav-menu').classList.remove('active', 'show');
+  }
+});
+
 // 1) Esperamos a que el DOM esté cargado
 document.addEventListener('DOMContentLoaded', () => {
   // 2) Seleccionamos todos los slides y los botones prev/next
@@ -52,25 +70,6 @@ document.addEventListener('DOMContentLoaded', () => {
     showSlide(currentIndex + 1);
   });
 
-});
-
-
-window.addEventListener('scroll', () => {
-  // Si ya hicimos scroll hacia abajo más de 50px (puedes ajustar ese valor)
-  if (window.scrollY > 50) {
-    header.classList.add('header--scrolled');
-  } else {
-    header.classList.remove('header--scrolled');
-  }
-});
-
-
-// Remueve el bloqueo si se redimensiona a escritorio
-window.addEventListener('resize', function() {
-  if (window.innerWidth > 900) {
-    document.body.classList.remove('menu-open');
-    document.querySelector('.nav-menu').classList.remove('active', 'show');
-  }
 });
 
 let toastInstance = null;

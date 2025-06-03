@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Universo - Contacto</title>
     <link rel="stylesheet" href="../css/style-contacto.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous"></head>
+
 </head>
 <body>
     <header class="header">
@@ -32,15 +34,129 @@
             </ul>
         </nav>
     </header>
-
     <main>
-        <section>
-            <h1>Esto es una prueba CONTACTO</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos cum quam autem, beatae atque sunt dolor est sed, perspiciatis illum ipsam, doloremque harum nisi tempore nulla. Ea exercitationem iste consequuntur!</p>
+        <section class="hero-section">
+            <img src="../imagenes/meet.jpeg" class="hero_img" alt="reunion">
+            <div class="hero_overlay"></div>
+                <div class="hero_content">
+                    <h1 class="hero_title">Lo que estás esperando, empieza ahora.</h1>
+                    <p class="hero_subtitle">Contactanos y dale a tu marca el impulso que necesita.</p>
+                </div>
         </section>
+        <div class="contacto-contenido">
+            <div class="contacto-formulario">
+                <form id="form-contacto">
+                    <div class="form-row">
+                        <div class="form-grupo">
+                            <label for="name">Nombre</label>
+                            <input type="text" id="nombre" required>
+                        </div>
+                        <div class="form-grupo">
+                            <label for="apellido">Apellido</label>
+                            <input type="text" id="apellido" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-grupo">
+                            <label for="email">Teléfono</label>
+                            <input type="tel" id="telefono" required>
+                        </div>
+                        <div class="form-grupo">
+                            <label for="name">Mail de contacto</label>
+                            <input type="email" id="mail"  placeholder="ejemplo@gmail.com" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-grupo">
+                            <label for="name">Nombre de la empresa</label>
+                            <input type="text" id="nombre-empresa" required>
+                        </div>
+                        <div class="form-grupo">
+                            <label for="rubro">Rubro de la empresa</label>
+                            <input type="text" id="rubro" required>
+                        </div>
+                    </div>
+                    <div class="form-grupo">
+                        <label>¿Tenés actualmente una página web?</label>
+                        <div class="radio-group">
+                            <label class="radio-label"><input type="radio" name="tieneWeb" value="si" required/>Sí</label>
+                            <label class="radio-label"> <input type="radio" name="tieneWeb" value="no"/>No</label>
+                        </div>
+                    </div>
+                    <div class="form-grupo" id="webExiste" style="display:none;"> <!--Va a estar oculto salvo que elija SI en lo anterior-->
+                        <label for="paginaWeb">Link de tu web</label>
+                        <input type="url" id="paginaWeb" placeholder="https://ejemplo.com"/>
+                    </div>
+                    <div class="form-grupo">
+                        <label>¿Tenés una cuenta empresarial en Instagram?</label>
+                        <div class="radio-group">
+                            <label class="radio-label"><input type="radio" name="tieneIg" value="si" required/>Sí</label>
+                            <label class="radio-label"><input type="radio" name="tieneIg" value="no"/>No</label>
+                        </div>
+                    </div>
+                    <div class="form-grupo" id="igExiste" style = "display: none;"> <!--Va a estar oculto salvo que elija SI en lo anterior-->
+                        <label for="igUsuario">Link a tu perfil</label>
+                        <input type="url" id="igUsuario" placeholder="https://instagram.com/tuempresa/"/>
+                    </div>
+                    <div class="form-grupo">
+                        <label for="mensaje">Mensaje</label>
+                        <textarea id="mensaje" rows="5" placeholder="¡Contanos sobre tu proyecto o consulta!"></textarea>
+                    </div>
+
+                    <button type="submit">Enviar</button>
+                </form>
+            </div>
+            <div class="contacto-visual">
+                <h3 class="contacto-titulo">¿Querés hablar con nosotros?</h3>
+
+                <div class="info-contacto">
+                    <div class="contacto-item">
+                        <img src="../imagenes/footer/correo.png" alt="Mail">
+                        <span>universoagenciaok@gmail.com</span>
+                    </div>
+                    <div class="contacto-item">
+                        <img src="../imagenes/footer/whatsapp.png" alt="WhatsApp">
+                        <span>Contáctanos</span>
+                    </div>
+                    <div class="contacto-item horario">
+                        <img src="../imagenes/footer/reloj-de-pared.png" alt="Horario">
+                        <div>
+                            Lunes a Viernes<br>
+                            9:00 – 18:00
+                        </div>
+                    </div>
+                </div>
+
+                <div class="redes-contacto">
+                    <h4>Seguinos</h4>
+                    <span class="linea-decorativa"></span>
+                    <ul>
+                        <li>
+                            <a href="https://instagram.com/universo.agencia" target="_blank">
+                            <img src="../imagenes/footer/instagram.png" alt="Instagram">
+                            @universoagencia
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/company/universo-agencia" target="_blank">
+                            <img src="../imagenes/footer/linkedin.png" alt="LinkedIn">
+                            LinkedIn
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 1100;">
+                <div id="liveToast" class="toast align-items-center text-bg-success border-0" …>
+                    <div class="d-flex">
+                        <div id="toast-message" class="toast-body"></div>
+                        <button class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+                    </div>
+                </div>
+            </div>
     </main>
     
-
     <footer class="footer">
         <div class="container footer__container">
             <!--redes sociales-->
@@ -89,6 +205,7 @@
             <p>© 2025 Universo Agencia. Todos los derechos reservados.</p>
         </div>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-…" crossorigin="anonymous"></script>
     <script src="../javaScript/script-contacto.js"></script>
 </body>
 
