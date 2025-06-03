@@ -691,6 +691,120 @@ section.contacto h2 {
     border: 1px solid #c3e0c9;
 }
 
+
+/*FOOTER*/
+.footer {
+    background-color: var(--universo-blue);
+    color: var(--white-color);
+    padding-top: 3rem;
+    padding-bottom: 1.5rem;
+}
+
+.footer__container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.footer__section {
+    flex: 1 1 250px; /* Ocupa al menos 250px, se ajusta si hace falta */
+    min-width: 200px;
+    }
+
+
+.footer__title {
+    font-family: "Gotham", sans-serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--white-color);
+}
+
+/*iconos del footer */
+.social-icon {
+    width: 35px;        
+    height: auto;
+    margin-right: 0.5rem;
+    vertical-align: middle; /* para alinear con el texto */
+}
+
+.footer__socials {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+/* Cada enlace en redes o contacto */
+.footer__social-link,
+.footer__contact a,
+.footer__hours {
+    font-family: "Gotham", sans-serif;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1rem;
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.footer__social-link:hover,
+.footer__contact a:hover {
+    color: var(--alice-blue);
+}
+
+/* Párrafo de contacto (email) */
+.footer__contact {
+    font-family: "Gotham", sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Horario de atención */
+.footer__hours {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.footer__bottom {
+    text-align: center;
+    margin-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: 1rem;
+}
+
+.footer__bottom p {
+    font-size: 0.875rem;
+    margin: 0;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+@media screen and (max-width: 768px) {
+  .footer__container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer__section {
+    min-width: auto;
+    width: 100%;
+  }
+
+  /* Centrar iconos y texto en móviles */
+  .footer__socials,
+  .footer__contact,
+  .footer__hours {
+    justify-content: center;
+  }
+}
+
+
+
 /* Media query para pantallas pequeñas */
 @media screen and (max-width: 768px) {
     .hero__title {

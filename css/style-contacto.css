@@ -1,0 +1,279 @@
+@font-face {
+    font-family: "Gotham";
+    src: url(../fuentes/Gotham-Medium.otf);
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Gotham";
+    src: url(../fuentes/Gotham-MediumItalic.otf);
+    font-weight: 600;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "Gotham";
+    src: url(../fuentes/Gotham-LightItalic.otf);
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+  font-family: 'Gotham';
+  src: url(../fuentes/Gotham-Light.otf) format('opentype');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gotham';
+  src: url(../fuentes/Gotham-Book.otf) format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gotham';
+  src: url(../fuentes/Gotham-BookItalic.otf) format('opentype');
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Gotham';
+  src: url(../fuentes/Gotham-Bold.otf) format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gotham';
+  src: url(../fuentes/Gotham-Black.otf) format('opentype');
+  font-weight: 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gotham';
+  src: url(../fuentes/Gotham-BlackItalic.otf) format('opentype');
+  font-weight: 900;
+  font-style: italic;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{ /*Custom Properties, variables globales que centralizan valores*/
+    --padding-container:100px 0;
+
+    --font-size-s: 0.9rem;
+    --font-size-n: 1rem;
+    --font-size-m: 1.12rem;
+    --font-size-l: 1.5rem;
+    --font-size-xl: 2rem;
+    --font-size-xxl: 2.3rem;
+
+    --font-weight-light: 300;
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 800;
+    
+    --white-color: #fff;
+    --alice-blue: #D8EBFF;
+    --ruddy-blue: #79A4D0;
+    --lake-blue:#508BBB;
+    --bice-blue: #386E9B;
+    --universo-blue:rgb(30, 78, 122);
+
+    --border-radius-s: 8px;
+    --border-radius-m: 30px;
+    --border-radius-circle: 50%;
+
+    --site-max-width:1300px;
+}
+
+.my-container{
+    width: 90%;
+    max-width: var(--site-max-width, 1200px);
+    margin: 0 auto;
+    overflow: hidden; /*para que todo lo que salga del espacio que marque se esconda*/
+    padding: var(--padding-container); 
+}
+
+body{
+    margin: 0;
+    font-family: "Gotham", sans-serif;
+    font-weight: 400;
+}
+
+h1{
+    font-size: var(--font-size-xxl);
+    font-weight: var(--font-weight-bold);
+    color: var(--universo-blue);
+}
+
+h2{
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weigth-semibold);
+    color: var(--bice-blue)
+}
+
+h3{
+    font-size: var(--font-size-m);
+    font-weight: var(--font-weigth-medium);
+}
+
+p{
+    font-size: var(--font-size-n);
+    font-weight: var(--font-weigth-normal);
+}
+/*estilo navbar*/
+
+.menu-toggle {
+    display: none; /* Oculto en desktop */
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(30, 78, 122); 
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+  z-index: 1000;
+  box-shadow: none;
+}
+
+
+header .navbar{
+    display: flex;
+    padding: 20px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar .nav-menu{
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar .nav-menu .nav-link{
+    text-decoration: none;
+    padding: 10px 18px;
+    color: var(--white-color);
+    font-size: var(--font-size-m);
+    border-radius: var(--border-radius-m);
+    transition: 0.3s ease;
+}
+
+.navbar .nav-menu .nav-link:hover {
+    color: var(--alice-blue);
+    background-color: var(--lake-blue);
+
+}
+
+.navbar .nav_img{
+    width: 100px; 
+    height: auto;
+    align-content: center;
+    transition: 0.3s ease;
+}
+
+main {
+  margin-top: 80px;
+}
+
+
+/*FOOTER*/
+.footer {
+    background-color: var(--universo-blue);
+    color: var(--white-color);
+    padding-top: 3rem;
+    padding-bottom: 1.5rem;
+}
+
+.footer__container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.footer__section {
+    flex: 1 1 250px; /* Ocupa al menos 250px, se ajusta si hace falta */
+    min-width: 200px;
+    }
+
+
+.footer__title {
+    font-family: "Gotham", sans-serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--white-color);
+}
+
+/*iconos del footer */
+.social-icon {
+    width: 35px;        
+    height: auto;
+    margin-right: 0.5rem;
+    vertical-align: middle; /* para alinear con el texto */
+}
+
+.footer__socials {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+/* Cada enlace en redes o contacto */
+.footer__social-link,
+.footer__contact a,
+.footer__hours {
+    font-family: "Gotham", sans-serif;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1rem;
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.footer__social-link:hover,
+.footer__contact a:hover {
+    color: var(--alice-blue);
+}
+
+/* Párrafo de contacto (email) */
+.footer__contact {
+    font-family: "Gotham", sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Horario de atención */
+.footer__hours {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.footer__bottom {
+    text-align: center;
+    margin-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: 1rem;
+}
+
+.footer__bottom p {
+    font-size: 0.875rem;
+    margin: 0;
+    color: rgba(255, 255, 255, 0.8);
+}
