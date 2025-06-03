@@ -157,25 +157,49 @@ header .navbar{
     justify-content: space-between;
 }
 
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
 .navbar .nav-menu{
-    list-style: none;
     display: flex;
     gap: 20px;
 }
 
 .navbar .nav-menu .nav-link{
     text-decoration: none;
+    list-style: none;
     padding: 10px 18px;
+    font-family: "Gotham", sans-serif;
     color: var(--white-color);
     font-size: var(--font-size-m);
     border-radius: var(--border-radius-m);
     transition: 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.navbar .nav-menu .nav-gestion {
+    background: var(--bice-blue);
+    padding: 10px 18px; 
+    display: flex;
+    align-items: center;
+    border-radius: var(--border-radius-m);
+    border: 2px solid transparent; 
+    font-weight: 600;
 }
 
 .navbar .nav-menu .nav-link:hover {
     color: var(--alice-blue);
     background-color: var(--lake-blue);
+}
 
+.navbar .nav-menu .nav-gestion:hover {
+    background: var(--alice-blue);
+    color: var(--universo-blue); 
+    border-color: var(--bice-blue);
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1); /* para efecto sutil */
 }
 
 .navbar .nav_img{
