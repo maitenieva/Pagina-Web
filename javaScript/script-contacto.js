@@ -142,6 +142,26 @@ function initForm() {
       return;
     }
 
+    // Crear objeto cliente -> Esto lo uso para que se carguen en la parte de gestion
+    const nuevoCliente = {
+      nombre: document.getElementById('nombre').value,
+      apellido: document.getElementById('apellido').value,
+      telefono: document.getElementById('telefono').value,
+      mail: document.getElementById('mail').value,
+      empresa: document.getElementById('nombre-empresa').value,
+      rubro: document.getElementById('rubro').value,
+      paginaWeb: document.getElementById('paginaWeb').value || null,
+      ig: document.getElementById('igUsuario').value || null,
+      mensaje: document.getElementById('mensaje').value,
+      avance: "Inicio"
+    };
+
+    // Guardar en localStorage -> lo guardo en local storage para después acceder a estos datos 
+    const clientesGuardados = JSON.parse(localStorage.getItem("clientes")) || [];
+    clientesGuardados.push(nuevoCliente);
+    localStorage.setItem("clientes", JSON.stringify(clientesGuardados));
+
+    //Limpio el form
     form.reset();
     toggleWebField();
     toggleIgField();
