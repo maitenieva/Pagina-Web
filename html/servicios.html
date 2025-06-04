@@ -1,91 +1,326 @@
+<!-- servicios.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Universo - Servicios</title>
-    <link rel="stylesheet" href="../css/style-servicios.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Universo - Servicios</title>
+
+  <!-- Swiper CSS -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+  />
+
+  <!-- CSS corregido -->
+  <link rel="stylesheet" href="../css/style-servicios.css" />
 </head>
 <body>
-    <header class="header"> <!--Seccion principal, portada de la pagina-->
-        <nav class="navbar my-container">
-            <a href="../index.html" class="nav-logo">
-                <img src="../imagenes/universo-logo.png" alt="logoUniverso" class="nav_img"/>
-            </a>
-        <div class="menu-toggle">☰</div>
-            <ul class="nav-menu">
-                <li class="nav-item">
-                    <a href="../index.html" class="nav-link">Inicio</a>
-                </li>
-                <li class="nav-item">
-                    <a href="./servicios.html" class="nav-link">Servicios</a>
-                </li>
-                <li class="nav-item">
-                    <a href="./nosotros.html" class="nav-link">Nosotros</a>
-                </li>
-                <li class="nav-item">
-                    <a href="./contacto.html" class="nav-link">Contacto</a>
-                </li>
-                <li class="nav-item">
-                    <a href="./gestion-clientes.html" class="nav-link nav-gestion">Gestión</a>
-                </li>
-            </ul>
-        </nav>
-    </header>
-<main>
-        <section>
-            <h1>SERVICIOS</h1>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed vitae esse autem explicabo blanditiis dolor, ex aspernatur doloremque! Sit aliquid consequuntur hic nobis officia alias dolor mollitia omnis fugit repellat!</p>
-        </section>
-    </main>
-    <footer class="footer">
-        <div class="container footer__container">
-            <!--redes sociales-->
-            <div class="footer__section">
-                <h4 class="footer__title">Redes Sociales</h4>
-                <nav class="footer__socials">
-                    <!--ig-->
-                    <a href="https://www.instagram.com/universoagencia/" target="_blank" rel="noopener" aria-label="Instagram" class="footer__social-link">
-                        <img src="../imagenes/footer/instagram.png" alt="Instagram" class="social-icon"/>@universoagencia
-                    </a>
+  <header class="header">
+    <nav class="navbar my-container">
+      <a href="../index.html" class="nav-logo">
+        <img
+          src="../imagenes/universo-logo.png"
+          alt="logoUniverso"
+          class="nav_img"
+        />
+      </a>
+      <div class="menu-toggle">☰</div>
+      <ul class="nav-menu">
+        <li class="nav-item">
+          <a href="../index.html" class="nav-link">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a href="./servicios.html" class="nav-link">Servicios</a>
+        </li>
+        <li class="nav-item">
+          <a href="./nosotros.html" class="nav-link">Nosotros</a>
+        </li>
+        <li class="nav-item">
+          <a href="./contacto.html" class="nav-link">Contacto</a>
+        </li>
+        <li class="nav-item">
+          <a href="./gestion-clientes.html" class="nav-link nav-gestion">Gestión</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
 
-                    <!--LinkedIn-->
-                    <a href="https://www.linkedin.com/in/tu_usuario" target="_blank" rel="noopener" aria-label="LinkedIn" class="footer__social-link">
-                        <img src="../imagenes/footer/linkedin.png" alt="LinkedIn" class="social-icon"/>LinkedIn
-                    </a>
-                </nav>
-            </div>
+  <main class="servicios-main">
+    <section class="hero-servicios">
+      <div class="my-container">
+        <h1>Nuestros Servicios</h1>
+        <p>Descubre cómo podemos ayudarte a potenciar tu marca y alcanzar tus objetivos.</p>
+      </div>
+    </section>
 
-            <!-- contacto -->
-            <div class="footer__section">
-                <h4 class="footer__title">Contáctanos</h4>
-                <nav class="footer__socials">
-                    <a href="universoagenciaok@gmail.com" target="_blank" rel="noopener" aria-label="Instagram" class="footer__social-link">
-                        <img src="../imagenes/footer/correo.png" alt="Correo Electrónico Universo" class="social-icon">
-                        universoagenciaok@gmail.com
-                    </a>
-                    <a href="https://wa.me/" target="_blank" rel="noopener" aria-label="WhatsApp"class="footer__social-link">
-                        <img src="../imagenes/footer/whatsapp.png" alt="WhatsApp" class="social-icon" />WhatsApp
-                    </a>  
-                </nav>
-            </div>
+    <!-- Servicio: Branding -->
+    <section id="branding" class="service-section">
+        <div class="my-container">
+            <h2>Branding</h2>
+            <p class="service-description">
+            Construimos identidades de marca sólidas y memorables. Desde el diseño de tu logo hasta la creación de merchandising y la ambientación de locales comerciales, pasando por un diseño editorial que comunique tu esencia.
+            </p>
 
-            <!-- horario de atención -->
-            <div class="footer__section">
-                <h4 class="footer__title">Horario de Atención</h4>
-                    <p class="footer__hours">
-                        <img src="../imagenes/footer/reloj-de-pared.png" alt="Horario" class="social-icon"/>
-                        Lunes a Viernes<br/>
-                        9:00 – 18:00
-                    </p>
+            <!-- Subtítulo 1 -->
+            <h3>Diseño de Logos</h3>
+            <div class="portfolio-carousel swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="../imagenes/carrusel-servicios/branding/770-logo.png" alt="Logo 770" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="../imagenes/carrusel-servicios/branding/zetty-rossi.svg" alt="Logo Zetty Rossi" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="../imagenes/carrusel-servicios/branding/Imagen 1.jpg" alt="Noblo Logo" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="../imagenes/logos/H&H-Alimentos.svg" alt="Logo H&H" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="../imagenes/logos/handy-pizza.png" alt="Logo Handy" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="../imagenes/logos/noblo-community.jpg" alt="Noblo Community" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="../imagenes/logos/cuyo-nuestro.png" alt="Logo Zetty Rossi (repetido)" />
+                    </div>
                 </div>
-        </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
 
-        <!-- Línea de derechos reservados -->
-        <div class="footer__bottom">
-            <p>© 2025 Universo Agencia. Todos los derechos reservados.</p>
+            <h3>Diseño de Packaging</h3>
+            <div class="portfolio-carousel swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="../imagenes/carrusel-servicios/branding/packaging-handy.png" alt="Packaging Handy-Pizza" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="../imagenes/carrusel-servicios/branding/frascos-monte.png" alt="Frascos Monte Hermon" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="../imagenes/carrusel-servicios/branding/alfajores-770.png" alt="Alfajores 770" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="../imagenes/carrusel-servicios/branding/mermeladas-cuyo.png" alt="Mermeladas Cuyo" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="../imagenes/carrusel-servicios/branding/crunchy-pops.jpg" alt="Crunchy Pops" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="../imagenes/carrusel-servicios/branding/aceitunas.jpg" alt="Aceitunas Olifaza" />
+                    </div>  
+                    <div class="swiper-slide">
+                        <img src="../imagenes/carrusel-servicios/branding/zetty-rossi-tostadas.png" alt="Zetty Rosi tostadas" />
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+        </div> 
+    </section>
+
+    <!-- Servicio: Diseño Gráfico -->
+    <section id="diseno-grafico" class="service-section alt-bg">
+        <div class="my-container">
+            <h2>Diseño Gráfico</h2>
+            <p class="service-description">
+            Creamos piezas gráficas impactantes y funcionales. Especializados en diseño de packagings que venden y pop-ups que capturan la atención en el punto de venta.
+            </p>
+            <div class="portfolio-carousel swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="../imagenes/carrusel-servicios/disenio-grafico/bao.jpg" alt="Placa Bao" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="../imagenes/carrusel-servicios/disenio-grafico/copa-america-petty.jpg" alt="Petty Copa America" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="../imagenes/carrusel-servicios/disenio-grafico/placa-faraj.jpg" alt="Placa Faraj Textil" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="../imagenes/carrusel-servicios/disenio-grafico/placa-petty.jpg" alt="Placa Petty Tours" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="../imagenes/carrusel-servicios/disenio-grafico/placa-iruya.jpg" alt="Placa Iruya " />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="../imagenes/carrusel-servicios/disenio-grafico/placa-iruya-2.jpg" alt="Placa Iruya 2" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="../imagenes/carrusel-servicios/disenio-grafico/hotmeat-historia.jpg" alt="HotMeat Historia" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="../imagenes/carrusel-servicios/disenio-grafico/banner-digital 770.png" alt="historia 770 lingotes" />
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
         </div>
-    </footer>
-    <script src="../javaScript/script-servicios.js"></script>
+    </section>
+
+    <!-- Servicio: Diseño Web & E-commerce -->
+    <section id="diseno-web" class="service-section">
+        <div class="my-container">
+            <h2>Diseño Web & E-commerce</h2>
+            <p class="service-description">
+            Desarrollamos sitios web y tiendas online atractivas, intuitivas y optimizadas para la conversión. Tu presencia digital profesional y efectiva para vender más.
+            </p>
+            <div class="portfolio-carousel swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="../imagenes/carrusel-servicios/disenio-web/770-web.png" alt="Web 770" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="../imagenes/carrusel-servicios/disenio-web/H&H-Web.png" alt="Web H&H Alimentos" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="../imagenes/carrusel-servicios/disenio-web/turboland-web.png" alt="Web Turboland" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="../imagenes/carrusel-servicios/disenio-web/matero-web.png" alt="Web Matero" />
+                    </div> 
+                    <div class="swiper-slide">
+                        <img src="../imagenes/carrusel-servicios/disenio-web/mil95-web.png" alt="Web Mil95" />
+                    </div>  
+                    <div class="swiper-slide">
+                        <img src="../imagenes/carrusel-servicios/disenio-web/zetty-rosi-web2.png" alt="Web Zetty Rosi" />
+                    </div>         
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servicio: Gestión de Redes -->
+    <section id="gestion-redes" class="service-section alt-bg">
+        <div class="my-container">
+            <h2>Gestión de Redes Sociales</h2>
+            <p class="service-description">
+            Potenciamos tu presencia en redes sociales. Creación de imagen de marca cohesiva, diseño de publicaciones atractivas, videomarketing de impacto y community management para conectar con tu audiencia.
+            </p>
+            <div class="portfolio-carousel swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="../imagenes/carrusel-servicios/redes/petty-ig.png" alt="Instagram Petty" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="../imagenes/carrusel-servicios/redes/iruya-ig.png" alt="Instagram Iruya" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="../imagenes/carrusel-servicios/redes/handy-ig.png" alt="Instagram Handy" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="../imagenes/carrusel-servicios/redes/saladino-ig.png" alt="Instagram Saladino" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="../imagenes/carrusel-servicios/redes/cinsa-ig.png" alt="Instagram Cinsa" />
+                    </div> 
+                    <div class="swiper-slide">
+                        <img src="../imagenes/carrusel-servicios/redes/faraj-ig.png" alt="Instagram Faraj Textil" />
+                    </div>                    
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+      </div>
+    </section>
+
+    <!-- Servicio: Gestión Digital -->
+    <section id="gestion-digital" class="service-section">
+        <div class="my-container">
+            <h2>Gestión Digital</h2>
+            <p class="service-description">
+            Maximizamos tu visibilidad y resultados online. Estrategias efectivas en Google Ads para atraer clientes y técnicas de posicionamiento de marca para destacar en el mundo digital.
+            </p>
+            <div class="logos-center">
+                <img src="../imagenes/carrusel-servicios/googleAds.png" alt="Logo Google Ads" />
+                <img src="../imagenes/carrusel-servicios/meta-ads.png" alt="Logo Meta Ads" />
+            </div>
+        </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__container my-container">
+      <!-- Redes Sociales -->
+      <div class="footer__section">
+        <h4 class="footer__title">Redes Sociales</h4>
+        <nav class="footer__socials">
+          <a
+            href="https://www.instagram.com/universoagencia/"
+            target="_blank"
+            rel="noopener"
+            class="footer__social-link"
+          >
+            <img src="../imagenes/footer/instagram.png" alt="Instagram" class="social-icon" />
+            @universoagencia
+          </a>
+          <a
+            href="https://www.linkedin.com/in/tu_usuario"
+            target="_blank"
+            rel="noopener"
+            class="footer__social-link"
+          >
+            <img src="../imagenes/footer/linkedin.png" alt="LinkedIn" class="social-icon" />
+            LinkedIn
+          </a>
+        </nav>
+      </div>
+
+      <!-- Contacto -->
+      <div class="footer__section">
+        <h4 class="footer__title">Contáctanos</h4>
+        <nav class="footer__socials">
+          <a
+            href="mailto:universoagenciaok@gmail.com"
+            class="footer__social-link"
+          >
+            <img src="../imagenes/footer/correo.png" alt="Correo Electrónico Universo" class="social-icon" />
+            universoagenciaok@gmail.com
+          </a>
+          <a
+            href="https://wa.me/"
+            target="_blank"
+            rel="noopener"
+            class="footer__social-link"
+          >
+            <img src="../imagenes/footer/whatsapp.png" alt="WhatsApp" class="social-icon" />
+            WhatsApp
+          </a>
+        </nav>
+      </div>
+
+      <!-- Horario de Atención -->
+      <div class="footer__section">
+        <h4 class="footer__title">Horario de Atención</h4>
+        <p class="footer__hours">
+          <img src="../imagenes/footer/reloj-de-pared.png" alt="Horario" class="social-icon" />
+          Lunes a Viernes<br />
+          9:00 – 18:00
+        </p>
+      </div>
+    </div>
+
+    <!-- Derechos Reservados -->
+    <div class="footer__bottom">
+      <p>© 2025 Universo Agencia. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  <!-- Inicialización de Swiper -->
+  <script src="../javaScript/script-servicios.js"></script>
 </body>
 </html>
