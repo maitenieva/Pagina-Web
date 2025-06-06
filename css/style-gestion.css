@@ -208,222 +208,191 @@ header .navbar{
 #login-container {
   display: flex;
   justify-content: center;
-  padding-top: 150px;
-  padding-bottom: 40px;
+  align-items: center;
+  padding-top: 150px; /* Espacio para el header fijo */
 }
+
 #login {
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  padding: 2rem 1.5rem;
+  background: var(--white-color);
+  border-radius: var(--border-radius-s);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
   width: 100%;
   max-width: 400px;
   text-align: center;
 }
+
 #login h2 {
-  font-size: 1.5rem;
-  margin-bottom: 0.75rem;
-  color: #333;
-}
-#login p {
+  font-size: 1.8rem;
+  color: var(--universo-blue);
   margin-bottom: 1rem;
-  color: #555;
 }
+
+#login p {
+  color: #555;
+  margin-bottom: 1.5rem;
+  line-height: 1.4;
+}
+
 #login input[type="password"] {
   width: 100%;
-  padding: 0.5rem 0.75rem;
-  margin-bottom: 1rem;
+  padding: 0.75rem;
   font-size: 1rem;
   border: 1px solid #ccc;
-  border-radius: 4px;
+  border-radius: var(--border-radius-s);
+  margin-bottom: 1rem;
 }
+
 #login button {
-  padding: 0.5rem 1rem;
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1.1rem;
+  font-weight: 600;
   background-color: var(--lake-blue);
-  color: white;
+  color: var(--white-color);
   border: none;
-  border-radius: 4px;
+  border-radius: var(--border-radius-s);
   cursor: pointer;
+  transition: background-color 0.2s;
 }
+
 #login button:hover {
-  background-color: var(--bice-blue);
+  background-color: var(--universo-blue);
 }
+
 #login .alert {
   margin-top: 1rem;
 }
-#login .d-none {
-  display: none !important;
-}
 
-/* ------------------------------------------------------------
-   Sección de gestión (inicialmente oculta)
-   ------------------------------------------------------------ */
 #crud-section {
-  display: none; /* se muestra tras el login */
-  max-width: 1200px;
-  margin: 2rem auto;
-  padding: 0 1rem;
+    padding-top: 30px;
+    display: none; /* Se muestra con JS */
+    max-width: var(--site-max-width);
+    margin: 150px auto 5rem auto; /* Espacio arriba para el header y abajo para el footer */
 }
+
 #crud-section h2 {
-  color: var(--universo-blue);
-  margin-bottom: 1rem;
-  text-align: center;
+    font-size: var(--font-size-xxl);
+    color: var(--universo-blue);
+    text-align: center;
+    margin-bottom: 2rem;
 }
 
-/* ------------------------------------------------------------
-   Contenedor de tarjetas
-   ------------------------------------------------------------ */
-#clientsContainer {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  justify-content: center;
-}
-#noClientsMsg {
-  text-align: center;
-  margin-top: 1rem;
-  color: #555;
-  display: none; /* se mostrará si no hay clientes */
+#clientesContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem; 
 }
 
-/* ------------------------------------------------------------
-   Tarjeta de cliente
-   ------------------------------------------------------------ */
 .client-card {
-  background: #fff;
-  border-radius: var(--border-radius-m);
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-  width: 300px;
-  padding: 1rem;
-  box-sizing: border-box;
-  transition: transform 0.1s ease;
+    background: var(--white-color);
+    border-radius: var(--border-radius-s);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
+
 .client-card:hover {
-  transform: translateY(-2px);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
 }
-.client-card .card-title {
-  margin: 0 0 0.5rem 0;
-  font-size: 1.25rem;
+
+/* --- Contenido de la tarjeta --- */
+.client-card h2 {
+  font-size: 1.4rem;
   font-weight: 700;
   color: var(--universo-blue);
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 0.5rem;
 }
-.client-card .info p {
-  margin: 0 0 0.4rem 0;
-  font-size: 0.9rem;
-  color: #333;
-  line-height: 1.3;
+
+.client-card p {
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
 }
-.client-card .info p strong {
+
+.client-card p strong {
   font-weight: 600;
   color: var(--bice-blue);
-  margin-right: 0.25rem;
 }
-.client-card .info a {
+
+.client-card a {
   color: var(--lake-blue);
   text-decoration: none;
+  word-break: break-all; /* Evita que links largos rompan el layout */
 }
-.client-card .info a:hover {
+
+.client-card a:hover {
   text-decoration: underline;
 }
 
-/* ------------------------------------------------------------
-   Área de acciones (select + botones)
-   ------------------------------------------------------------ */
-.client-card .actions {
+.client-card .select-avance {
+  width: 100%;
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: var(--border-radius-s);
+  background: #f9f9f9;
   margin-top: 1rem;
+}
+
+.client-card .actions {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
-  align-items: center;
-}
-.client-card .actions label {
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: var(--bice-blue);
-}
-.client-card .actions .avance-select {
-  flex: 1;
-  padding: 0.5rem;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  background: #f9f9f9;
-  color: #333;
-  font-size: 0.9rem;
+  margin-top: 1rem;
+  border-top: 1px solid #eee;
+  padding-top: 1rem;
 }
 
-/* ------------------------------------------------------------
-   Botones: Editar / Eliminar / Guardar / Cancelar
-   Todos con bordes redondeados y colores pastel
-   ------------------------------------------------------------ */
-.client-card button {
-  flex: 1;
-  padding: 0.7rem 1rem;
-  border: 2px solid transparent;
-  border-radius: 50px;
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background-color 0.2s ease, transform 0.1s ease;
-}
-.btn-edit {
-  background-color: #b8e6b8;
-  color: #2f662f;
-}
-.btn-edit:hover {
-  background-color: #a0dba0;
-  transform: translateY(-1px);
-}
-.btn-delete {
-  background-color: #f5b8b8;
-  color: #7a2f2f;
-}
-.btn-delete:hover {
-  background-color: #e6a0a0;
-  transform: translateY(-1px);
-}
-.btn-save {
-  background-color: #fff4c2;
-  color: #7a6b2f;
-}
-.btn-save:hover {
-  background-color: #ffe69b;
-  transform: translateY(-1px);
-}
-.btn-cancel {
-  background-color: #d8e1ee;
-  color: #333f57;
-}
-.btn-cancel:hover {
-  background-color: #c0c8db;
-  transform: translateY(-1px);
+/* --- Edición en Línea (integrado aquí) --- */
+.client-card .vista-edicion,
+.client-card .btn-save,
+.client-card .btn-cancel {
+  display: none;
 }
 
-/* ------------------------------------------------------------
-   Input/textarea para edición inline
-   ------------------------------------------------------------ */
-.edit-input {
+.client-card.is-editing .vista-lectura,
+.client-card.is-editing .btn-edit,
+.client-card.is-editing .btn-delete {
+  display: none;
+}
+
+.client-card.is-editing .vista-edicion,
+.client-card.is-editing .btn-save,
+.client-card.is-editing .btn-cancel {
+  display: block;
+}
+
+.client-card .edit-input {
   width: 100%;
   padding: 0.5rem;
-  margin-top: 0.3rem;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-size: 0.92rem;
-  color: #333;
-  box-sizing: border-box;
+  margin: 0.2rem 0 0.8rem 0;
+  border: 1px solid var(--ruddy-blue);
+  border-radius: var(--border-radius-s);
 }
 
-/* ------------------------------------------------------------
-   Adaptación responsiva para pantallas pequeñas
-   ------------------------------------------------------------ */
-@media (max-width: 500px) {
-  #clientsContainer {
-    justify-content: center;
-  }
-  .client-card {
-    width: 90%;
-  }
+/* --- Botones de la tarjeta --- */
+.client-card button {
+  flex-grow: 1; /* Ocupan el espacio disponible */
+  padding: 0.6rem 1rem;
+  border: none;
+  border-radius: var(--border-radius-m);
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.2s;
 }
 
+.btn-edit { background-color: #d1f4d1; color: #2f662f; }
+.btn-delete { background-color: #f6caca; color: #7a2f2f; }
+.btn-save { background-color: #fff4c2; color: #7a6b2f; }
+.btn-cancel { background-color: #d8e1ee; color: #333f57; }
+
+.client-card button:hover {
+  transform: translateY(-2px);
+}
 /*FOOTER*/
 .footer {
     background-color: var(--universo-blue);
