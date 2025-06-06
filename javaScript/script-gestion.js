@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // === INYECTAR ESTILOS PARA LA EDICIÓN EN LÍNEA ===
     const estilosCSS = `
         .client-card .vista-edicion, .client-card .btn-save, .client-card .btn-cancel { display: none; }
         .client-card.is-editing .vista-lectura, .client-card.is-editing .btn-edit, .client-card.is-editing .btn-delete { display: none; }
@@ -10,18 +9,17 @@ document.addEventListener("DOMContentLoaded", function () {
     tagEstilo.textContent = estilosCSS;
     document.head.appendChild(tagEstilo);
 
-    // === SELECTORES DE ELEMENTOS DEL DOM ===
+    // Elementos DOM
     const botonIngresar = document.getElementById("ingresar");
     const campoContrasenia = document.getElementById("contrasenia");
     const contenedorLogin = document.getElementById("login-container");
     const seccionCRUD = document.getElementById("crud-section");
-    // ***** CORRECCIÓN FUNDAMENTAL AQUÍ *****
-    const contenedorClientes = document.getElementById("clientesContainer"); // Ahora usa el ID correcto
+    const contenedorClientes = document.getElementById("clientesContainer"); 
     const mensajeSinClientes = document.getElementById("noClientsMsg");
 
     const claveCorrecta = "Matematica";
 
-    // === LÓGICA DE LOGIN ===
+    //login
     botonIngresar.addEventListener("click", function () {
         if (!contenedorClientes) {
             console.error("¡ERROR GRAVE! No se encontró el elemento con id 'clientesContainer'. Revisa tu HTML.");
@@ -43,18 +41,18 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // === FUNCIONES DE LOCALSTORAGE ===
+    // localstorage
     function obtenerClientes() {
         const datosGuardados = localStorage.getItem("clientes");
-        console.log("Datos leídos de localStorage:", datosGuardados); // MENSAJE DE DIAGNÓSTICO
+        console.log("Datos leídos de localStorage:", datosGuardados); 
         return datosGuardados ? JSON.parse(datosGuardados) : [];
     }
     function guardarClientes(listaClientes) {
         localStorage.setItem("clientes", JSON.stringify(listaClientes));
-        console.log("Datos guardados en localStorage."); // MENSAJE DE DIAGNÓSTICO
+        console.log("Datos guardados en localStorage."); 
     }
 
-    // === RENDERIZADO DE TARJETAS ===
+    // renderizado tarjetas - construir las tarjetas de los clientes que aparecen en la pantalla
     function renderizarClientes() {
         contenedorClientes.innerHTML = "";
         const listaDeClientes = obtenerClientes();
@@ -68,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         listaDeClientes.forEach((cliente) => {
-            console.log("Renderizando cliente:", cliente); // MENSAJE DE DIAGNÓSTICO
+            console.log("Renderizando cliente:", cliente); 
             const tarjeta = document.createElement("div");
             tarjeta.className = "client-card";
             tarjeta.setAttribute("data-id", cliente.id);
@@ -110,7 +108,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // === MANEJO DE EVENTOS (Sin cambios, ya era robusto) ===
     contenedorClientes.addEventListener('click', function (evento) {
         const tarjeta = evento.target.closest('.client-card');
         if (!tarjeta) return;
