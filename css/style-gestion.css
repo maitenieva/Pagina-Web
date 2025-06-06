@@ -109,7 +109,7 @@ body{
 h1{
     font-size: var(--font-size-xxl);
     font-weight: var(--font-weight-bold);
-    color: var(--universo-blue);
+    color: var(--universo-blue) !important;
 }
 
 h2{
@@ -207,7 +207,7 @@ header .navbar{
 }
 
 body {
-  padding-top: 120px;
+  padding-top: 40px;
 }
 
 #login {
@@ -289,6 +289,191 @@ body {
     padding: 0.25rem 0.5rem; 
     font-size: 0.85rem;     
     text-align: center;  
+}
+
+/*Gestion clientes*/
+/* ---------------------------------------------------
+   Contenedor de tarjetas: mostrar en fila y ajustar
+   --------------------------------------------------- */
+#clientsContainer {
+  display: flex;
+  flex-wrap: wrap;            /* permite que las tarjetas “bajen” a la siguiente línea cuando no quepan */
+  gap: 1rem;                  /* espacio entre tarjetas */
+  justify-content: center;    /* centra las tarjetas horizontales */
+  padding: 1rem 0;            /* algo de espacio superior e inferior */
+}
+
+/* ---------------------------------------------------
+   Tarjeta de cliente: tamaño fijo para que quepan varias en fila
+   --------------------------------------------------- */
+.client-card {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  padding: 1rem;
+  margin: 0;                  /* el gap lo maneja #clientsContainer */
+  width: 280px;               /* ancho fijo para alinearse en fila */
+  box-sizing: border-box;
+  transition: transform 0.1s ease;
+}
+
+.client-card:hover {
+  transform: translateY(-2px);
+}
+
+/* ---------------------------------------------------
+   Título (nombre) con color de marca
+   --------------------------------------------------- */
+.client-card .card-title {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--universo-blue);
+}
+
+/* ---------------------------------------------------
+   Cuerpo de la tarjeta (info + acciones)
+   --------------------------------------------------- */
+.card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+/* ---------------------------------------------------
+   Información: cada etiqueta en semibold Bice Blue
+   --------------------------------------------------- */
+.card-body .info p {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: #333;
+}
+.card-body .info p strong {
+  font-weight: 600;
+  color: var(--bice-blue) !important;
+}
+
+/* Enlaces dentro de info */
+.card-body .info a {
+  color: var(--lake-blue);
+  text-decoration: none;
+}
+.card-body .info a:hover {
+  text-decoration: underline;
+}
+
+/* ---------------------------------------------------
+   Select de avance
+   --------------------------------------------------- */
+.card-body .actions label {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--bice-blue);
+}
+.card-body .actions select {
+  padding: 0.45rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  background: #f9f9f9;
+  color: #333;
+  margin-bottom: 0.6rem; /* margen entre select y fila de botones */
+}
+
+/* ---------------------------------------------------
+   Botones más grandes, redondeados y pastel
+   --------------------------------------------------- */
+.card-body .actions {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+/* ---------------------------------------------------
+   Botones rediseñados: más grandes, con padding 
+   abundante, borde transparente y forma circular
+   --------------------------------------------------- */
+/* ---------------------------------------------------
+   Botones rediseñados: más grandes, con padding 
+   abundante, borde transparente y forma circular
+   --------------------------------------------------- */
+.client-card .card-body .actions button {
+  /* Padding mayor */
+  padding: 0.9rem 1.6rem;
+
+  /* Borde invisible (transparente) */
+  border: 2px solid transparent;
+
+  /* Bordes completamente redondeados */
+  border-radius: 50px;
+
+  /* Tamaño de fuente ligeramente superior */
+  font-size: 1rem;
+  font-weight: 600;
+
+  /* Quitar flex:1 para que el ancho venga del padding */
+  flex: none;
+  max-width: none;
+
+  /* Animación suave en hover */
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+/* Hover: pequeño levantamiento y cambio de tonalidad */
+.client-card .card-body .actions button:hover {
+  transform: translateY(-1px);
+}
+
+/* Colores pastel finales para cada tipo de botón */
+/* EDITAR */
+.btn-edit {
+  background-color: #d1f4d1; /* verde pastel */
+  color: #2f662f;
+}
+.btn-edit:hover {
+  background-color: #b8e6b8;
+}
+
+/* ELIMINAR */
+.btn-delete {
+  background-color: #f6caca; /* rojo pastel */
+  color: #7a2f2f;
+}
+.btn-delete:hover {
+  background-color: #f0b8b8;
+}
+
+/* GUARDAR */
+.btn-save {
+  background-color: #fff4c2; /* amarillo pastel */
+  color: #7a6b2f;
+}
+.btn-save:hover {
+  background-color: #ffe69b;
+}
+
+/* CANCELAR */
+.btn-cancel {
+  background-color: #d8e1ee; /* gris azulado pastel */
+  color: #333f57;
+}
+.btn-cancel:hover {
+  background-color: #c0c8db;
+}
+/* ---------------------------------------------------
+   Adaptación responsiva para pantallas angostas
+   --------------------------------------------------- */
+@media (max-width: 500px) {
+  #clientsContainer {
+    justify-content: center;
+  }
+  .client-card {
+    width: 90%;  /* ocupan casi todo el ancho en móviles */
+  }
 }
 
 /*FOOTER*/

@@ -37,7 +37,7 @@
     <div id="login">
         <h2>Acceso Restringido</h2>
         <p>Si usted es parte del equipo de </br><em>Universo Agencia</em>, ingrese la clave para continuar.</p>
-        <input type="password" id="contraseña" placeholder="Ingrese la Contraseña">
+        <input type="password" id="contrasenia" placeholder="Ingrese la Contraseña">
         <button id="ingresar">Ingresar</button>
 
         <!--Alerta exito-->
@@ -57,13 +57,40 @@
         </div>
     </div>
 
-    <div id="gestion-clientes" style="display:none;">
-        <h2>Gestor de clientes</h2>
-        <ul id="lista-clientes" class="grupo-lista mt-3"></ul> <!--MT 3 es de bpptstrap,margin top 3(nivel de espaciado)-->
+    <!-- Ejemplo de una tarjeta generada por JS, ilustrando la estructura recomendada -->
+    <div class="client-card">
+    <!-- 1) Título del cliente -->
+    <h2 class="card-title">María Pérez</h2>
+
+    <!-- 2) Contenedor principal de la tarjeta (info + acciones) -->
+    <div class="card-body">
+        
+        <!-- 2.1) Bloque de información, cada etiqueta-valor en un párrafo -->
+        <div class="card-info">
+        <p><span class="info-label">Teléfono:</span> 11-1234-5678</p>
+        <p><span class="info-label">Mail:</span> maria@mail.com</p>
+        <p><span class="info-label">Empresa:</span> Acme S.A.</p>
+        <p><span class="info-label">Rubro:</span> Tecnología</p>
+        <p><span class="info-label">Página Web:</span> <a href="https://acme.com" class="info-link" target="_blank">acme.com</a></p>
+        <p><span class="info-label">Instagram:</span> <a href="https://instagram.com/acme" class="info-link" target="_blank">@acme</a></p>
+        <p><span class="info-label">Mensaje:</span> Quisiera potenciar mi marca…</p>
+        </div>
+
+        <!-- 2.2) Bloque de acciones: select de avance + botones -->
+        <div class="card-actions">
+        <label for="avance-123" class="actions-label">Avance:</label>
+        <select id="avance-123" class="actions-select">
+            <option>Inicio</option>
+            <option>En Proceso</option>
+            <option>Completado</option>
+        </select>
+
+        <button class="btn btn-edit">Editar</button>
+        <button class="btn btn-delete">Eliminar</button>
+        </div>
+
     </div>
-
-
-
+    </div>
 
     <footer class="footer">
         <div class="container footer__container">
