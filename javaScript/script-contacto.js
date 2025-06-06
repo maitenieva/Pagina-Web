@@ -1,5 +1,3 @@
-// script-contacto.js
-
 // Detectar scroll para cambiar el fondo del header
 const header = document.querySelector(".header");
 window.addEventListener("scroll", () => {

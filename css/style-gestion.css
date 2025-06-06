@@ -205,274 +205,222 @@ header .navbar{
     align-content: center;
     transition: 0.3s ease;
 }
-
-body {
-  padding-top: 40px;
+#login-container {
+  display: flex;
+  justify-content: center;
+  padding-top: 150px;
+  padding-bottom: 40px;
 }
-
 #login {
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    padding: 2rem;
-    padding-bottom: 45px;
-    width: 100%;
-    max-width: 400px;
-    margin: 2rem auto;
-    text-align: center;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  padding: 2rem 1.5rem;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
 }
-
 #login h2 {
-    font-family: "Gotham", sans-serif;
-    margin-bottom: fon;
-    font-size: var(--font-size-xl);
-    color: #333;
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+  color: #333;
 }
-
-
 #login p {
-    font-family: "Gotham", sans-serif;
-    font-size: var(--font-size-n);
-    color: #555;
-    margin-bottom: 1.5rem;
-    line-height: 1.4;
+  margin-bottom: 1rem;
+  color: #555;
 }
-
 #login input[type="password"] {
-    font-family: "Gotham", sans-serif;
-    width: 100%;
-    max-width: 280px;
-    padding: 0.5rem 0.75rem;
-    font-size: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    margin: 0.5rem 0;
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
-
 #login button {
-    font-family: "Gotham", sans-serif;
-    margin-top: 1rem;
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
-    background-color: var(--lake-blue); /* color primario Bootstrap */
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
+  padding: 0.5rem 1rem;
+  background-color: var(--lake-blue);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }
-
 #login button:hover {
-    background-color: var(--universo-blue);
+  background-color: var(--bice-blue);
 }
-
 #login .alert {
-    margin: 0 auto;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 1rem;
-    width: 100%;
-    max-width: 280px;
-    border-radius: 4px;
-    }
-
-#login .alert svg {
-    width: 1rem;
-    height: 1rem;
-    margin-right: 0.25rem; /* espacio pequeño entre ícono y texto */
+  margin-top: 1rem;
+}
+#login .d-none {
+  display: none !important;
 }
 
-#success-msg,
-#error-msg {
-    font-family: "Gotham", sans-serif;
-    padding: 0.25rem 0.5rem; 
-    font-size: 0.85rem;     
-    text-align: center;  
+/* ------------------------------------------------------------
+   Sección de gestión (inicialmente oculta)
+   ------------------------------------------------------------ */
+#crud-section {
+  display: none; /* se muestra tras el login */
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+#crud-section h2 {
+  color: var(--universo-blue);
+  margin-bottom: 1rem;
+  text-align: center;
 }
 
-/*Gestion clientes*/
-/* ---------------------------------------------------
-   Contenedor de tarjetas: mostrar en fila y ajustar
-   --------------------------------------------------- */
+/* ------------------------------------------------------------
+   Contenedor de tarjetas
+   ------------------------------------------------------------ */
 #clientsContainer {
   display: flex;
-  flex-wrap: wrap;            /* permite que las tarjetas “bajen” a la siguiente línea cuando no quepan */
-  gap: 1rem;                  /* espacio entre tarjetas */
-  justify-content: center;    /* centra las tarjetas horizontales */
-  padding: 1rem 0;            /* algo de espacio superior e inferior */
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+#noClientsMsg {
+  text-align: center;
+  margin-top: 1rem;
+  color: #555;
+  display: none; /* se mostrará si no hay clientes */
 }
 
-/* ---------------------------------------------------
-   Tarjeta de cliente: tamaño fijo para que quepan varias en fila
-   --------------------------------------------------- */
+/* ------------------------------------------------------------
+   Tarjeta de cliente
+   ------------------------------------------------------------ */
 .client-card {
-  display: flex;
-  flex-direction: column;
   background: #fff;
-  border-radius: 16px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border-radius: var(--border-radius-m);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  width: 300px;
   padding: 1rem;
-  margin: 0;                  /* el gap lo maneja #clientsContainer */
-  width: 280px;               /* ancho fijo para alinearse en fila */
   box-sizing: border-box;
   transition: transform 0.1s ease;
 }
-
 .client-card:hover {
   transform: translateY(-2px);
 }
-
-/* ---------------------------------------------------
-   Título (nombre) con color de marca
-   --------------------------------------------------- */
 .client-card .card-title {
   margin: 0 0 0.5rem 0;
   font-size: 1.25rem;
   font-weight: 700;
   color: var(--universo-blue);
 }
-
-/* ---------------------------------------------------
-   Cuerpo de la tarjeta (info + acciones)
-   --------------------------------------------------- */
-.card-body {
-  display: flex;
-  flex-direction: column;
-  gap: 0.6rem;
-}
-
-/* ---------------------------------------------------
-   Información: cada etiqueta en semibold Bice Blue
-   --------------------------------------------------- */
-.card-body .info p {
-  margin: 0;
+.client-card .info p {
+  margin: 0 0 0.4rem 0;
   font-size: 0.9rem;
-  line-height: 1.4;
   color: #333;
+  line-height: 1.3;
 }
-.card-body .info p strong {
+.client-card .info p strong {
   font-weight: 600;
-  color: var(--bice-blue) !important;
+  color: var(--bice-blue);
+  margin-right: 0.25rem;
 }
-
-/* Enlaces dentro de info */
-.card-body .info a {
+.client-card .info a {
   color: var(--lake-blue);
   text-decoration: none;
 }
-.card-body .info a:hover {
+.client-card .info a:hover {
   text-decoration: underline;
 }
 
-/* ---------------------------------------------------
-   Select de avance
-   --------------------------------------------------- */
-.card-body .actions label {
+/* ------------------------------------------------------------
+   Área de acciones (select + botones)
+   ------------------------------------------------------------ */
+.client-card .actions {
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+}
+.client-card .actions label {
   font-size: 0.95rem;
   font-weight: 600;
   color: var(--bice-blue);
 }
-.card-body .actions select {
-  padding: 0.45rem;
+.client-card .actions .avance-select {
+  flex: 1;
+  padding: 0.5rem;
   border: 1px solid #ccc;
   border-radius: 8px;
-  font-size: 0.9rem;
   background: #f9f9f9;
   color: #333;
-  margin-bottom: 0.6rem; /* margen entre select y fila de botones */
+  font-size: 0.9rem;
 }
 
-/* ---------------------------------------------------
-   Botones más grandes, redondeados y pastel
-   --------------------------------------------------- */
-.card-body .actions {
-  display: flex;
-  flex-direction: row;
-  gap: 0.5rem;
-  flex-wrap: wrap;
-  align-items: center;
-}
-/* ---------------------------------------------------
-   Botones rediseñados: más grandes, con padding 
-   abundante, borde transparente y forma circular
-   --------------------------------------------------- */
-/* ---------------------------------------------------
-   Botones rediseñados: más grandes, con padding 
-   abundante, borde transparente y forma circular
-   --------------------------------------------------- */
-.client-card .card-body .actions button {
-  /* Padding mayor */
-  padding: 0.9rem 1.6rem;
-
-  /* Borde invisible (transparente) */
+/* ------------------------------------------------------------
+   Botones: Editar / Eliminar / Guardar / Cancelar
+   Todos con bordes redondeados y colores pastel
+   ------------------------------------------------------------ */
+.client-card button {
+  flex: 1;
+  padding: 0.7rem 1rem;
   border: 2px solid transparent;
-
-  /* Bordes completamente redondeados */
   border-radius: 50px;
-
-  /* Tamaño de fuente ligeramente superior */
   font-size: 1rem;
   font-weight: 600;
-
-  /* Quitar flex:1 para que el ancho venga del padding */
-  flex: none;
-  max-width: none;
-
-  /* Animación suave en hover */
+  cursor: pointer;
   transition: background-color 0.2s ease, transform 0.1s ease;
 }
-
-/* Hover: pequeño levantamiento y cambio de tonalidad */
-.client-card .card-body .actions button:hover {
-  transform: translateY(-1px);
-}
-
-/* Colores pastel finales para cada tipo de botón */
-/* EDITAR */
 .btn-edit {
-  background-color: #d1f4d1; /* verde pastel */
+  background-color: #b8e6b8;
   color: #2f662f;
 }
 .btn-edit:hover {
-  background-color: #b8e6b8;
+  background-color: #a0dba0;
+  transform: translateY(-1px);
 }
-
-/* ELIMINAR */
 .btn-delete {
-  background-color: #f6caca; /* rojo pastel */
+  background-color: #f5b8b8;
   color: #7a2f2f;
 }
 .btn-delete:hover {
-  background-color: #f0b8b8;
+  background-color: #e6a0a0;
+  transform: translateY(-1px);
 }
-
-/* GUARDAR */
 .btn-save {
-  background-color: #fff4c2; /* amarillo pastel */
+  background-color: #fff4c2;
   color: #7a6b2f;
 }
 .btn-save:hover {
   background-color: #ffe69b;
+  transform: translateY(-1px);
 }
-
-/* CANCELAR */
 .btn-cancel {
-  background-color: #d8e1ee; /* gris azulado pastel */
+  background-color: #d8e1ee;
   color: #333f57;
 }
 .btn-cancel:hover {
   background-color: #c0c8db;
+  transform: translateY(-1px);
 }
-/* ---------------------------------------------------
-   Adaptación responsiva para pantallas angostas
-   --------------------------------------------------- */
+
+/* ------------------------------------------------------------
+   Input/textarea para edición inline
+   ------------------------------------------------------------ */
+.edit-input {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.3rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 0.92rem;
+  color: #333;
+  box-sizing: border-box;
+}
+
+/* ------------------------------------------------------------
+   Adaptación responsiva para pantallas pequeñas
+   ------------------------------------------------------------ */
 @media (max-width: 500px) {
   #clientsContainer {
     justify-content: center;
   }
   .client-card {
-    width: 90%;  /* ocupan casi todo el ancho en móviles */
+    width: 90%;
   }
 }
 

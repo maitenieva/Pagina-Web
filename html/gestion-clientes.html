@@ -1,152 +1,73 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Universo - Objetivos</title>
+    <title>Universo - Gestión</title>
     <link rel="stylesheet" href="../css/style-gestion.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous"></head>
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <header class="header"> <!--Seccion principal, portada de la pagina-->
+    <header class="header">
         <nav class="navbar my-container">
             <a href="../index.html" class="nav-logo">
                 <img src="../imagenes/universo-logo.png" alt="logoUniverso" class="nav_img"/>
             </a>
-        <div class="menu-toggle">☰</div>
+            <div class="menu-toggle">☰</div>
             <ul class="nav-menu">
-                <li class="nav-item">
-                    <a href="../index.html" class="nav-link">Inicio</a>
-                </li>
-                <li class="nav-item">
-                    <a href="./servicios.html" class="nav-link">Servicios</a>
-                </li>
-                <li class="nav-item">
-                    <a href="./nosotros.html" class="nav-link">Nosotros</a>
-                </li>
-                <li class="nav-item">
-                    <a href="./contacto.html" class="nav-link">Contacto</a>
-                </li>
-                <li class="nav-item">
-                    <a href="./gestion-clientes.html" class="nav-link nav-gestion">Gestión</a>
-                </li>
+                <li class="nav-item"><a href="../index.html" class="nav-link">Inicio</a></li>
+                <li class="nav-item"><a href="./servicios.html" class="nav-link">Servicios</a></li>
+                <li class="nav-item"><a href="./nosotros.html" class="nav-link">Nosotros</a></li>
+                <li class="nav-item"><a href="./contacto.html" class="nav-link">Contacto</a></li>
+                <li class="nav-item"><a href="./gestion-clientes.html" class="nav-link nav-gestion">Gestión</a></li>
             </ul>
         </nav>
     </header>
-    <div id="login">
-        <h2>Acceso Restringido</h2>
-        <p>Si usted es parte del equipo de </br><em>Universo Agencia</em>, ingrese la clave para continuar.</p>
-        <input type="password" id="contrasenia" placeholder="Ingrese la Contraseña">
-        <button id="ingresar">Ingresar</button>
 
-        <!--Alerta exito-->
-        <div id="success-msg" class="alert alert-success d-none d-flex align-items-center" role="alert">
-            <svg class="bi flex-shrink-0 me-2" role="img" aria-label="Success:">
-                <use xlink:href="#check-circle-fill"/>
-            </svg>
-            <div>Acceso concedido</div>
-        </div>
-
-        <!--Alerta incorrectp-->
-        <div id="error-msg" class="alert alert-danger d-none d-flex align-items-center" role="alert">
-            <svg class="bi flex-shrink-0 me-2" role="img" aria-label="Danger:">
-                <use xlink:href="#exclamation-triangle-fill"/>
-            </svg>
-            <div>Clave incorrecta.</div>
+    <div id="login-container">
+        <div id="login">
+            <h2>Acceso Restringido</h2>
+            <p>Si usted es parte del equipo de <br><em>Universo Agencia</em>, ingrese la clave para continuar.</p>
+            <input type="password" id="contrasenia" placeholder="Ingrese la Contraseña">
+            <button id="ingresar">Ingresar</button>
+            <div id="success-msg" class="alert alert-success d-none">Acceso concedido</div>
+            <div id="error-msg" class="alert alert-danger d-none">Clave incorrecta.</div>
         </div>
     </div>
 
-    <!-- Ejemplo de una tarjeta generada por JS, ilustrando la estructura recomendada -->
-    <div class="client-card">
-    <!-- 1) Título del cliente -->
-    <h2 class="card-title">María Pérez</h2>
-
-    <!-- 2) Contenedor principal de la tarjeta (info + acciones) -->
-    <div class="card-body">
-        
-        <!-- 2.1) Bloque de información, cada etiqueta-valor en un párrafo -->
-        <div class="card-info">
-        <p><span class="info-label">Teléfono:</span> 11-1234-5678</p>
-        <p><span class="info-label">Mail:</span> maria@mail.com</p>
-        <p><span class="info-label">Empresa:</span> Acme S.A.</p>
-        <p><span class="info-label">Rubro:</span> Tecnología</p>
-        <p><span class="info-label">Página Web:</span> <a href="https://acme.com" class="info-link" target="_blank">acme.com</a></p>
-        <p><span class="info-label">Instagram:</span> <a href="https://instagram.com/acme" class="info-link" target="_blank">@acme</a></p>
-        <p><span class="info-label">Mensaje:</span> Quisiera potenciar mi marca…</p>
-        </div>
-
-        <!-- 2.2) Bloque de acciones: select de avance + botones -->
-        <div class="card-actions">
-        <label for="avance-123" class="actions-label">Avance:</label>
-        <select id="avance-123" class="actions-select">
-            <option>Inicio</option>
-            <option>En Proceso</option>
-            <option>Completado</option>
-        </select>
-
-        <button class="btn btn-edit">Editar</button>
-        <button class="btn btn-delete">Eliminar</button>
-        </div>
-
-    </div>
+    <div id="crud-section" style="display: none; margin-top: 120px; width: 90%; max-width: 1200px; margin-left: auto; margin-right: auto;">
+        <h2>Gestor de Clientes</h2>
+        <div id="clientesContainer"></div>
+        <p id="noClientsMsg" style="display: none; text-align: center; margin-top: 2rem; color: #555;">No hay clientes registrados.</p>
     </div>
 
     <footer class="footer">
         <div class="container footer__container">
-            <!--redes sociales-->
             <div class="footer__section">
                 <h4 class="footer__title">Redes Sociales</h4>
                 <nav class="footer__socials">
-                    <!--ig-->
-                    <a href="https://www.instagram.com/universoagencia/" target="_blank" rel="noopener" aria-label="Instagram" class="footer__social-link">
-                        <img src="../imagenes/footer/instagram.png" alt="Instagram" class="social-icon"/>@universoagencia
-                    </a>
-
-                    <!--LinkedIn-->
-                    <a href="https://www.linkedin.com/in/tu_usuario" target="_blank" rel="noopener" aria-label="LinkedIn" class="footer__social-link">
-                        <img src="../imagenes/footer/linkedin.png" alt="LinkedIn" class="social-icon"/>LinkedIn
-                    </a>
+                    <a href="https://www.instagram.com/universoagencia/" target="_blank" class="footer__social-link">@universoagencia</a>
+                    <a href="https://www.linkedin.com/in/tu_usuario" target="_blank" class="footer__social-link">LinkedIn</a>
                 </nav>
             </div>
-
-            <!-- contacto -->
             <div class="footer__section">
                 <h4 class="footer__title">Contáctanos</h4>
                 <nav class="footer__socials">
-                    <a href="universoagenciaok@gmail.com" target="_blank" rel="noopener" aria-label="Instagram" class="footer__social-link">
-                        <img src="../imagenes/footer/correo.png" alt="Correo Electrónico Universo" class="social-icon">
-                        universoagenciaok@gmail.com
-                    </a>
-                    <a href="https://wa.me/" target="_blank" rel="noopener" aria-label="WhatsApp"class="footer__social-link">
-                        <img src="../imagenes/footer/whatsapp.png" alt="WhatsApp" class="social-icon" />WhatsApp
-                    </a>  
+                    <a href="mailto:universoagenciaok@gmail.com" class="footer__social-link">universoagenciaok@gmail.com</a>
+                    <a href="https://wa.me/" target="_blank" class="footer__social-link">WhatsApp</a>
                 </nav>
             </div>
-
-            <!-- horario de atención -->
             <div class="footer__section">
                 <h4 class="footer__title">Horario de Atención</h4>
-                    <p class="footer__hours">
-                        <img src="../imagenes/footer/reloj-de-pared.png" alt="Horario" class="social-icon"/>
-                        Lunes a Viernes<br/>
-                        9:00 – 18:00
-                    </p>
-                </div>
+                <p class="footer__hours">Lunes a Viernes<br>9:00 – 18:00</p>
+            </div>
         </div>
-
-        <!-- Línea de derechos reservados -->
         <div class="footer__bottom">
             <p>© 2025 Universo Agencia. Todos los derechos reservados.</p>
         </div>
     </footer>
 
-    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
-        <symbol id="exclamation-triangle-fill" fill="currentColor" viewBox="0 0 16 16">
-            <path d="M8.982 1.566a1.13 1.13 0 0 0-1.964 0L.165 13.233c-.457.778.091 1.767.982 1.767h13.707c.89 0 1.438-.99.982-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1-2.002 0 1 1 0 0 1 2.002 0z"/>
-        </symbol>
-    </svg>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-…" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../javaScript/script-gestion.js"></script>
 </body>
 </html>
