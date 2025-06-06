@@ -128,8 +128,8 @@ h2::after {
 }
 
 h3 {
-  font-size: var(--font-size-m);
-  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-l);
+  font-weight: var(--font-weight-semibold);
   color: var(--bice-blue);
   margin: 40px 0 20px;
 }
@@ -146,7 +146,6 @@ p {
   margin: 0 auto;
   overflow: hidden;
   padding: var(--padding-container);
-  margin-bottom: 0;
 }
 
 @media (max-width: 768px) {
@@ -279,7 +278,6 @@ p {
   position: relative;
 }
 
-/* Estructura básica y responsividad del carrusel */
 .portfolio-carousel.swiper-container {
   width: 100%;
   max-width: 1100px;
