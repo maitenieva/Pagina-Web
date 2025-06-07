@@ -127,6 +127,7 @@ p{
     font-size: var(--font-size-n);
     font-weight: var(--font-weight-normal);
 }
+
 /*estilo navbar*/
 
 .menu-toggle {
@@ -242,7 +243,6 @@ ul {
     padding: 0 1rem;
     color: white;
 }
-
 
 .hero_overlay {
     position: absolute;

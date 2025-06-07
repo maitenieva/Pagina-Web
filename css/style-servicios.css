@@ -1,238 +1,213 @@
 @font-face {
-  font-family: "Gotham";
-  src: url(../fuentes/Gotham-Medium.otf);
-  font-weight: 600;
+    font-family: "Gotham";
+    src: url(../fuentes/Gotham-Medium.otf);
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Gotham";
+    src: url(../fuentes/Gotham-MediumItalic.otf);
+    font-weight: 600;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "Gotham";
+    src: url(../fuentes/Gotham-LightItalic.otf);
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+  font-family: 'Gotham';
+  src: url(../fuentes/Gotham-Light.otf) format('opentype');
+  font-weight: 300;
   font-style: normal;
 }
 @font-face {
-  font-family: "Gotham";
-  src: url(../fuentes/Gotham-MediumItalic.otf);
-  font-weight: 600;
-  font-style: italic;
-}
-@font-face {
-  font-family: "Gotham";
-  src: url(../fuentes/Gotham-LightItalic.otf);
-  font-weight: 300;
-  font-style: italic;
-}
-@font-face {
-  font-family: "Gotham";
-  src: url(../fuentes/Gotham-Light.otf) format("opentype");
-  font-weight: 300;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Gotham";
-  src: url(../fuentes/Gotham-Book.otf) format("opentype");
+  font-family: 'Gotham';
+  src: url(../fuentes/Gotham-Book.otf) format('opentype');
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
-  font-family: "Gotham";
-  src: url(../fuentes/Gotham-BookItalic.otf) format("opentype");
+  font-family: 'Gotham';
+  src: url(../fuentes/Gotham-BookItalic.otf) format('opentype');
   font-weight: 400;
   font-style: italic;
 }
 @font-face {
-  font-family: "Gotham";
-  src: url(../fuentes/Gotham-Bold.otf) format("opentype");
+  font-family: 'Gotham';
+  src: url(../fuentes/Gotham-Bold.otf) format('opentype');
   font-weight: 700;
   font-style: normal;
 }
 @font-face {
-  font-family: "Gotham";
-  src: url(../fuentes/Gotham-Black.otf) format("opentype");
+  font-family: 'Gotham';
+  src: url(../fuentes/Gotham-Black.otf) format('opentype');
   font-weight: 900;
   font-style: normal;
 }
 @font-face {
-  font-family: "Gotham";
-  src: url(../fuentes/Gotham-BlackItalic.otf) format("opentype");
+  font-family: 'Gotham';
+  src: url(../fuentes/Gotham-BlackItalic.otf) format('opentype');
   font-weight: 900;
   font-style: italic;
 }
 
-:root {
-  --padding-container: 100px 0;
-
-  --font-size-s: 0.9rem;
-  --font-size-n: 1rem;
-  --font-size-m: 1.12rem;
-  --font-size-l: 1.5rem;
-  --font-size-xl: 2rem;
-  --font-size-xxl: 2.3rem;
-
-  --font-weight-light: 300;
-  --font-weight-normal: 400;
-  --font-weight-medium: 500;
-  --font-weight-semibold: 600;
-  --font-weight-bold: 800;
-
-  --white-color: #fff;
-  --alice-blue: #d8ebff;
-  --ruddy-blue: #79a4d0;
-  --lake-blue: #508bbb;
-  --bice-blue: #386e9b;
-  --universo-blue: rgb(30, 78, 122);
-
-  --border-radius-s: 8px;
-  --border-radius-m: 30px;
-  --border-radius-circle: 50%;
-
-  --site-max-width: 1300px;
-}
-
-
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-body {
-  margin: 0;
-  font-family: "Gotham", sans-serif;
-  font-weight: var(--font-weight-normal);
-  background-color: #fff;
-  color: #333;
+:root{ /*Custom Properties, variables globales que centralizan valores*/
+    --padding-container:100px 0;
+
+    --font-size-s: 0.9rem;
+    --font-size-n: 1rem;
+    --font-size-m: 1.12rem;
+    --font-size-l: 1.5rem;
+    --font-size-xl: 2rem;
+    --font-size-xxl: 2.3rem;
+
+    --font-weight-light: 300;
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 800;
+    
+    --white-color: #fff;
+    --alice-blue: #D8EBFF;
+    --ruddy-blue: #79A4D0;
+    --lake-blue:#508BBB;
+    --bice-blue: #386E9B;
+    --universo-blue:rgb(30, 78, 122);
+
+    --border-radius-s: 8px;
+    --border-radius-m: 30px;
+    --border-radius-circle: 50%;
+
+    --site-max-width:1300px;
 }
 
-h1 {
-  font-size: var(--font-size-xxl);
-  font-weight: var(--font-weight-bold);
-  color: var(--universo-blue);
-  margin-bottom: 10px;
+.my-container{
+    width: 90%;
+    max-width: var(--site-max-width, 1200px);
+    margin: 0 auto;
+    overflow: hidden; /*para que todo lo que salga del espacio que marque se esconda*/
+    padding: var(--padding-container); 
 }
 
-h2 {
-  font-size: var(--font-size-xl);
-  font-weight: var(--font-weight-semibold);
-  color: var(--bice-blue);
-  margin-bottom: 20px;
-  position: relative;
-  display: inline-block;
-  padding-bottom: 10px;
+body{
+    margin: 0;
+    font-family: "Gotham", sans-serif;
+    font-weight: 400;
 }
 
-h2::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 60px;
-  height: 3px;
-  background-color: var(--ruddy-blue);
-  border-radius: 2px;
+h1{
+    font-size: var(--font-size-xxl);
+    font-weight: var(--font-weight-bold);
+    color: var(--universo-blue);
 }
 
-h3 {
-  font-size: var(--font-size-l);
-  font-weight: var(--font-weight-semibold);
-  color: var(--bice-blue);
-  margin: 40px 0 20px;
+h2{
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weigth-semibold);
+    color: var(--bice-blue)
 }
 
-p {
-  font-size: var(--font-size-n);
-  font-weight: var(--font-weight-normal);
-  line-height: 1.6;
+h3{
+    font-size: var(--font-size-m);
+    font-weight: var(--font-weigth-medium);
 }
 
-.my-container {
-  width: 90%;
-  max-width: var(--site-max-width);
-  margin: 0 auto;
-  overflow: hidden;
-  padding: var(--padding-container);
+p{
+    font-size: var(--font-size-n);
+    font-weight: var(--font-weigth-normal);
 }
-
-@media (max-width: 768px) {
-  .my-container {
-    padding: 40px 0;
-  }
-}
-
-/*Navbar y header*/
-.header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: rgba(30, 78, 122);
-  transition: background 0.3s ease, box-shadow 0.3s ease;
-  z-index: 1000;
-  box-shadow: none;
-}
-
-.navbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 20px 0;
-}
-
-.navbar .nav-logo img {
-  width: 100px;
-  height: auto;
-  transition: 0.3s ease;
-}
+/*estilo navbar*/
 
 .menu-toggle {
-  display: none;
-  cursor: pointer;
-  font-size: 1.5rem;
+    display: none; /* Oculto en desktop */
+    cursor: pointer;
+    font-size: 1.5rem;
 }
 
-.navbar .nav-menu {
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: transparent;
+    transition: background 0.3s ease;       
+    z-index: 1000;
+}
+
+.header.header--scrolled {
+    background-color: var(--universo-blue); /* o #1e3a8a directamente */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+header .navbar{
+    display: flex;
+    padding: 20px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar .nav-menu{
+    display: flex;
+    gap: 20px;
+}
+
+.navbar .nav-menu .nav-link{
+    text-decoration: none;
     list-style: none;
-  display: flex;
-  gap: 20px;
-}
-
-.navbar .nav-menu .nav-link {
-  text-decoration: none;
-  padding: 10px 18px;
-  font-family: "Gotham", sans-serif;
-  color: var(--white-color);
-  font-size: var(--font-size-m);
-  border-radius: var(--border-radius-m);
-  transition: 0.3s ease;
-  display: flex;
-  align-items: center;
+    padding: 10px 18px;
+    font-family: "Gotham", sans-serif;
+    color: var(--white-color);
+    font-size: var(--font-size-m);
+    border-radius: var(--border-radius-m);
+    transition: 0.3s ease;
+    display: flex;
+    align-items: center;
 }
 
 .navbar .nav-menu .nav-gestion {
-  background: var(--bice-blue);
-  padding: 10px 18px;
-  border-radius: var(--border-radius-m);
-  border: 2px solid transparent;
-  font-weight: 600;
-  display: flex;
-  align-items: center;
+    background: var(--bice-blue);
+    padding: 10px 18px; 
+    display: flex;
+    align-items: center;
+    border-radius: var(--border-radius-m);
+    border: 2px solid transparent; 
+    font-weight: 600;
 }
 
 .navbar .nav-menu .nav-link:hover {
-  color: var(--alice-blue);
-  background-color: var(--lake-blue);
+    color: var(--alice-blue);
+    background-color: var(--lake-blue);
 }
 
 .navbar .nav-menu .nav-gestion:hover {
-  background: var(--alice-blue);
-  color: var(--universo-blue);
-  border-color: var(--bice-blue);
-  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
+    background: var(--alice-blue);
+    color: var(--universo-blue); 
+    border-color: var(--bice-blue);
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1); /* para efecto sutil */
 }
 
-.servicios-main {
-  padding-top: 80px;
-}
 
-@media (max-width: 768px) {
-  .servicios-main {
-    padding-top: 70px;
-  }
+.navbar .nav_img{
+    width: 100px; 
+    height: auto;
+    align-content: center;
+    transition: 0.3s ease;
 }
 
 .hero-servicios {

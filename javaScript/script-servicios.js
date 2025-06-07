@@ -1,3 +1,22 @@
+// Detectar scroll para cambiar el fondo del header
+const header = document.querySelector(".header");
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 50) {
+    header.classList.add("header--scrolled");
+  } else {
+    header.classList.remove("header--scrolled");
+  }
+});
+
+// Remueve el bloqueo si se redimensiona a escritorio
+window.addEventListener("resize", function () {
+  if (window.innerWidth > 900) {
+    document.body.classList.remove("menu-open");
+    document.querySelector(".nav-menu").classList.remove("active", "show");
+  }
+});
+
+
 
 document.addEventListener("DOMContentLoaded", () => {
   const carousels = document.querySelectorAll(".portfolio-carousel");

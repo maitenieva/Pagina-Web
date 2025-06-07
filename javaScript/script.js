@@ -128,6 +128,14 @@ function showToast(message, type = 'success') {
   toastInstance.show();
 }
 
+function obtenerClientes() {
+  const datos = localStorage.getItem("clientes");
+  return datos ? JSON.parse(datos) : [];
+}
+function guardarClientes(lista) {
+  localStorage.setItem("clientes", JSON.stringify(lista));
+}
+
 function initForm() {
   const form = document.getElementById('form-contacto');
   const tieneWebRadios = document.querySelectorAll('input[name="tieneWeb"]');
@@ -193,6 +201,23 @@ function initForm() {
       form.reportValidity();
       return;
     }
+
+    const nuevoCliente = {
+      id: Date.now(),
+      nombre:    document.getElementById("nombre").value,
+      apellido:  document.getElementById("apellido").value,
+      telefono:  document.getElementById("telefono").value,
+      mail:      document.getElementById("mail").value,
+      empresa:   document.getElementById("nombre-empresa").value,
+      rubro:     document.getElementById("rubro").value,
+      paginaWeb: document.getElementById("paginaWeb").value || "",
+      ig:        document.getElementById("igUsuario").value || "",
+      mensaje:   document.getElementById("mensaje").value,
+      avance:    "Inicio"
+    };
+    const lista = obtenerClientes();
+    lista.push(nuevoCliente);
+    guardarClientes(lista);
 
     form.reset();
     toggleWebField();
