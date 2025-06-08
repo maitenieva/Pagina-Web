@@ -1217,14 +1217,13 @@ img{
         padding: 0 1.5rem;
     }
 
-    .contacto-formulario {
-        padding: 0 1rem;
+    .contacto-formulario{
+        padding: 0 0.05rem;
     }
 
     .footer__section {
         text-align: center;
     }
-
     .footer__title {
         font-size: 0.9rem;
     }
