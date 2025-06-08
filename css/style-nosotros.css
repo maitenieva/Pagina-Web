@@ -737,7 +737,7 @@ header .navbar{
 
   .cta-button { padding: 6px 12px; font-size: .8rem; }
   .footer__social-link,
-  .footer__hours { font-size: .8rem; gap: .3rem; }
-  .social-icon      { width: 20px; }
-  .footer__bottom p { font-size: .7rem; }
+  .footer__hours { font-size: 0.85rem; gap: .3rem; color: var(--alice-blue); }
+  .social-icon      { width: 24px; height: 24px; }
+  .footer__bottom p { font-size: 0.9rem }
 }

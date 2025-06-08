@@ -675,43 +675,7 @@ button[type="submit"]:hover {
         width: 100%;
     }
     .contacto-visual { display: none; }
-   .footer__container {
-        flex-direction: row ;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        align-items: flex-start;
-        gap: 0.5rem;
-        padding: 0 1rem;
-    }
-    .footer__section {
-        flex: 0 1 30%;
-        min-width: 100px;
-        margin: 0;
-        padding: 0.5rem;
-        text-align: center;
-    }
-
-    .footer__title {
-        font-size: 1rem;
-        margin-bottom: 0.4rem;
-    }
-
-    .footer__social-link,
-    .footer__hours,
-    .footer__contact a {
-        font-size: 0.8rem;
-        gap: 0.3rem;
-    }
-
-    .social-icon {  
-        width: 24px;
-        margin-right: 0.3rem;
-    }
-
-    .footer__bottom p {
-        font-size: 1rem;
-        margin-top: 0.7rem;
-    }
+   
 }
 
 @media screen and (max-width: 768px) {
@@ -824,8 +788,4 @@ button[type="submit"]:hover {
         font-size: 0.75rem;
         margin-top: 0.5rem;
     }
-}
-
-@media screen and (max-width: 768px), screen and (max-width: 576px) {
-
 }
