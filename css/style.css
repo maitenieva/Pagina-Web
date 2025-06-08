@@ -402,13 +402,11 @@ header .navbar{
     flex-direction: column;
     align-items: center;
     padding: 2rem 1rem;              
-    margin-top: 0rem;
-    margin-bottom: 0rem;
-    padding: 3rem 1rem;          
     text-align: center;
 }
 
 .boton h3 {
+    margin-top: 50px;
     font-family: "Gotham", sans-serif;    
     font-size: 1.9rem;                 
     font-weight: 600;
@@ -468,7 +466,7 @@ header .navbar{
     display: inline-block;
     font-family: "Gotham", sans-serif;
     text-decoration: none;
-    padding: 15px 35px;
+    padding: 10px 20px;
     background: var(--universo-blue);
     color: var(--white-color);
     border: 2px solid transparent;
@@ -484,6 +482,7 @@ header .navbar{
     border-color: var(--bice-blue);
     box-shadow: 0 5px 15px rgba(30, 78, 122, 0.3);
 }
+
 /*editar carousel */ 
 .carousel-clientes-wrapper{
     position: relative;
