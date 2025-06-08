@@ -719,8 +719,8 @@ header .navbar{
 /* ==== Ajustes para móviles pequeños (≤576px) ==== */
 @media screen and (max-width: 576px) {
   .hero-nosotros {
-    margin-top: 50px;
-    height: calc(40vh - 50px);
+      margin-top: 70px;                       /* un poco menos para móviles */
+      height: calc(40vh - 50px);
   }
   .hero-nosotros__content h1 { font-size: 1.6rem; }
   .hero-nosotros__content p  { font-size: .85rem; }

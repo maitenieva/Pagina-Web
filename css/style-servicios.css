@@ -778,7 +778,7 @@ header .navbar{
   @media screen and (max-width: 576px) {
     /* Hero muy pequeño */
     .hero-servicios {
-      margin-top: 50px;
+      margin-top: 70px;                       /* un poco menos para móviles */
       height: calc(40vh - 50px);
     }
     .hero-servicio__content h1 {
