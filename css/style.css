@@ -275,8 +275,9 @@ header .navbar{
 
 .nuestros-servicios{
     padding: 1.5rem 1rem;
-    margin-bottom: 0;
-    margin-top: 100px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin-top: 60px;
     background-color: var(--white-color);
     text-align: center;
 }
@@ -437,7 +438,9 @@ header .navbar{
 }
 
 .nuestros-clientes{
-    margin-bottom: 0px;
+    margin-top: 40px;
+    padding-top: 30px;
+    padding-bottom: 20px;
 }
 
 .nuestros-clientes h2{
@@ -595,7 +598,9 @@ img{
 
 /*Css para el formulario*/
 .contacto {
-    padding: 4rem 1rem;
+    margin-top: 40px;
+    padding-top: 30px;
+    padding-bottom: 30px;
     width: 100%;
     margin: var(--padding-container) auto;
     background-color: var(--alice-blue);
