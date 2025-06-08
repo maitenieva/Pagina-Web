@@ -439,12 +439,15 @@ header .navbar{
   font-family: 'Gotham', sans-serif;
   color: var(--universo-blue);
   margin: 0;
+  margin-bottom: 1rem;
+}
+.cta-section p{
+    font-family: 'Gotham', sans-serif;
+    color: var(--bice-blue);
+    margin: 0;
+    margin-bottom: 1rem;
 }
 
-.cta-section h2 {
-  font-size: var(--font-size-xxl);
-  margin-bottom: 1rem;            /* separa del párrafo */
-}
 
 .cta-section .cta-button {
   display: inline-block;

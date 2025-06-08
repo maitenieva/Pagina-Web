@@ -262,8 +262,14 @@ header .navbar{
   background-color: var(--universo-blue);
 }
 
-#login .alert {
+
+#success-msg,
+#error-msg {
   margin-top: 1rem;
+  font-family: "Gotham", sans-serif;
+  padding: 0.25rem 0.5rem; 
+  font-size: 0.85rem;     
+  text-align: center; 
 }
 
 #crud-section {
