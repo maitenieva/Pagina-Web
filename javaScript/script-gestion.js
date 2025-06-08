@@ -1,3 +1,17 @@
+// Toggle de menú en móvil
+document.querySelector('.menu-toggle').addEventListener('click', function() {
+  var menu = document.querySelector('.nav-menu');
+  var body = document.body;
+
+  menu.classList.toggle('active');
+  menu.classList.toggle('show');
+
+  // Solo bloquea scroll en móvil
+  if (window.innerWidth <= 900) {
+    body.classList.toggle('menu-open');
+  }
+});
+
 document.addEventListener("DOMContentLoaded", function () {
     // — Inyección dinámica de estilos —
     const estilosCSS = `

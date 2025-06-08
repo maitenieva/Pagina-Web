@@ -553,3 +553,180 @@ header .navbar{
   opacity: 1;
   transform: translateY(0);
 }
+
+
+/* ==== Responsive para pantallas medianas (≤900px) ==== */
+@media screen and (max-width: 900px) {
+  /* Header fijo y menú hamburguesa */
+  .header {
+    position: fixed;
+    top: 0; left: 0; width: 100%;
+    background-color: var(--universo-blue);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    z-index: 2000;
+  }
+  .navbar .nav-menu { display: none; }
+  .menu-toggle {
+    display: block;
+    background: var(--universo-blue);
+    color: #fff;
+    padding: .5rem;
+    border-radius: var(--border-radius-s);
+    font-size: 1.5rem;
+  }
+  .navbar .nav-menu.active {
+    display: block;
+    position: fixed;
+    top: 0; left: 0;
+    width: 75%; max-width: 280px;
+    height: 100vh;
+    background: var(--bice-blue);
+    padding: 1.5rem;
+    overflow-y: auto;
+    z-index: 1900;
+  }
+
+  /* Hero */
+  .hero-nosotros {
+    margin-top: 60px;
+    height: calc(60vh - 60px);
+  }
+  .hero-nosotros__content h1 { font-size: 2.5rem; }
+  .hero-nosotros__content p  { font-size: 1rem; max-width: 90%; }
+
+  /* Story section */
+  .story-flex {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+  .story-content {
+    flex: 1 1 100%;
+    padding: 1rem;
+    text-align: center;
+  }
+
+  /* Pilares */
+  .pillars-section .mission-vision-wrapper {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .pillars-section .mission-card {
+    flex: 1 1 100%;
+    padding: 2rem 1rem;
+  }
+
+  /* Valores */
+  .values-grid {
+    grid-template-columns: 1fr;
+  }
+  .value-card {
+    width: 100%;
+  }
+
+  /* CTA */
+  .cta-content {
+    padding: 2rem 1rem;
+  }
+  .cta-section h2 { font-size: 1.5rem; }
+  .cta-section p  { font-size: 1rem; }
+  .cta-button    { padding: 10px 20px; font-size: 1rem; }
+
+  /* Footer */
+  .footer__container {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  .footer__section {
+    flex: 0 1 30%;
+    text-align: center;
+  }
+  .footer__social-link,
+  .footer__hours {
+    font-size: 0.9rem;
+  }
+  .social-icon {
+    width: 28px;
+  }
+  .footer__bottom p {
+    font-size: 0.8rem;
+  }
+}
+
+/* ==== Ajustes para tablets (≤768px) ==== */
+@media screen and (max-width: 768px) {
+  .hero-nosotros {
+    height: calc(50vh - 60px);
+  }
+  .hero-nosotros__content h1 { font-size: 2rem; }
+  .hero-nosotros__content p  { font-size: .95rem; }
+
+  .story-content h2 { font-size: 1.75rem; }
+  .story-content p  { font-size: .9rem; }
+
+  .pillars-section h2 { font-size: 1.5rem; }
+  .pillars-section .mission-card h3 { font-size: 1.25rem; }
+  .pillars-section .mission-card p  { font-size: .95rem; }
+
+  .value-card h3 { font-size: 1rem; }
+  .value-card p  { font-size: .9rem; }
+
+  .cta-button { padding: 8px 16px; font-size: .9rem; }
+
+  .footer__container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+  }
+  .footer__section {
+    width: 100%;
+    padding: 0.5rem 0;
+    text-align: center;
+  }
+
+  .footer__socials {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer__hours {
+    display: block !important;
+    text-align: center !important;
+    margin: 0 auto;
+  }
+  .footer__hours img {
+    display: block !important;
+    margin: 0 auto 0.5rem !important;
+  }
+}
+
+/* ==== Ajustes para móviles pequeños (≤576px) ==== */
+@media screen and (max-width: 576px) {
+  .hero-nosotros {
+    margin-top: 50px;
+    height: calc(40vh - 50px);
+  }
+  .hero-nosotros__content h1 { font-size: 1.6rem; }
+  .hero-nosotros__content p  { font-size: .85rem; }
+
+  .story-content h2 { font-size: 1.5rem; }
+  .story-content p  { font-size: .85rem; }
+
+  .pillars-section h2 { font-size: 1.3rem; }
+  .pillars-section .mission-card h3 { font-size: 1.1rem; }
+  .pillars-section .mission-card p  { font-size: .9rem; }
+
+  .value-card h3 { font-size: .9rem; }
+  .value-card p  { font-size: .85rem; }
+
+  .cta-button { padding: 6px 12px; font-size: .8rem; }
+  .footer__social-link,
+  .footer__hours { font-size: .8rem; gap: .3rem; }
+  .social-icon      { width: 20px; }
+  .footer__bottom p { font-size: .7rem; }
+}

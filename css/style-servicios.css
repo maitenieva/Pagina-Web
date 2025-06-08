@@ -692,32 +692,24 @@ header .navbar{
     font-size: 1rem;
   }
 
-  /* Footer en fila */
   .footer__container {
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    gap: 1rem;
-    padding: 1rem;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+
   }
   .footer__section {
-    flex: 0 1 30%;
-    text-align: center;
+      width: 100%;
+      padding: 0.5rem 0;
+      text-align: center;
   }
-  .footer__social-link,
-  .footer__hours {
-    font-size: 0.9rem;
-  }
-  .social-icon {
-    width: 28px;
-  }
-  .footer__bottom p {
-    font-size: 0.8rem;
+
+  .footer__socials {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
   }
 }
-
-/* Tablets (≤768px) */
 @media screen and (max-width: 768px) {
   /* Hero más bajo */
   .hero-servicios {
@@ -747,12 +739,6 @@ header .navbar{
     height: 180px;
   }
 
-  /* Logos apilados */
-  .logos-center {
-    flex-direction: column;
-    gap: 15px;
-  }
-
   .footer__container {
       flex-direction: column;
       align-items: center;
@@ -769,6 +755,16 @@ header .navbar{
       display: flex;
       flex-direction: column;
       align-items: center;
+  }
+
+  .footer__hours {
+    display: inline-flex;          
+    flex-direction: column;       
+    align-items: center;          
+    justify-content: center;        
+    margin: 0 auto;                 
+    text-align: center;             
+    gap: 0.5rem;                    
   }
 }
 
