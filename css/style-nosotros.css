@@ -83,7 +83,7 @@
     --ruddy-blue: #79A4D0;
     --lake-blue:#508BBB;
     --bice-blue: #386E9B;
-    --universo-blue:rgb(30, 78, 122);
+    --universo-blue:#1e4e7a;
 
     --border-radius-s: 8px;
     --border-radius-m: 30px;
@@ -209,24 +209,78 @@ header .navbar{
     align-content: center;
     transition: 0.3s ease;
 }
-
-
 .hero-nosotros {
-  display: flex; align-items: center; justify-content: center;
+  position: relative;
+  width: 100%;
   height: 60vh;
-  background:
-    linear-gradient(rgba(30,78,122,.8),rgba(30,78,122,.8)),
-    url('https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070')
-    center/cover no-repeat;
-  color: var(--white); text-align: center;
-}
-.hero-nosotros__content h1 {
-  font-size: 3.5rem;
-}
-.hero-nosotros__content p {
-  font-size: var(--font-size-l);
+  overflow: hidden;
 }
 
+/* Imagen de fondo */
+.hero_img {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: -1;
+}
+
+/* Capa semitransparente + flex centrar */
+.hero-nosotros__content {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(30, 78, 122, 0.6);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 1.5rem;   /* margen lateral en móvil */
+  box-sizing: border-box;
+  text-align: center;
+}
+
+/* Título grande, con Gotham y sombra para mejor lectura */
+.hero-nosotros__content h1 {
+    margin-top: 45px;
+  font-family: 'Gotham', sans-serif;
+  font-size: 3.5rem;
+  color: var(--alice-blue);
+  margin-bottom: 1rem;
+}
+
+/* Párrafo algo más pequeño y responsivo */
+.hero-nosotros__content p {
+  font-family: 'Gotham', sans-serif;
+  font-size: var(--font-size-l);
+  color: var(--white-color);
+  max-width: 600px;
+  margin-bottom: 2rem;
+  line-height: 1.5;
+}
+
+/* (Opcional) botón de llamada a la acción */
+.hero-nosotros__content .cta-button {
+  display: inline-block;
+  font-family: 'Gotham', sans-serif;
+  padding: 12px 30px;
+  background: var(--white-color);
+  color: var(--universo-blue);
+  border: 2px solid var(--white-color);
+  border-radius: var(--border-radius-m);
+  text-decoration: none;
+  font-weight: var(--font-weight-semibold);
+  transition: all 0.3s ease;
+}
+.hero-nosotros__content .cta-button:hover {
+  background: transparent;
+  color: var(--white-color);
+  border-color: var(--white-color);
+  box-shadow: 0 4px 12px rgba(255,255,255,0.4);
+}
 /* Historia */
 .story-section {
     background-color:rgb(229, 241, 252);  /* fondo muy suave */
@@ -293,6 +347,7 @@ header .navbar{
 .pillars-section .mission-vision-wrapper .mission-card h3 {
   font-family: 'Gotham', sans-serif;
   font-size: var(--font-size-l);
+  font-weight: var(--font-weight-medium);
   margin: 0 0 0.5rem;
   display: inline-block;
   color: var(--bice-blue);
@@ -317,49 +372,99 @@ header .navbar{
 
 /*VALORES*/
 .values-grid {
-  display: grid; gap: 30px;
+  display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-bottom: 60px;
 }
+
 .value-card {
   background: var(--white);
-  padding: 30px;
+  padding: 2rem 1.5rem;
   border-radius: var(--border-radius-s);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
   text-align: center;
-  transition: transform .3s, box-shadow .3s;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+
 .value-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 30px rgba(0,0,0,.1);
-}
-.value-icon {
-  font-size: 3rem;
-  color: var(--universo-blue);
-  margin-bottom: 15px;
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
 }
 
-/* Llamada a la acción */
+.value-card .iconos {
+  width: 60px;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+.value-card h3 {
+  font-family: 'Gotham', sans-serif;
+  font-size: var(--font-size-m);
+  font-weight: var(--font-weight-medium);
+  color: var(--universo-blue);
+  margin: 0 0 0.5rem;
+  position: relative;
+}
+
+/* Línea decorativa bajo el título, opcional */
+.value-card h3::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 3px;
+  background: var(--lake-blue);
+  margin: 0.5rem auto 0;
+  border-radius: 2px;
+}
+
+.value-card p {
+  font-family: 'Gotham', sans-serif;
+  color: var(--bice-blue);
+  line-height: 1.6;
+  margin: 0;
+  flex: 1; /* para que los textos largos no rompan el layout */
+}
+
 .cta-section {
-  background: var(--bice-blue);
-  color: var(--white);
+  background-color: var(--alice-blue);
   text-align: center;
+  padding: 40px 0;                /* espacio arriba y abajo */
 }
-.cta-button {
-  display: inline-block;
-  margin-top: 1rem;
-  padding: 15px 35px;
-  border-radius: var(--border-radius-m);
-  background: var(--white);
+
+.cta-section h2{
+  font-family: 'Gotham', sans-serif;
   color: var(--universo-blue);
+  margin: 0;
+}
+
+.cta-section h2 {
+  font-size: var(--font-size-xxl);
+  margin-bottom: 1rem;            /* separa del párrafo */
+}
+
+.cta-section .cta-button {
+  display: inline-block;
+  font-family: 'Gotham', sans-serif;
   text-decoration: none;
-  font-weight: var(--font-weight-bold);
-  transition: transform .3s;
+  padding: 15px 35px;
+  background: var(--white-color);           /* fondo blanco */
+  color: var(--universo-blue);              /* texto azul */
+  border: 2px solid var(--white-color);     /* borde blanco */
+  border-radius: var(--border-radius-m);
+  font-weight: var(--font-weight-semibold);
+  transition: all 0.3s ease;
 }
-.cta-button:hover {
-  transform: scale(1.05);
+
+.cta-section .cta-button:hover {
+  background: transparent;                  
+  color: var(--bice-blue);                /* texto blanco */
+  border-color: var(--bice-blue);         /* borde blanco */
+  box-shadow: 0 5px 15px rgba(149, 167, 238, 0.3); /* sombra clara */
 }
-
-
-
 /*FOOTER*/
 .footer {
   background-color: var(--universo-blue);
