@@ -965,7 +965,7 @@ img{
         gap: 20px;
     }
     .cartas-contenedor .carta {
-        flex: 0 0 calc(50% - 10px);  /* 50% menos la mitad del gap */
+        flex: 0 0 calc(50% - 10px);  
         margin-bottom: 20px;
     }
     
@@ -977,18 +977,13 @@ img{
     .nuestros-servicios {
         margin-top: 100px;
     }
-      
 
-    /* Contacto: solo el formulario */
     .contacto-contenido {
         width: 90%;
-        max-width: 1100px;      /* opcional, para no exceder cierto ancho */
-        margin: 0 auto;         /* centra horizontalmente */
-        gap: 2rem;              /* espacio entre columnas */
+        max-width: 1100px;      
+        margin: 0 auto;        
+        gap: 2rem;             
     }
-
-    /* Ajustar proporción de columnas */
-
     .textoContacto{
         padding: 0 3rem;
     }
@@ -1031,11 +1026,10 @@ img{
         font-size: 0.75rem;
         margin-top: 0.5rem;
     }
-    }
+}
 
 /* Tablets y pantallas pequeñas */
 @media screen and (max-width: 900px) {
-    /* Header siempre arriba, con fondo */
     .header {
         position: fixed;
         top: 0;
@@ -1046,7 +1040,6 @@ img{
         z-index: 2000;
     }
 
-    /* Oculta el menú por defecto */
     .navbar .nav-menu {
         display: none;
     }
@@ -1084,7 +1077,7 @@ img{
         gap: 20px;
     }
     .cartas-contenedor .carta {
-        flex: 0 0 calc(50% - 10px);  /* 50% menos la mitad del gap */
+        flex: 0 0 calc(50% - 10px); 
         margin-bottom: 20px;
     }
     
@@ -1146,7 +1139,6 @@ img{
     }
 }
 
-/* Móviles grandes (≤768px) */
 @media (max-width: 768px) {
     .hero-section {
         margin-top: 60px;
@@ -1162,7 +1154,6 @@ img{
         top: 45%;
     }
 
-    /* Servicios: cartas apiladas y centradas */
     .cartas-contenedor {
         display: flex !important;
         flex-direction: column;
@@ -1175,8 +1166,6 @@ img{
         margin: 0 auto;
     }
 
-    /* Sección contacto (solo formulario) */
-
     .textoContacto{
         padding: 0 2.5rem;
     }
@@ -1185,7 +1174,6 @@ img{
         padding: 0 1rem;
     }
 
-    /* Footer vuelve a columna */
     .footer__container {
         flex-direction: column;
         align-items: center;
@@ -1221,7 +1209,6 @@ img{
         top: 50%;
     }
 
-    /* Servicios: cartas más angostas */
     .cartas-contenedor .carta {
         max-width: 300px;
     }
@@ -1230,7 +1217,6 @@ img{
         padding: 0 1.5rem;
     }
 
-    /* Contacto: padding lateral más pequeño */
     .contacto-formulario {
         padding: 0 1rem;
     }
@@ -1239,7 +1225,6 @@ img{
         text-align: center;
     }
 
-    /* Footer ultra-compacto */
     .footer__title {
         font-size: 0.9rem;
     }

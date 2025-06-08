@@ -1,3 +1,17 @@
+// Toggle de menú en móvil
+document.querySelector('.menu-toggle').addEventListener('click', function() {
+  var menu = document.querySelector('.nav-menu');
+  var body = document.body;
+
+  menu.classList.toggle('active');
+  menu.classList.toggle('show');
+
+  // Solo bloquea scroll en móvil
+  if (window.innerWidth <= 900) {
+    body.classList.toggle('menu-open');
+  }
+});
+
 // Detectar scroll para cambiar el fondo del header
 const header = document.querySelector(".header");
 window.addEventListener("scroll", () => {
