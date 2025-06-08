@@ -547,28 +547,28 @@ header .navbar{
   }
 
   /* Footer */
-    .footer__container {
-      display: flex;
-      justify-content: space-around;
-      align-items: flex-start;
-      flex-wrap: wrap;
-      gap: 1rem;
-      padding: 1rem;
-    }
-    .footer__section {
-      flex: 0 1 30%;
-      text-align: center;
-    }
-    .footer__social-link,
-    .footer__hours {
-      font-size: 0.9rem;
-    }
-    .social-icon {
-      width: 28px;
-    }
-    .footer__bottom p {
-      font-size: 0.8rem;
-    }
+  .footer__container {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  .footer__section {
+    flex: 0 1 30%;
+    text-align: center;
+  }
+  .footer__social-link,
+  .footer__hours {
+    font-size: 0.9rem;
+  }
+  .social-icon {
+    width: 28px;
+  }
+  .footer__bottom p {
+    font-size: 0.8rem;
+  }
 }
 
 /* ==== Tablets (≤768px) ==== */
