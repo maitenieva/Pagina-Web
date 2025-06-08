@@ -457,6 +457,7 @@ header .navbar{
   border-radius: var(--border-radius-m);
   font-weight: var(--font-weight-semibold);
   transition: all 0.3s ease;
+    margin-top: 1.5rem;
 }
 
 .cta-section .cta-button:hover {
