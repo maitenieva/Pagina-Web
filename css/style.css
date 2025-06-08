@@ -20,40 +20,40 @@
 }
 
 @font-face {
-  font-family: 'Gotham';
-  src: url(../fuentes/Gotham-Light.otf) format('opentype');
-  font-weight: 300;
-  font-style: normal;
+    font-family: 'Gotham';
+    src: url(../fuentes/Gotham-Light.otf) format('opentype');
+    font-weight: 300;
+    font-style: normal;
 }
 @font-face {
-  font-family: 'Gotham';
-  src: url(../fuentes/Gotham-Book.otf) format('opentype');
-  font-weight: 400;
-  font-style: normal;
+    font-family: 'Gotham';
+    src: url(../fuentes/Gotham-Book.otf) format('opentype');
+    font-weight: 400;
+    font-style: normal;
 }
 @font-face {
-  font-family: 'Gotham';
-  src: url(../fuentes/Gotham-BookItalic.otf) format('opentype');
-  font-weight: 400;
-  font-style: italic;
+    font-family: 'Gotham';
+    src: url(../fuentes/Gotham-BookItalic.otf) format('opentype');
+    font-weight: 400;
+    font-style: italic;
 }
 @font-face {
-  font-family: 'Gotham';
-  src: url(../fuentes/Gotham-Bold.otf) format('opentype');
-  font-weight: 700;
-  font-style: normal;
+    font-family: 'Gotham';
+    src: url(../fuentes/Gotham-Bold.otf) format('opentype');
+    font-weight: 700;
+    font-style: normal;
 }
 @font-face {
-  font-family: 'Gotham';
-  src: url(../fuentes/Gotham-Black.otf) format('opentype');
-  font-weight: 900;
-  font-style: normal;
-}
+    font-family: 'Gotham';
+    src: url(../fuentes/Gotham-Black.otf) format('opentype');
+    font-weight: 900;
+    font-style: normal;
+    }
 @font-face {
-  font-family: 'Gotham';
-  src: url(../fuentes/Gotham-BlackItalic.otf) format('opentype');
-  font-weight: 900;
-  font-style: italic;
+    font-family: 'Gotham';
+    src: url(../fuentes/Gotham-BlackItalic.otf) format('opentype');
+    font-weight: 900;
+    font-style: italic;
 }
 
 * {
@@ -151,8 +151,8 @@ p{
 }
 
 ul {
-  list-style-type: none;
-  padding-left: 0;
+    list-style-type: none;
+    padding-left: 0;
 }
 
 header .navbar{
@@ -304,7 +304,6 @@ header .navbar{
 
 /*estilo cartas servicios*/
 /* Estilo para el contenedor de cartas */
-
 
 .cartas-contenedor {
     display: grid;
@@ -900,120 +899,120 @@ img{
     margin: 0;
     color: rgba(255, 255, 255, 0.8);
 }
+/* ==== OVERRIDES PARA RESPONSIVE ==== */
 
-@media screen and (max-width: 768px) {
-  .footer__container {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .footer__section {
-    min-width: auto;
-    width: 100%;
-  }
-
-  /* Centrar iconos y texto en móviles */
-  .footer__socials,
-  .footer__contact,
-  .footer__hours {
-    justify-content: center;
-  }
-}
-
-
-
-/* Media query para pantallas pequeñas */
-@media screen and (max-width: 768px) {
-    .hero__title {
-        font-size: 2rem;
+/* Ajustes en pantallas medianas */
+@media (max-width: 1200px) {
+    .hero_content img {
+        width: 80%;
     }
-    .hero__subtitle {
-        font-size: 1rem;
+    .nuestros-servicios .servicios-texto {
+        padding: 0 2rem;
     }
-
-    .contacto-contenido {
-        flex-direction: column;
-        gap: 2rem;
-    }
-    .contacto-visual {
-        max-width: 100%;
-        height: auto;
-    }
-    .contacto-visual img {
-        width: 100%;
-        height: auto;
-    }
-    #form-contacto {
-        padding: 1.5rem;
-    }
-    .form-row {
-        flex-direction: column;
-        gap: 1rem;
-    }
-    #form-contacto button[type="submit"] {
-        width: 100%;
-        align-self: center;
+    .cartas-contenedor {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     }
 }
 
-/* Para que se adapte a celulares*/
-@media screen and (max-width: 900px){
-    :root{
-        --font-size-n: 0.9rem;
-        --font-size-m: 1rem;
-        --font-size-l: 1.3rem;
-        --font-size-xl: 1.5rem;
-        --font-size-xxl: 1.9rem;
-    }
-
-    body.menu-open {
-        overflow: hidden; /* bloquea el scroll */
-        position: fixed; 
+/* Tablets y pantallas pequeñas */
+@media screen and (max-width: 900px) {
+    /* Header siempre arriba, con fondo */
+    .header {
+        position: fixed;
+        top: 0;
+        left: 0;
         width: 100%;
+        background-color: var(--universo-blue);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        z-index: 2000;
     }
 
-    .navbar .nav-menu{
+    /* Oculta el menú por defecto */
+    .navbar .nav-menu {
         display: none;
     }
 
-    .navbar{
-        position: relative;
-    }
-
-    .navbar .nav-menu.active{
-        display: block;
-        position: fixed;
-        left: 0;
-        top: 0;
-        width: 70%;
-        max-width: 300px;
-        height: 100hv;
-        background: var(--white-color);
-        z-index: 1000;
-        padding: 20px;
-        box-shadow: 2px 0 10px rgba(0,0,0,0.1);
-        transition: transform 0.3 ease;
-    }
-
-    .navbar .nav-menu.active.show {
-        transform: translateX(0); /*mueve el menu a 0, con el show se muestra cuando pasa de escritorio a celu*/
-    }
-
-     .navbar .nav-menu .nav-item {
-        margin-bottom: 15px;
-    }
-
-    .navbar .nav-menu .nav-link{
-        font-size: var(--font-size-l);
-        color: var(--universo-blue);
-        padding: 10px;
-        display: block;
-    }
-
+    /* Muestra el botón de toggler */
     .menu-toggle {
         display: block;
-        cursor: pointer;
-        z-index: 1001;
+        color: var(--alice-blue);
+        padding: 0.5rem 1rem;
+    }
+
+    /* Menú abierto */
+    .navbar .nav-menu.active {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 75%;
+        max-width: 300px;
+        background: var(--bice-blue);
+        padding: 20px;
+        box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+        z-index: 1900;
+        overflow-y: auto;
+    }
+    .hero-section {
+        margin-top: 60px;                /* iguala la altura de tu header */
+        height: calc(100vh - 60px);      /* full viewport menos header */
+    }
+
+    .nuestros-servicios {
+        margin-top: 100px; /* ajusta este valor al alto de tu header */
+    }
+}
+
+/* Móviles grandes (≤768px) */
+@media (max-width: 768px) {
+    .hero-section {
+        height: auto;               /* deja que el contenido fluya */
+    }
+    .hero_content {
+        top: 40%;                   /* baja un poco el contenido */
+    }
+    .hero_content img {
+        width: 60%;
+    }
+    .cartas-contenedor {
+        gap: 20px;
+    }
+    .carta {
+        padding: 20px;
+    }
+    .boton {
+        padding: 1rem 0;
+    }
+    .carousel-boton {
+        margin: 1rem 0;
+    }
+}
+
+/* Móviles chicos (≤576px) */
+@media (max-width: 576px) {
+    .hero_content img {
+        width: 100%;
+    }
+    .cartas-contenedor {
+        grid-template-columns: 1fr;
+    }
+    .carta h3 {
+        font-size: 1.2rem;
+    }
+    .cliente-carta {
+        width: 120px;
+        height: 120px;
+    }
+    .carousel-boton {
+        width: 30px;
+        height: 30px;
+        font-size: 1.5rem;
+    }
+    .mas-info,
+    .se-parte,
+    #form-contacto button[type="submit"] {
+        width: 100%;
+        text-align: center;
     }
 }
