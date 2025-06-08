@@ -508,22 +508,6 @@ button[type="submit"]:hover {
     width: 24px;
     height: 24px;
 }
-
-/* RESPONSIVE */
-
-@media (max-width: 900px) {
-  .contacto-contenido {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .contacto-formulario,
-  .contacto-visual {
-    width: 100%;
-  }
-}
-
-
 /*FOOTER*/
 .footer {
   background-color: var(--universo-blue);
@@ -599,15 +583,249 @@ button[type="submit"]:hover {
   color: rgba(255, 255, 255, 0.8);
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .footer__container {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
 
-  .footer__section {
-    flex: 1 1 100%;
-  }
+@media screen and (max-width:1200px){
+    .header {
+        position: fixed;
+        top: 0; left: 0; width: 100%;
+        background-color: var(--universo-blue);
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        z-index: 2000;
+    }
+    .hero-section {
+        margin-top: 60px;                       /* deja hueco para el header */
+        height: calc(60vh - 60px);              /* 60% de alto viewport menos header */
+    }
+    .hero_img {
+        position: absolute;
+        top: 0; left: 0;
+        width: 100%;
+        height: 100%;                           /* ocupa todo ese contenedor */
+        object-fit: cover;
+    }
+    .hero_content {
+        top: 50%; left: 50%;
+        transform: translate(-50%, -50%);       /* centro absoluto perfecto */
+    }
+    .hero_title {
+        font-size: 2.8rem;
+    }
+    .hero_subtitle {
+        font-size: 1.2rem;
+    }
+
+    /* hamburguesa visible */
+    .menu-toggle {
+        display: block;
+        background: var(--universo-blue);
+        color: #fff;
+        padding: 0.5rem;
+        border-radius: var(--border-radius-s);
+        font-size: 1.5rem;
+        z-index: 2001;
+    }
+
+    /* menú siempre posicionado, oculto con transform */
+    .navbar .nav-menu {
+        position: fixed;
+        top: 0; left: 0;
+        width: 75%; max-width: 300px;
+        height: 100vh;
+        background: var(--bice-blue);
+        padding: 1.5rem;
+        overflow-y: auto;
+        z-index: 2000;
+        flex-direction: column;
+
+        transform: translateX(-100%);
+        transition: transform 0.3s ease-in-out;
+    }
+    /* slide-in al añadir .active */
+    .navbar .nav-menu.active {
+        transform: translateX(0);
+    }
+}
+
+
+@media screen and (max-width: 900px) {
+    .hero-section {
+        margin-top: 60px;
+        height: calc(60vh - 60px);
+    }
+    .hero_img { height: 100%; }
+    .hero_content {
+        top: 50%; left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .hero_title {
+        font-size: 2.5rem;
+    }
+    .hero_subtitle {
+        font-size: 1.1rem;
+    }
+    /* contacto apilado: solo el formulario */
+    .contacto-contenido {
+        flex-direction: column;
+        align-items: center;
+        padding: 0 1rem;
+        gap: 2rem;
+    }
+    .contacto-formulario,
+    .contacto-visual {
+        width: 100%;
+    }
+    .contacto-visual { display: none; }
+   .footer__container {
+        flex-direction: row ;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 0.5rem;
+        padding: 0 1rem;
+    }
+    .footer__section {
+        flex: 0 1 30%;
+        min-width: 100px;
+        margin: 0;
+        padding: 0.5rem;
+        text-align: center;
+    }
+
+    .footer__title {
+        font-size: 1rem;
+        margin-bottom: 0.4rem;
+    }
+
+    .footer__social-link,
+    .footer__hours,
+    .footer__contact a {
+        font-size: 0.8rem;
+        gap: 0.3rem;
+    }
+
+    .social-icon {  
+        width: 24px;
+        margin-right: 0.3rem;
+    }
+
+    .footer__bottom p {
+        font-size: 1rem;
+        margin-top: 0.7rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .hero-section {
+        margin-top: 60px;
+        height: calc(50vh - 60px);
+    }
+    .hero_img { height: 100%; }
+    .hero_content {
+        top: 50%; left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .hero_title {
+        font-size: 2rem;
+    }
+    .hero_subtitle {
+        font-size: 1rem;
+    }
+    /* inputs y filas apiladas */
+    .form-row { flex-direction: column; gap: 1rem; }
+
+    .footer__container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 0.5rem;
+        padding: 0.5rem 0;
+    }
+    .footer__section {
+        width: 100%;
+        padding: 0.25rem 0;
+    }
+
+    /* un poco más grande y centrado también */
+    .footer__social-link,
+    .footer__hours {
+        font-size: 0.9rem;  
+        gap: 0.5rem;
+        display: flex;
+        justify-content: center;
+    }
+
+    .social-icon {
+        width: 20px;
+        margin-right: 0.25rem;
+    }
+
+    .footer__bottom p {
+        font-size: 0.75rem;
+        margin-top: 0.5rem;
+    }
+}
+
+
+/* ==== Afinar en móviles pequeños (≤576px) ==== */
+@media screen and (max-width: 576px) {
+    .hero-section {
+        margin-top: 90px;                       /* un poco menos para móviles */
+        height: calc(40vh - 50px);
+    }
+    .hero_img { height: 100%; }
+    .hero_content {
+        top: 50%; left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .hero_title {
+        font-size: 1.3rem;
+        margin-bottom: 10px;
+    }
+    .hero_subtitle {
+        font-size: 0.85rem;
+    }
+    /* botón “Enviar” full-width */
+    button[type="submit"] {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* contactos y redes más apretados */
+    .contacto-item     { gap: 0.75rem; font-size: 0.85rem; }
+    .redes-contacto h4  { font-size: 1rem; }
+    .redes-contacto ul  { gap: 0.75rem; }
+    .footer__container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 0.5rem;
+        padding: 0.5rem 0;
+    }
+    .footer__section {
+        width: 100%;
+        padding: 0.25rem 0;
+    }
+
+    /* un poco más grande y centrado también */
+    .footer__social-link,
+    .footer__hours {
+        font-size: 0.9rem;  
+        gap: 0.5rem;
+        display: flex;
+        justify-content: center;
+    }
+
+    .social-icon {
+        width: 20px;
+        margin-right: 0.25rem;
+    }
+
+    .footer__bottom p {
+        font-size: 0.75rem;
+        margin-top: 0.5rem;
+    }
+}
+
+@media screen and (max-width: 768px), screen and (max-width: 576px) {
+
 }

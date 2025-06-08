@@ -905,43 +905,42 @@ img{
 @media (max-width: 1200px) {
     .header {
         position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
+        top: 0; left: 0; width: 100%;
         background-color: var(--universo-blue);
         box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         z-index: 2000;
     }
 
-    /* Menú hamburguesa */
-    .navbar .nav-menu {
-        display: none;
-    }
+    /* hamburguesa visible */
     .menu-toggle {
         display: block;
-        background-color: var(--universo-blue);
-        color: var(--white-color);
-        padding: 0.5rem 1rem;
+        background: var(--universo-blue);
+        color: #fff;
+        padding: 0.5rem;
         border-radius: var(--border-radius-s);
         font-size: 1.5rem;
-        line-height: 1;
+        z-index: 2001;
     }
-    .navbar .nav-menu.active {
-        display: block;
+
+    /* menú siempre posicionado, oculto con transform */
+    .navbar .nav-menu {
         position: fixed;
-        top: 0;
-        left: 0;
+        top: 0; left: 0;
+        width: 75%; max-width: 300px;
         height: 100vh;
-        width: 75%;
-        max-width: 300px;
         background: var(--bice-blue);
         padding: 1.5rem;
-        box-shadow: 2px 0 10px rgba(0,0,0,0.1);
-        z-index: 1900;
         overflow-y: auto;
-    }
-    /* Icono cambia con tu JS entre ☰ y ✕ */
+        z-index: 2000;
+        flex-direction: column;
 
+        transform: translateX(-100%);
+        transition: transform 0.3s ease-in-out;
+    }
+    /* slide-in al añadir .active */
+    .navbar .nav-menu.active {
+        transform: translateX(0);
+    }
     /* Hero bajo el header */
     .hero-section {
         margin-top: 60px;                 
@@ -1030,42 +1029,7 @@ img{
 
 /* Tablets y pantallas pequeñas */
 @media screen and (max-width: 900px) {
-    .header {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        background-color: var(--universo-blue);
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        z-index: 2000;
-    }
-
-    .navbar .nav-menu {
-        display: none;
-    }
-
-    /* Muestra el botón de toggler */
-    .menu-toggle {
-        display: block;
-        color: var(--alice-blue);
-        padding: 0.5rem 1rem;
-    }
-
-    /* Menú abierto */
-    .navbar .nav-menu.active {
-        display: block;
-        position: fixed;
-        top: 0;
-        left: 0;
-        height: 100vh;
-        width: 75%;
-        max-width: 300px;
-        background: var(--bice-blue);
-        padding: 20px;
-        box-shadow: 2px 0 10px rgba(0,0,0,0.1);
-        z-index: 1900;
-        overflow-y: auto;
-    }
+    
     .hero-section {
         margin-top: 60px;                
         height: calc(100vh - 60px);      

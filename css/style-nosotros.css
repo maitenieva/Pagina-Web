@@ -554,38 +554,49 @@ header .navbar{
   transform: translateY(0);
 }
 
+@media screen and (max-width:1200px){
+      .header {
+        position: fixed;
+        top: 0; left: 0; width: 100%;
+        background-color: var(--universo-blue);
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        z-index: 2000;
+    }
+
+    /* hamburguesa visible */
+    .menu-toggle {
+        display: block;
+        background: var(--universo-blue);
+        color: #fff;
+        padding: 0.5rem;
+        border-radius: var(--border-radius-s);
+        font-size: 1.5rem;
+        z-index: 2001;
+    }
+
+    /* menú siempre posicionado, oculto con transform */
+    .navbar .nav-menu {
+        position: fixed;
+        top: 0; left: 0;
+        width: 75%; max-width: 300px;
+        height: 100vh;
+        background: var(--bice-blue);
+        padding: 1.5rem;
+        overflow-y: auto;
+        z-index: 2000;
+        flex-direction: column;
+
+        transform: translateX(-100%);
+        transition: transform 0.3s ease-in-out;
+    }
+    /* slide-in al añadir .active */
+    .navbar .nav-menu.active {
+        transform: translateX(0);
+    }
+}
 
 /* ==== Responsive para pantallas medianas (≤900px) ==== */
 @media screen and (max-width: 900px) {
-  /* Header fijo y menú hamburguesa */
-  .header {
-    position: fixed;
-    top: 0; left: 0; width: 100%;
-    background-color: var(--universo-blue);
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    z-index: 2000;
-  }
-  .navbar .nav-menu { display: none; }
-  .menu-toggle {
-    display: block;
-    background: var(--universo-blue);
-    color: #fff;
-    padding: .5rem;
-    border-radius: var(--border-radius-s);
-    font-size: 1.5rem;
-  }
-  .navbar .nav-menu.active {
-    display: block;
-    position: fixed;
-    top: 0; left: 0;
-    width: 75%; max-width: 280px;
-    height: 100vh;
-    background: var(--bice-blue);
-    padding: 1.5rem;
-    overflow-y: auto;
-    z-index: 1900;
-  }
-
   /* Hero */
   .hero-nosotros {
     margin-top: 60px;
