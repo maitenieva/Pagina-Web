@@ -100,10 +100,19 @@
     padding: var(--padding-container); 
 }
 
-body{
+html, body {
+    height: 100%;
     margin: 0;
-    font-family: "Gotham", sans-serif;
-    font-weight: 400;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* 100% de la ventana */
+}
+
+main, #login-container, #crud-section, .contacto {
+  flex: 1;
 }
 
 h1{
