@@ -642,6 +642,13 @@ button[type="submit"]:hover {
     .navbar .nav-menu.active {
         transform: translateX(0);
     }
+
+    .contacto-formulario {
+        margin: 1rem;      /* 2rem arriba/abajo, 2rem a los costados */
+    }
+    #form-contacto {
+        padding: 2.5rem 1.5rem;  /* 2.5rem arriba/abajo, 1.5rem laterales */
+    }
 }
 
 
@@ -665,13 +672,14 @@ button[type="submit"]:hover {
     .contacto-contenido {
         flex-direction: column;
         align-items: center;
-        padding: 0 1rem;
         gap: 2rem;
     }
-    .contacto-formulario,
-    .contacto-visual {
-        width: 100%;
+    
+    #form-contacto {
+        padding: 4rem 2.5rem;  /* 2.5rem arriba/abajo, 1.5rem laterales */
     }
+
+
     .contacto-visual { display: none; }
 
     .footer__container {
@@ -695,7 +703,6 @@ button[type="submit"]:hover {
     }
     .footer__bottom p {
         font-size: 0.8rem;
-   
     }
 }   
 
@@ -715,6 +722,7 @@ button[type="submit"]:hover {
     .hero_subtitle {
         font-size: 1rem;
     }
+
     /* inputs y filas apiladas */
     .form-row { flex-direction: column; gap: 1rem; }
 
@@ -770,7 +778,6 @@ button[type="submit"]:hover {
         width: 100%;
         text-align: center;
     }
-
     /* contactos y redes más apretados */
     .contacto-item     { gap: 0.75rem; font-size: 0.85rem; }
     .redes-contacto h4  { font-size: 1rem; }

@@ -202,7 +202,6 @@ header .navbar{
     box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1); /* para efecto sutil */
 }
 
-
 .navbar .nav_img{
     width: 100px; 
     height: auto;
@@ -469,11 +468,12 @@ header .navbar{
   border-color: var(--bice-blue);         /* borde blanco */
   box-shadow: 0 5px 15px rgba(149, 167, 238, 0.3); /* sombra clara */
 }
-/*FOOTER*/
+
 .footer {
   background-color: var(--universo-blue);
   color: var(--white-color);
   padding: 4rem 2rem 2rem;
+
 }
 
 .footer__container {
@@ -498,13 +498,20 @@ header .navbar{
   color: var(--white-color);
 }
 
+.social-icon {
+  width: 24px;
+  height: 24px;
+}
+
 .footer__socials {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
 
-.footer__social-link {
+
+.footer__social-link,
+.footer__hours {
   display: flex;
   align-items: center;
   gap: 0.8rem;
@@ -524,11 +531,6 @@ header .navbar{
   display: flex;
   align-items: center;
   gap: 0.5rem;
-}
-
-.social-icon {
-  width: 24px;
-  height: 24px;
 }
 
 .footer__bottom {
@@ -643,7 +645,6 @@ header .navbar{
   .cta-section p  { font-size: 1rem; }
   .cta-button    { padding: 10px 20px; font-size: 1rem; }
 
-  /* Footer */
   .footer__container {
     display: flex;
     justify-content: space-around;

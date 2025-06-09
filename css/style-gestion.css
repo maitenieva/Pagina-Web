@@ -475,6 +475,8 @@ header .navbar{
   color: rgba(255, 255, 255, 0.8);
 }
 
+
+
 /* ==== Pantallas Medianamente Grandes (≤1200px) ==== */
 @media screen and (max-width: 1200px) {
   /* Header fijo + hamburger */
@@ -545,8 +547,7 @@ header .navbar{
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
-
-  /* Footer */
+  
   .footer__container {
     display: flex;
     justify-content: space-around;
@@ -653,7 +654,6 @@ header .navbar{
   #crud-section {
       margin-top: 140px;        /* empuja más abajo */
   }
-
   .footer__social-link,
   .footer__hours { font-size: 0.85rem; gap: .3rem; color: var(--alice-blue); }
   .social-icon      { width: 24px; height: 24px; }

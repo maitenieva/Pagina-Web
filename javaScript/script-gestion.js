@@ -12,6 +12,35 @@ document.querySelector('.menu-toggle').addEventListener('click', function() {
   }
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+  const btn = document.getElementById('ingresar');
+  const pwd = document.getElementById('contrasenia');
+  const ok  = document.getElementById('success-msg');
+  const err = document.getElementById('error-msg');
+  let timeoutId;
+
+  btn.addEventListener('click', () => {
+    // 1. Oculto siempre ambos
+    ok.classList.add('d-none');
+    err.classList.add('d-none');
+
+    // 2. Cancelo cualquier hide pendiente
+    clearTimeout(timeoutId);
+
+    // 3. Valido
+    if (pwd.value === 'tuClaveSegura') {
+      ok.classList.remove('d-none');
+      // 4. Oculto el de éxito tras 2 s
+      timeoutId = setTimeout(() => ok.classList.add('d-none'), 2000);
+      // aquí tu lógica de acceso permitido…
+    } else {
+      err.classList.remove('d-none');
+      timeoutId = setTimeout(() => err.classList.add('d-none'), 2000);
+    }
+  });
+});
+
+
 document.addEventListener("DOMContentLoaded", function () {
     // — Inyección dinámica de estilos —
     const estilosCSS = `
