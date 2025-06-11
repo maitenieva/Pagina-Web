@@ -519,20 +519,24 @@ header .navbar{
   }
 
   .hero-servicio__content h1 {
-    font-size: 2rem;
+    font-size: 2.85rem;
   }
   .hero-servicio__content p {
-    font-size: 1rem;
+    font-size: 1.42rem;
   }
   .service-section {
       padding: 60px 0;
   }
 
   h2, .service-section h2 {
-      font-size: 1.6rem;
+      font-size: 2rem;
+  }
+
+  .service-section p{
+    font-size: 1.2rem;
   }
   h3, .service-section h3{
-    font-size: 1.34rem;
+    font-size: 1.6rem;
   }
   .custom-carousel .card {
       width: 300px; /* Hacemos las tarjetas un poco más grandes para que se vean mejor de a 2 */

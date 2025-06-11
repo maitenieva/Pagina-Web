@@ -297,7 +297,7 @@ header .navbar{
     max-width: 1200px;
     margin-top:30px;
     margin-bottom: 60px;    
-    font-size: 1.125rem;       
+    font-size: 1.3rem;       
     line-height: 1.7;
     color: #2d2f4f;               
 }
@@ -459,7 +459,7 @@ header .navbar{
     max-width: 1000px;
     margin: 1.5rem auto; 
     margin-bottom: 40px;       
-    font-size: 1.125rem;       
+    font-size: 1.3rem;       
     line-height: 1.7;
     color: #2d2f4f;  
 }
@@ -995,6 +995,24 @@ img{
         height: 95vh;
     }
 
+    .hero_content p{
+        font-size: 1.4rem;
+    }
+
+    .nuestros-servicios h2{
+        font-size: 2rem;
+    }
+    .nuestros-servicios p{
+        font-size: 1.6rem;
+    }
+
+    .nuestros-clientes h2{
+        font-size: 2rem;
+    }
+    .nuestros-servicios p{
+        font-size: 1.6rem;
+    }
+
 
     .cartas-contenedor {
         display: flex;
@@ -1066,6 +1084,20 @@ img{
     .hero_content {
         top: 45%;
     }
+    .nuestros-servicios h2{
+        font-size: 1.9rem;
+    }
+
+    .nuestros-servicios p{
+        font-size: 1.4rem;
+    }
+
+    .nuestros-clientes h2{
+        font-size: 1.9rem;
+    }
+    .nuestros-servicios p{
+        font-size: 1.4rem;
+    }
 
     .cartas-contenedor {
         display: flex !important;
@@ -1133,6 +1165,24 @@ img{
     }
     .hero_content {
         top: 50%;
+    }
+    .hero_content p{
+        font-size: 0.95rem;
+        font-weight: var(--font-weight-medium);
+    }
+
+    .nuestros-servicios h2{
+        font-size: 1.8rem;
+    }
+    .nuestros-servicios p{
+        font-size: 1.2rem;
+    }
+
+    .nuestros-clientes h2{
+        font-size: 1.8rem;
+    }
+    .nuestros-servicios p{
+        font-size: 1.2rem;
     }
 
     .cartas-contenedor .carta {

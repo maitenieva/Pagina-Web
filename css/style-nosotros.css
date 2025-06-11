@@ -252,7 +252,8 @@ header .navbar{
 
 .hero-nosotros__content p {
   font-family: 'Gotham', sans-serif;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
+  font-weight: var(--font-weight-semibold);
   color: var(--white-color);
   max-width: 800px;
   margin-bottom: 2rem;
@@ -294,6 +295,7 @@ header .navbar{
 }
 
 .story-content {
+    font-family: "Gotham", sans-serif;
     flex: 2 1 400px;
     padding: 2rem 1rem;
     text-align: justify;
@@ -303,16 +305,19 @@ header .navbar{
 }
 
 .story-content h2 {
+    font-family: "Gotham", sans-serif;
     text-align: center;
     margin: 0 0 1.5rem;        
-    font-size: var(--font-size-xxl);
+    font-size: 2.1rem;
     color: var(--universo-blue);
 }
 
 .story-content p {
+    font-family: "Gotham", sans-serif;
     margin: 0;                  
     color: var(--bice-blue);
     text-align: center;
+    font-size: 1.256rem;
 }
 
 /* Pilares */
@@ -618,10 +623,17 @@ header .navbar{
     text-align: center;
   }
 
+  .story-content h2{
+    font-size: 1.9rem;
+  }
+  .story-content p{
+    font-size: 1.12rem;
+  }
+
   /* Pilares */
   .pillars-section .mission-vision-wrapper {
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1.12rem;
   }
   .pillars-section .mission-card {
     flex: 1 1 100%;
@@ -727,15 +739,15 @@ header .navbar{
       margin-top: 70px;                       
       height: calc(40vh - 50px);
   }
-  .hero-nosotros__content h1 { font-size: 1.6rem; }
-  .hero-nosotros__content p  { font-size: .85rem; }
+  .hero-nosotros__content h1 { font-size: 2rem; }
+  .hero-nosotros__content p  { font-size: 0.85rem; }
 
-  .story-content h2 { font-size: 1.5rem; }
-  .story-content p  { font-size: .85rem; }
+  .story-content h2 { font-size: 1.7rem; }
+  .story-content p  { font-size: 0.9rem; }
 
   .pillars-section h2 { font-size: 1.3rem; }
   .pillars-section .mission-card h3 { font-size: 1.1rem; }
-  .pillars-section .mission-card p  { font-size: .9rem; }
+  .pillars-section .mission-card p  { font-size: .90rem; }
 
   .value-card h3 { font-size: .9rem; }
   .value-card p  { font-size: .85rem; }
