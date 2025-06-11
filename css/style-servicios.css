@@ -312,14 +312,17 @@ header .navbar{
 .custom-carousel .slide {
     display: none;    /* Oculta todos los slides por defecto */
     flex-shrink: 0;   /* Evita que las tarjetas se encojan */
+    transition: opacity 0.4s ease-in-out;
 }
 
 .custom-carousel .slide.active {
     display: block;   /* Muestra ÚNICAMENTE los slides con la clase .active */
-}
+    opacity: 1;
 
+}
 .custom-carousel .card {
     width: 260px; 
+    min-height: 200px;
     aspect-ratio: 4 / 3;
     background: var(--white-color);
     border-radius: 18px;

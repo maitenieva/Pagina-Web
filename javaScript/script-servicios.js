@@ -1,121 +1,103 @@
 document.addEventListener('DOMContentLoaded', () => {
-  //Para mover el header, que aparezca el color cuando se hace scroll//
-  const header = document.querySelector('.header');
-  if (header) {
-    const SCROLL_TRIGGER = 50;
+  const encabezado = document.querySelector('.header');
+  if (encabezado) {
+    const UMBRAL_SCROLL = 50;
     window.addEventListener('scroll', () => {
-      header.classList.toggle('header--scrolled', window.scrollY > SCROLL_TRIGGER);
+      encabezado.classList.toggle('header--scrolled', window.scrollY > UMBRAL_SCROLL);
     });
   }
-  //que aparezca el menu reducido dependiendo del tamaño de la pantalla//
-  const burger = document.querySelector('.menu-toggle');
-  const navMenu = document.querySelector('.nav-menu');
-  if (burger && navMenu) {
-    burger.addEventListener('click', () => {
-      navMenu.classList.toggle('active');
+
+  const botonMenu = document.querySelector('.menu-toggle');
+  const menuNavegacion = document.querySelector('.nav-menu');
+  if (botonMenu && menuNavegacion) {
+    botonMenu.addEventListener('click', () => {
+      menuNavegacion.classList.toggle('active');
       document.body.classList.toggle('menu-open');
     });
     window.addEventListener('resize', () => {
       if (window.innerWidth >= 992) {
-        navMenu.classList.remove('active');
+        menuNavegacion.classList.remove('active');
         document.body.classList.remove('menu-open');
       }
     });
   }
+  
+  document.querySelectorAll('.custom-carousel-wrapper').forEach(configurarCarrusel);
 
-  // carrusel//
-  document.querySelectorAll('.custom-carousel-wrapper').forEach(setupCarousel);
-
-  function setupCarousel(carouselWrapper) {
-    const slides = carouselWrapper.querySelectorAll('.slide');
-    const prevBtn = carouselWrapper.querySelector('.carousel-button.prev');
-    const nextBtn = carouselWrapper.querySelector('.carousel-button.next');
+  function configurarCarrusel(contenedorDelCarrusel) {
+    const slides = contenedorDelCarrusel.querySelectorAll('.slide');
+    const botonAnterior = contenedorDelCarrusel.querySelector('.carousel-button.prev');
+    const botonSiguiente = contenedorDelCarrusel.querySelector('.carousel-button.next');
 
     if (slides.length === 0) return;
 
-    let currentIndex = 0;
+    // rastreo la posición del primer slide visible
+    let indiceActual = 0;
 
-    // Devuelve cuántas tarjetas deben ser visibles
-    function getVisibleCount() {
-      if (window.innerWidth <= 768) return 1;
-      if (window.innerWidth <= 992) return 2;
-      return 3;
+    // calculo cuántos slides deben ser visibles según el ancho de la pantalla.
+    function obtenerCantidadVisible() {
+      if (window.innerWidth <= 768) return 1; 
+      if (window.innerWidth <= 992) return 2; 
+      return 3; 
     }
     
-    // Muestra los slides correctos
-    function showSlides() {
-      const visibleCount = getVisibleCount();
+    // 'actualizarVista' es la función principal: muestra y oculta los slides correctos.
+    function actualizarVista() {
+      const cantidadVisible = obtenerCantidadVisible();
       
-      // Oculta todos los slides que no se deberian ver
+      // Primero, ocultamos todos los slides para empezar de cero.
       slides.forEach(slide => slide.classList.remove('active'));
 
-      // Muestra solo los que deben ser visibles
-      for (let i = 0; i < visibleCount; i++) {
-        const indexToShow = currentIndex + i;
-        if (slides[indexToShow]) {
-          slides[indexToShow].classList.add('active');
+      // Luego, mostramos solo el grupo de slides que corresponde.
+      for (let i = 0; i < cantidadVisible; i++) {
+        const indiceParaMostrar = indiceActual + i;
+        if (slides[indiceParaMostrar]) {
+          slides[indiceParaMostrar].classList.add('active');
         }
       }
-      
-      // Se actualiza el estado de los botones cuando no hay mas slides para mostrar
-      prevBtn.disabled = currentIndex === 0;
-      nextBtn.disabled = currentIndex + visibleCount >= slides.length;
+            
+      // El botón 'anterior' se deshabilita si estamos en el primer slide.
+      botonAnterior.disabled = indiceActual === 0;
+
+      // El botón 'siguiente' se deshabilita si ya no hay más slides para mostrar a la derecha.
+      botonSiguiente.disabled = indiceActual >= slides.length - cantidadVisible;
     }
+    function moverSlide(direccion) {
+        const cantidadVisible = obtenerCantidadVisible();
+        const nuevoIndice = indiceActual + direccion;
 
-    // movimiento en bloque del carrusel
-    function moveByBlock(direction) {
-      const step = getVisibleCount();
-      currentIndex += direction * step;
-
-      // para que el indice no se salga del limite 
-      if (currentIndex < 0) {
-        currentIndex = 0;
-      }
-      if (currentIndex > slides.length - step) {
-        // para que el final siempre muestre un grupo completo si es posible
-         const remainder = slides.length % step;
-         if (remainder !== 0) {
-            currentIndex = slides.length - remainder;
-         } else if (direction === -1) {
-            currentIndex = slides.length - step;
-         } else {
-            currentIndex -= step;
-         }
-      }
-      
-      showSlides();
-    }
-    
-    // Mueve el carrusel de uno en uno (para swipe)
-    function moveOne(direction){
-        const visibleCount = getVisibleCount();
-        const newIndex = currentIndex + direction;
-
-        if (newIndex >= 0 && newIndex <= slides.length - visibleCount) {
-            currentIndex = newIndex;
-            showSlides();
+        // Nos aseguramos de que el nuevo índice no se salga de los límites.
+        if (nuevoIndice >= 0 && nuevoIndice <= slides.length - cantidadVisible) {
+            indiceActual = nuevoIndice;
+            actualizarVista();
         }
     }
 
-    // Asigna eventos a los botones
-    prevBtn?.addEventListener('click', () => moveByBlock(-1));
-    nextBtn?.addEventListener('click', () => moveByBlock(1));
+    // Asignamos los eventos a los botones.
+    botonAnterior?.addEventListener('click', () => moverSlide(-1)); 
+    botonSiguiente?.addEventListener('click', () => moverSlide(1));  
 
-    // Swipe táctil (mueve de a uno)
-    let touchStartX = 0;
-    carouselWrapper.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
-    carouselWrapper.addEventListener('touchend', e => {
-      const swipeDistance = e.changedTouches[0].clientX - touchStartX;
-      if (Math.abs(swipeDistance) > 50) {
-        moveOne(swipeDistance < 0 ? 1 : -1);
+    // Lógica para el deslizamiento táctil (swipe) en móviles.
+    let inicioDelToqueX = 0;
+    contenedorDelCarrusel.addEventListener('touchstart', e => {
+        inicioDelToqueX = e.touches[0].clientX;
+    }, { passive: true });
+
+    contenedorDelCarrusel.addEventListener('touchend', e => {
+      const distanciaDeslizada = e.changedTouches[0].clientX - inicioDelToqueX;
+      if (Math.abs(distanciaDeslizada) > 50) {
+
+        moverSlide(distanciaDeslizada < 0 ? 1 : -1);
       }
     });
-
+    
+    // Si el usuario cambia el tamaño, se reinicia el carrusel.
     window.addEventListener('resize', () => {
-        currentIndex = 0; // Resetea al cambiar tamaño
-        showSlides();
+        indiceActual = 0; 
+        actualizarVista();
     });
     
-    showSlides(); // Llamada inicial
+    // Llamada inicial para que el carrusel se muestre correctamente al cargar la página.
+    actualizarVista();
   }
 });
