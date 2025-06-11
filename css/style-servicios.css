@@ -109,23 +109,21 @@ body{
 h1{
     font-size: var(--font-size-xxl);
     font-weight: var(--font-weight-bold);
-    color: var(--universo-blue);
 }
 
 h2{
-    font-size: var(--font-size-xxl);
-    font-weight: var(--font-weigth-semibold);
-    color: var(--bice-blue)
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-semibold);
 }
 
 h3{
     font-size: var(--font-size-m);
-    font-weight: var(--font-weigth-medium);
+    font-weight: var(--font-weight-medium);
 }
 
 p{
     font-size: var(--font-size-n);
-    font-weight: var(--font-weigth-normal);
+    font-weight: var(--font-weight-normal);
 }
 /*estilo navbar*/
 
@@ -146,7 +144,7 @@ p{
 }
 
 .header.header--scrolled {
-    background-color: var(--universo-blue); /* o #1e3a8a directamente */
+    background-color: var(--universo-blue); 
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -199,7 +197,7 @@ header .navbar{
     background: var(--alice-blue);
     color: var(--universo-blue); 
     border-color: var(--bice-blue);
-    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1); /* para efecto sutil */
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1); 
 }
 
 
@@ -242,256 +240,158 @@ header .navbar{
   text-align: center;
 }
 
-/* Título grande, con Gotham y sombra para mejor lectura */
 .hero-servicio__content h1 {
   font-family: 'Gotham', sans-serif;
-  font-size: 3.5rem;
-  color: var(--alice-blue);
-  margin-top: 4rem;
+  font-size: 3.3rem;
   margin-bottom: 1rem;
+  color: var(--alice-blue);
 }
 
-/* Párrafo algo más pequeño y responsivo */
 .hero-servicio__content p {
   font-family: 'Gotham', sans-serif;
-  font-size: var(--font-size-l);
+  font-size: 1.5rem; 
   color: var(--white-color);
-  max-width: 600px;
-  margin-bottom: 2rem;
+  max-width: 650px;
+  margin-left: auto;
+  margin-right: auto;
   line-height: 1.5;
 }
 
-.service-section .my-container{
-  padding: 40px 0;
-}
 
 .service-section {
-  padding: 30px 0;
-  text-align: center
+    padding: 80px 0;
+    text-align: center;
 }
-
-.service-section h2{
-  margin: 0 0 0.75rem;
-  margin-bottom: 1.5rem;
-  font-weight: var(--font-weight-semibold);
-}
-
-.service-section h3{
-  margin: 0 0 0.75rem;
-  font-weight: var(--font-weight-semibold);
-  font-size: var(--font-size-l);
-  color: var(--bice-blue);
-}
-
-.service-section .service-description {
-  font-size: var(--font-size-m);
-  color: var(--lake-blue);
-  max-width: 1000px;
-  margin: 0 auto 40px auto;
-  line-height: 1.7;
-}
-
 .service-section.alt-bg {
-  padding: 30px 0;
-  background-color: rgba(255, 255, 255, 0.8);
+    background-color: #f8f9fa;
+}
+.service-section h2 {
+    font-size: 2.3rem;
+    margin-bottom: 20px;
+    color: var(--universo-blue);
+    font-weight: bold;
+}
+.service-section h3 {
+    font-size: 1.8rem;
+    font-weight: var(--font-weight-semibold);
+    color: var(--bice-blue);
+    margin-top: 60px;
+    margin-bottom: 30px;
+}
+.service-description {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--lake-blue);
+    max-width: 800px;
+    margin: 0 auto 50px auto;
 }
 
-.portfolio-carousel {
-  position: relative;
+.custom-carousel-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 0 20px;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
 }
 
-.portfolio-carousel.swiper-container {
-  width: 100%;
-  max-width: 1100px;
-  margin: 40px auto 60px auto;
-  padding: 0 0 40px 0;
-  overflow: hidden;
+.custom-carousel {
+    display: flex; /* Para alinear los slides activos */
+    justify-content: center;
+    gap: 1.3rem;   /* Espacio entre las tarjetas visibles */
+    width: 100%;
+    min-height: 220px;
 }
 
-.swiper-wrapper {
-  display: flex;
-  align-items: stretch;
+.custom-carousel .slide {
+    display: none;    /* Oculta todos los slides por defecto */
+    flex-shrink: 0;   /* Evita que las tarjetas se encojan */
 }
 
-.portfolio-carousel .swiper-slide {
-  flex-shrink: 0;
-  width: 100%;
-  height: auto;
-  background: var(--alice-blue);
-  border-radius: var(--border-radius-s);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 20px;
+.custom-carousel .slide.active {
+    display: block;   /* Muestra ÚNICAMENTE los slides con la clase .active */
 }
 
-.portfolio-carousel .swiper-slide img {
-  display: block;
-  width: 100%;
-  height: 280px;               
-  object-fit: contain;         
-  object-position: center;
-  background-color: #ffffff;   
-  border-radius: var(--border-radius-s);
+.custom-carousel .card {
+    width: 260px; 
+    aspect-ratio: 4 / 3;
+    background: var(--white-color);
+    border-radius: 18px;
+    box-shadow: 0 4px 8px rgba(30,42,75,0.06), 0 1px 3px rgba(30,42,75,0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
 }
 
-.logos-center {
-  display: flex;
-  justify-content: center;   
-  align-items: center;       
-  gap: 40px;                 
-  margin: 40px 0;            
+.custom-carousel .card img {
+  width: 85%;
+  height: 85%;
+  object-fit: contain;
 }
 
-.logos-center img {
-  max-width: 200px;          
-  height: auto;             
-  object-fit: contain;       
+.carousel-button {
+    background: none;
+    border: none;
+    font-size: var(--font-size-xl);
+    color: var(--universo-blue);
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    z-index: 10;
+
+    display: flex;
+    align-items: center;     
+    justify-content: center; 
+    padding-bottom: 3px;    
+    box-sizing: border-box;
+}
+.carousel-button:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
 }
 
-
-.cta-section {
-  text-align: center;
-  margin-top: 0;
-}
-
-.cta-section h2 {
-  font-family: 'Gotham', sans-serif;
-  color: var(--universo-blue);
-  margin: 0 0 0.75rem;
-  font-size: var(--font-size-xxl);
-  margin-bottom: 2.5rem; 
-}
-
-.cta-section .cta-button {
-  display: inline-block;
-  font-family: 'Gotham', sans-serif;
-  text-decoration: none;
-  padding: 15px 35px;
-  background: var(--universo-blue);           
-  color: var(--white-color);              
-  border: 2px solid var(--white-color);     
-  border-radius: var(--border-radius-m);
-  font-weight: var(--font-weight-semibold);
-  transition: all 0.3s ease;
-}
-
-.cta-section .cta-button:hover {
-  background: transparent;                  
-  color: var(--bice-blue);                
-  border-color: var(--bice-blue);         
-  box-shadow: 0 5px 15px rgba(149, 167, 238, 0.3);
-}
-
-/* Flechas posicionadas dentro de cada carousel */
-.portfolio-carousel .swiper-button-prev,
-.portfolio-carousel .swiper-button-next {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 10;
-  width: 36px;
-  height: 36px;
-  background-color: rgba(255, 255, 255, 0.8);
-  border-radius: var(--border-radius-circle);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--universo-blue);
-  transition: background-color 0.2s ease, transform 0.2s ease;
-}
-
-/* Ubicación de cada flecha */
-.portfolio-carousel .swiper-button-prev {
-  left: 8px;
-}
-.portfolio-carousel .swiper-button-next {
-  right: 8px;
-}
-
-.portfolio-carousel .swiper-button-prev:hover,
-.portfolio-carousel .swiper-button-next:hover {
-  background-color: var(--universo-blue);
-  color: var(--white-color);
-  transform: translateY(-50%) scale(1.1);
-}
-
-.portfolio-carousel .swiper-button-prev::after,
-.portfolio-carousel .swiper-button-next::after {
-  font-size: 1rem;
-}
-
-/* bullets */
-.portfolio-carousel .swiper-pagination {
-  position: absolute;
-  bottom: 12px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.portfolio-carousel .swiper-pagination-bullet {
-  background: var(--ruddy-blue);
-  opacity: 0.6;
-  width: 10px;
-  height: 10px;
-  margin: 0 6px !important;
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-.portfolio-carousel .swiper-pagination-bullet-active {
-  background: var(--universo-blue);
-  opacity: 1;
-  transform: scale(1.3);
-}
-
-/* Si hubiera flechas en el header/banner, ocultarlas */
-.header .swiper-button-prev,
-.header .swiper-button-next {
-  display: none !important;
-}
 
 .boton {
+    background: var(--alice-blue);
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 2rem 1rem;              
-    margin-top: 0rem;
-    margin-bottom: 0rem;
-    padding: 3rem 1rem;          
+    padding: 5rem 1.5rem;
     text-align: center;
 }
 
 .boton h3 {
-    font-family: "Gotham", sans-serif;    
-    font-size: 1.9rem;                 
-    font-weight: 600;
-    color: var(--bice-blue);     
-    margin-bottom: 2rem;           
+    font-size: 1.9rem;
+    font-weight: var(--font-weight-semibold);
+    color: var(--bice-blue);
+    margin-bottom: 2rem;
     line-height: 1.3;
-    }
+}
 
-
-.se-parte {
+.se-parte { 
     display: inline-block;
-    font-family: "Gotham", sans-serif;
     text-decoration: none;
     padding: 15px 35px;
     background: var(--universo-blue);
     color: var(--white-color);
     border: 2px solid transparent;
     border-radius: var(--border-radius-m);
-    font-weight: var(--font-weigth-semibold);
+    font-weight: var(--font-weight-semibold);
     transition: all 0.3s ease;
 }
 
 .se-parte:hover {
     background: transparent;
     color: var(--bice-blue);
-    border: 2px solid;
     border-color: var(--bice-blue);
-    box-shadow: 0 5px 15px rgba(30, 78, 122, 0.3);
+    box-shadow: 0 5px 15px rgba(30, 78, 122, 0.2);
 }
+
 .footer {
     background-color: var(--universo-blue);
     color: var(--white-color);
@@ -578,7 +478,7 @@ header .navbar{
         z-index: 2000;
     }
 
-    /* hamburguesa visible */
+    /* menu visible */
     .menu-toggle {
         display: block;
         background: var(--universo-blue);
@@ -589,7 +489,7 @@ header .navbar{
         z-index: 2001;
     }
 
-    /* menú siempre posicionado, oculto con transform */
+    /* menú oculto con transform */
     .navbar .nav-menu {
         position: fixed;
         top: 0; left: 0;
@@ -604,17 +504,16 @@ header .navbar{
         transform: translateX(-100%);
         transition: transform 0.3s ease-in-out;
     }
-    /* slide-in al añadir .active */
     .navbar .nav-menu.active {
         transform: translateX(0);
     }
+
     .footer{
         padding: 4rem 2rem 2rem;
     }
 }
 
 @media screen and (max-width: 900px) {
-  /* Hero Servicios */
   .hero-servicios {
     margin-top: 60px;
     height: 70vh;
@@ -626,48 +525,18 @@ header .navbar{
   .hero-servicio__content p {
     font-size: 1rem;
   }
-
-  /* Secciones de servicio */
-  .service-section .my-container {
-    padding: 30px 1rem;
-  }
-  .service-section h2 {
-    font-size: 1.75rem;
-  }
-  .service-section h3 {
-    font-size: 1.25rem;
-  }
-  .service-description {
-    font-size: 1rem;
-    margin-bottom: 30px;
+  .service-section {
+      padding: 60px 0;
   }
 
-  /* Carruseles */
-  .portfolio-carousel.swiper-container {
-    max-width: 100%;
-    margin: 30px auto 40px;
+  h2, .service-section h2 {
+      font-size: 1.6rem;
   }
-  .portfolio-carousel .swiper-slide img {
-    height: 200px;
+  h3, .service-section h3{
+    font-size: 1.34rem;
   }
-
-  /* Logos center */
-  .logos-center {
-    flex-wrap: wrap;
-    gap: 20px;
-    margin: 30px 0;
-  }
-  .logos-center img {
-    max-width: 150px;
-  }
-
-  /* CTA final */
-  .boton h3 {
-    font-size: 1.5rem;
-  }
-  .se-parte {
-    padding: 12px 25px;
-    font-size: 1rem;
+  .custom-carousel .card {
+      width: 300px; /* Hacemos las tarjetas un poco más grandes para que se vean mejor de a 2 */
   }
 
   .footer{
@@ -698,7 +567,6 @@ header .navbar{
   }
 }
 @media screen and (max-width: 768px) {
-    /* Hero más bajo */
     .hero-servicios {
       margin-top: 60px;
       height: 50vh;
@@ -709,21 +577,39 @@ header .navbar{
     .hero-servicio__content p {
       font-size: 0.7rem;
     }
-
-    /* Servicio apilado */
-    .service-section .my-container {
-      padding: 25px 1rem;
+.service-section {
+        padding: 60px 0;
     }
-    .service-section h2 {
-      font-size: 1.5rem;
+    h2, .service-section h2 {
+        font-size: 2rem;
+        line-height: 1.3;
+    }
+    .service-section h3 {
+        margin-top: 40px;
     }
     .service-description {
-      font-size: 0.95rem;
+        font-size: 1rem;
+    }
+    .custom-carousel .card {
+        width: 100%; 
+        max-width: 350px;
+    }
+    .carousel-button {
+        width: 40px;
+        height: 40px;
+    }
+    .carousel-button.prev {
+        left: 10px; /*10px desde el borde izquierdo */
+    }
+    .carousel-button.next {
+        right: 10px; /*10px desde el borde derecho */
     }
 
-    /* Carrusel más compacto */
-    .portfolio-carousel .swiper-slide img {
-      height: 180px;
+    .boton {
+        padding: 4rem 1.5rem;
+    }
+    .boton h3 {
+        font-size: 1.6rem;
     }
 
     .footer{
@@ -758,49 +644,56 @@ header .navbar{
     }
   }
 
-  /* Móviles pequeños (≤576px) */
+  /* Telefonos chicos */
   @media screen and (max-width: 576px) {
-    /* Hero muy pequeño */
     .hero-servicios {
-      margin-top: 70px;                       /* un poco menos para móviles */
+      margin-top: 70px;                       
       height: calc(40vh - 50px);
     }
     .hero-servicio__content h1 {
-      font-size: 1.6rem;
+      font-size: 1.9rem;
     }
     .hero-servicio__content p {
       font-size: 0.85rem;
     }
-
-    /* Tipos aún más reducidos */
     .service-section h2 {
-      font-size: 1.3rem;
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+        color: var(--universo-blue);
+        font-weight: bold;
     }
     .service-section h3 {
-      font-size: 1.1rem;
-    }
-    .service-description {
-      font-size: 0.9rem;
-      margin-bottom: 20px;
+        font-size: 1.32rem;
+        margin-bottom: 20px;
     }
 
-    /* Imagenes carrusel más bajitas */
-    .portfolio-carousel .swiper-slide img {
-      height: 150px;
+
+    .service-section p {
+        font-size: 1rem;
+        margin-bottom: 20px;
     }
 
-    /* Logos muy compactos */
-    .logos-center img {
-      max-width: 120px;
+   .custom-carousel-wrapper {
+        padding: 0 60px;
     }
 
-    /* CTA ultra-compacto */
+    /* Carrusel muestra una tarjeta */
+    .custom-carousel .card {
+        flex: 0 0 100%;
+        max-width: 400px;
+    }
+
+    .carousel-button {
+        width: 45px;
+        height: 35px;
+    }
+
     .boton h3 {
-      font-size: 1.3rem;
+        font-size: 1.4rem;
     }
     .se-parte {
-      padding: 10px 20px;
-      font-size: 0.9rem;
+        padding: 12px 28px;
+        font-size: 1rem;
     }
 
     .footer__section{

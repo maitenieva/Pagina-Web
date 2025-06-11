@@ -242,21 +242,19 @@ header .navbar{
   text-align: center;
 }
 
-/* Título grande, con Gotham y sombra para mejor lectura */
 .hero-nosotros__content h1 {
-    margin-top: 45px;
+  margin-top: 45px;
   font-family: 'Gotham', sans-serif;
-  font-size: 3.5rem;
+  font-size: 3.3rem;
   color: var(--alice-blue);
   margin-bottom: 1rem;
 }
 
-/* Párrafo algo más pequeño y responsivo */
 .hero-nosotros__content p {
   font-family: 'Gotham', sans-serif;
-  font-size: var(--font-size-l);
+  font-size: 1.5rem;
   color: var(--white-color);
-  max-width: 600px;
+  max-width: 800px;
   margin-bottom: 2rem;
   line-height: 1.5;
 }
