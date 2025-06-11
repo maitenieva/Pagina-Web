@@ -807,10 +807,9 @@ img{
     color: #348a47;
     border: 1px solid #c3e0c9;
 }
-
 .footer {
     background-color: var(--universo-blue);
-    color: var(--white-color);
+    color: var(--alice-blue);
     padding: 4rem 2rem 2rem;
 }
 
@@ -836,7 +835,7 @@ img{
     font-size: 1.25rem;
     font-weight: 600;
     margin-bottom: 1rem;
-    color: var(--white-color);
+    color: var(--alice-blue);
 }
 
 .footer__socials {
@@ -851,12 +850,12 @@ img{
     gap: 0.8rem;
     font-size: 1rem;
     text-decoration: none;
-    color: var(--white-color);
+    color: var(--alice-blue);
     transition: color 0.2s ease;
 }
 
 .footer__social-link:hover {
-    color: var(--alice-blue);
+    color: var(--white-color);
 }
 
 .footer__hours {

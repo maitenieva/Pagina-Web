@@ -114,18 +114,18 @@ h1{
 
 h2{
     font-size: var(--font-size-xl);
-    font-weight: var(--font-weigth-semibold);
+    font-weight: var(--font-weight-semibold);
     color: var(--bice-blue)
 }
 
 h3{
     font-size: var(--font-size-m);
-    font-weight: var(--font-weigth-medium);
+    font-weight: var(--font-weight-medium);
 }
 
 p{
     font-size: var(--font-size-n);
-    font-weight: var(--font-weigth-normal);
+    font-weight: var(--font-weight-normal);
 }
 /*estilo navbar*/
 
@@ -146,7 +146,7 @@ p{
 }
 
 .header.header--scrolled {
-    background-color: var(--universo-blue); /* o #1e3a8a directamente */
+    background-color: var(--universo-blue); 
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -199,7 +199,7 @@ header .navbar{
     background: var(--alice-blue);
     color: var(--universo-blue); 
     border-color: var(--bice-blue);
-    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1); /* para efecto sutil */
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
 }
 
 .navbar .nav_img{
@@ -280,10 +280,10 @@ header .navbar{
 }
 /* Historia */
 .story-section {
-    background-color:rgb(229, 241, 252);  /* fondo muy suave */
+    background-color:rgb(229, 241, 252); 
     width: 100%;                /* ocupa todo el ancho */
     padding: 40px 0;
-    margin: 0;                  /* elimina márgenes extra */
+    margin: 0;                 
 }
 
 .story-flex {
@@ -317,7 +317,7 @@ header .navbar{
 
 /* Pilares */
 .pillars-section .mission-vision-wrapper {
-    padding-top: 40px;
+  padding-top: 40px;
   display: flex;
   justify-content: space-between;      
   align-items: stretch;              
@@ -369,6 +369,7 @@ header .navbar{
 
 /*VALORES*/
 .values-grid {
+  padding-top: 40px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
@@ -407,7 +408,7 @@ header .navbar{
   position: relative;
 }
 
-/* Línea decorativa bajo el título, opcional */
+/* Línea decorativa bajo el título */
 .value-card h3::after {
   content: "";
   display: block;
@@ -423,13 +424,13 @@ header .navbar{
   color: var(--bice-blue);
   line-height: 1.6;
   margin: 0;
-  flex: 1; /* para que los textos largos no rompan el layout */
+  flex: 1; 
 }
 
 .cta-section {
   background-color: var(--alice-blue);
   text-align: center;
-  padding: 40px 0;                /* espacio arriba y abajo */
+  padding: 40px 0;                
 }
 
 .cta-section h2{
@@ -445,15 +446,14 @@ header .navbar{
     margin-bottom: 1rem;
 }
 
-
 .cta-section .cta-button {
   display: inline-block;
   font-family: 'Gotham', sans-serif;
   text-decoration: none;
   padding: 15px 35px;
-  background: var(--white-color);           /* fondo blanco */
-  color: var(--universo-blue);              /* texto azul */
-  border: 2px solid var(--white-color);     /* borde blanco */
+  background: var(--alice-blue);           
+  color: var(--universo-blue);              
+  border: 2px solid var(--universo-blue);     
   border-radius: var(--border-radius-m);
   font-weight: var(--font-weight-semibold);
   transition: all 0.3s ease;
@@ -461,15 +461,14 @@ header .navbar{
 }
 
 .cta-section .cta-button:hover {
-  background: transparent;                  
-  color: var(--bice-blue);                /* texto blanco */
-  border-color: var(--bice-blue);         /* borde blanco */
-  box-shadow: 0 5px 15px rgba(149, 167, 238, 0.3); /* sombra clara */
+  background: var(--universo-blue);                  
+  color: var(--alice-blue);                
+  border-color: var(--bice-blue);       
+  box-shadow: 0 5px 15px rgba(149, 167, 238, 0.3); 
 }
-
 .footer {
     background-color: var(--universo-blue);
-    color: var(--white-color);
+    color: var(--alice-blue);
     padding: 4rem 2rem 2rem;
 }
 
@@ -495,7 +494,7 @@ header .navbar{
     font-size: 1.25rem;
     font-weight: 600;
     margin-bottom: 1rem;
-    color: var(--white-color);
+    color: var(--alice-blue);
 }
 
 .footer__socials {
@@ -510,12 +509,12 @@ header .navbar{
     gap: 0.8rem;
     font-size: 1rem;
     text-decoration: none;
-    color: var(--white-color);
+    color: var(--alice-blue);
     transition: color 0.2s ease;
 }
 
 .footer__social-link:hover {
-    color: var(--alice-blue);
+    color: var(--white-color);
 }
 
 .footer__hours {
@@ -598,7 +597,6 @@ header .navbar{
     }
 }
 
-/* ==== Responsive para pantallas medianas (≤900px) ==== */
 @media screen and (max-width: 900px) {
   /* Hero */
   .hero-nosotros {
@@ -674,7 +672,6 @@ header .navbar{
     }
 }
 
-/* ==== Ajustes para tablets (≤768px) ==== */
 @media screen and (max-width: 768px) {
   .hero-nosotros {
     height: calc(50vh - 60px);
@@ -725,10 +722,9 @@ header .navbar{
   }
 }
 
-/* ==== Ajustes para móviles pequeños (≤576px) ==== */
 @media screen and (max-width: 576px) {
   .hero-nosotros {
-      margin-top: 70px;                       /* un poco menos para móviles */
+      margin-top: 70px;                       
       height: calc(40vh - 50px);
   }
   .hero-nosotros__content h1 { font-size: 1.6rem; }

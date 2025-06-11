@@ -123,18 +123,18 @@ h1{
 
 h2{
     font-size: var(--font-size-xl);
-    font-weight: var(--font-weigth-semibold);
+    font-weight: var(--font-weight-semibold);
     color: var(--bice-blue)
 }
 
 h3{
     font-size: var(--font-size-m);
-    font-weight: var(--font-weigth-medium);
+    font-weight: var(--font-weight-medium);
 }
 
 p{
     font-size: var(--font-size-n);
-    font-weight: var(--font-weigth-normal);
+    font-weight: var(--font-weight-normal);
 }
 /*estilo navbar*/
 
@@ -283,9 +283,9 @@ header .navbar{
 
 #crud-section {
     padding-top: 30px;
-    display: none; /* Se muestra con JS */
+    display: none; 
     max-width: var(--site-max-width);
-    margin: 150px auto 5rem auto; /* Espacio arriba para el header y abajo para el footer */
+    margin: 150px auto 5rem auto; 
 }
 
 #crud-section h2 {
@@ -412,7 +412,7 @@ header .navbar{
 }
 .footer {
     background-color: var(--universo-blue);
-    color: var(--white-color);
+    color: var(--alice-blue);
     padding: 4rem 2rem 2rem;
 }
 
@@ -438,7 +438,7 @@ header .navbar{
     font-size: 1.25rem;
     font-weight: 600;
     margin-bottom: 1rem;
-    color: var(--white-color);
+    color: var(--alice-blue);
 }
 
 .footer__socials {
@@ -453,12 +453,12 @@ header .navbar{
     gap: 0.8rem;
     font-size: 1rem;
     text-decoration: none;
-    color: var(--white-color);
+    color: var(--alice-blue);
     transition: color 0.2s ease;
 }
 
 .footer__social-link:hover {
-    color: var(--alice-blue);
+    color: var(--white-color);
 }
 
 .footer__hours {
