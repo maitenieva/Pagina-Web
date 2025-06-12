@@ -108,7 +108,7 @@ html, body {
 body{
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* 100% de la ventana */
+    min-height: 100vh; 
 }
 
 main, #login-container, #crud-section, .contacto {
@@ -209,7 +209,7 @@ header .navbar{
     background: var(--alice-blue);
     color: var(--universo-blue); 
     border-color: var(--bice-blue);
-    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1); /* para efecto sutil */
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1); 
 }
 
 .navbar .nav_img{
@@ -368,7 +368,7 @@ header .navbar{
   padding-top: 1rem;
 }
 
-/* --- Edición en Línea (integrado aquí) --- */
+/* edición cartas */
 .client-card .vista-edicion,
 .client-card .btn-save,
 .client-card .btn-cancel {
@@ -395,7 +395,7 @@ header .navbar{
   border-radius: var(--border-radius-s);
 }
 
-/* --- Botones de la tarjeta --- */
+/* botones tarjeta */
 .client-card button {
   flex-grow: 1; /* Ocupan el espacio disponible */
   padding: 0.6rem 1rem;
@@ -491,9 +491,7 @@ header .navbar{
     color: rgba(255, 255, 255, 0.8);
 }
 
-/* ==== Pantallas Medianamente Grandes (≤1200px) ==== */
 @media screen and (max-width: 1200px) {
-  /* Header fijo + hamburger */
   .header {
     background-color: var(--universo-blue);
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
@@ -525,7 +523,7 @@ header .navbar{
 
   /* Login más compacto */
   #login-container {
-    padding-top: 130px;  /* deja espacio al header */
+    padding-top: 130px;  
     padding-bottom: 30px;
   }
   #login {
@@ -543,9 +541,7 @@ header .navbar{
 
 }
 
-/* ==== Pantallas Medianas (≤900px) ==== */
 @media screen and (max-width: 900px) {
-  /* Login: ajusta tipografías */
   #login h2 {
     font-size: 1.4rem;
   }
@@ -557,9 +553,8 @@ header .navbar{
     padding: 0.6rem;
   }
 
-  /* CRUD: grid a 1 columna */
   #crud-section {
-    margin-top: 120px;  /* adapta al header fijo */
+    margin-top: 120px; 
   }
   #clientesContainer {
     display: grid;
@@ -595,9 +590,7 @@ header .navbar{
   }
 }
 
-/* ==== Tablets (≤768px) ==== */
 @media screen and (max-width: 768px) {
-  /* Login aún más compacto */
   #login-container {
     padding-top: 120px;
     padding-bottom: 40px;
@@ -609,7 +602,6 @@ header .navbar{
   #login h2 { font-size: 1.3rem; }
   #login p  { font-size: 0.9rem; }
 
-  /* CRUD */
   #crud-section {
     margin-top: 100px;
     padding: 0 1rem;
@@ -650,25 +642,23 @@ header .navbar{
   }
 }
 
-/* ==== Móviles Pequeños (≤576px) ==== */
 @media screen and (max-width: 576px) {
-  /* ==== LOGIN ==== */
   #login-container {
-    padding-top: 160px;       /* más espacio arriba para respirar */
-    padding-bottom: 80px;     /* más espacio abajo */
+    padding-top: 160px;     
+    padding-bottom: 80px;     
   }
   #login {
-    max-width: 90%;           /* casi todo el ancho */
-    padding: 2rem;            /* relleno generoso */
+    max-width: 90%;           
+    padding: 2rem;           
   }
   #login h2 {
-    font-size: 1.6rem;        /* título más grande */
+    font-size: 1.6rem;       
   }
   #login p {
-    font-size: 1rem;          /* texto de apoyo legible */
+    font-size: 1rem;         
   }
   #login input[type="password"] {
-    padding: 1rem;            /* clic más cómodo */
+    padding: 1rem;            
     font-size: 1rem;
     margin-bottom: 1rem;
   }
@@ -677,9 +667,8 @@ header .navbar{
     font-size: 1.1rem;
   }
 
-  /* ==== CRUD ==== */
   #crud-section {
-      margin-top: 140px;        /* empuja más abajo */
+      margin-top: 140px;       
   }
     .footer__section{
         flex: 0 0 100%;

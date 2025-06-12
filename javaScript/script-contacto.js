@@ -141,7 +141,6 @@ function initForm() {
       }
     }
 
-    // Generación de ID incremental en lugar de Date.now()
     const nuevoId = nextClientId++;
 
     const nuevoCliente = {

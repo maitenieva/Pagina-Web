@@ -619,7 +619,7 @@ button[type="submit"]:hover {
         font-size: 1.4rem;
     }
 
-    /* hamburguesa visible */
+    /* menu visible */
     .menu-toggle {
         display: block;
         background: var(--universo-blue);

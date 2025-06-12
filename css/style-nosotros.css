@@ -265,25 +265,6 @@ header .navbar{
   line-height: 1.5;
 }
 
-/* (Opcional) botón de llamada a la acción */
-.hero-nosotros__content .cta-button {
-  display: inline-block;
-  font-family: 'Gotham', sans-serif;
-  padding: 12px 30px;
-  background: var(--white-color);
-  color: var(--universo-blue);
-  border: 2px solid var(--white-color);
-  border-radius: var(--border-radius-m);
-  text-decoration: none;
-  font-weight: var(--font-weight-semibold);
-  transition: all 0.3s ease;
-}
-.hero-nosotros__content .cta-button:hover {
-  background: transparent;
-  color: var(--white-color);
-  border-color: var(--white-color);
-  box-shadow: 0 4px 12px rgba(255,255,255,0.4);
-}
 /* Historia */
 .story-section {
     background-color:rgb(229, 241, 252); 
@@ -571,7 +552,6 @@ header .navbar{
         z-index: 2000;
     }
 
-    /* hamburguesa visible */
     .menu-toggle {
         display: block;
         background: var(--universo-blue);
@@ -582,7 +562,6 @@ header .navbar{
         z-index: 2001;
     }
 
-    /* menú siempre posicionado, oculto con transform */
     .navbar .nav-menu {
         position: fixed;
         top: 0; left: 0;
@@ -608,7 +587,6 @@ header .navbar{
 }
 
 @media screen and (max-width: 900px) {
-  /* Hero */
   .hero-nosotros {
     margin-top: 60px;
     height: calc(60vh - 60px);
@@ -653,7 +631,6 @@ header .navbar{
     width: 100%;
   }
 
-  /* CTA */
   .cta-content {
     padding: 2rem 1rem;
   }

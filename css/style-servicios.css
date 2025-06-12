@@ -239,7 +239,7 @@ header .navbar{
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 0 1.5rem;   /* margen lateral en móvil */
+  padding: 0 1.5rem;   
   box-sizing: border-box;
   text-align: center;
 }
@@ -302,9 +302,9 @@ header .navbar{
 }
 
 .custom-carousel {
-    display: flex; /* Para alinear los slides activos */
+    display: flex; 
     justify-content: center;
-    gap: 1.3rem;   /* Espacio entre las tarjetas visibles */
+    gap: 1.3rem;   
     width: 100%;
     min-height: 220px;
 }
@@ -484,7 +484,6 @@ header .navbar{
         z-index: 2000;
     }
 
-    /* menu visible */
     .menu-toggle {
         display: block;
         background: var(--universo-blue);
@@ -614,10 +613,10 @@ header .navbar{
         height: 40px;
     }
     .carousel-button.prev {
-        left: 10px; /*10px desde el borde izquierdo */
+        left: 10px; 
     }
     .carousel-button.next {
-        right: 10px; /*10px desde el borde derecho */
+        right: 10px; 
     }
 
     .boton {
@@ -659,8 +658,7 @@ header .navbar{
     }
   }
 
-  /* Telefonos chicos */
-  @media screen and (max-width: 576px) {
+@media screen and (max-width: 576px) {
     .hero-servicios {
       margin-top: 70px;                       
       height: calc(40vh - 50px);
