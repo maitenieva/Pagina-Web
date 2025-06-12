@@ -338,7 +338,7 @@ header .navbar{
   font-weight: var(--font-weight-medium);
   margin: 0 0 0.5rem;
   display: inline-block;
-  color: var(--bice-blue);
+  color: var(--universo-blue);
   position: relative;
 }
 .pillars-section .mission-vision-wrapper .mission-card h3::after {
@@ -353,9 +353,9 @@ header .navbar{
 
 .pillars-section .mission-vision-wrapper .mission-card p {
   font-family: 'Gotham', sans-serif;
-  color: #444;
   line-height: 1.6;
   margin: 0;
+  color: var(--bice-blue);
 }
 
 /*VALORES*/

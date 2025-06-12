@@ -303,7 +303,7 @@ header .navbar{
     margin-bottom: 60px;    
     font-size: 1.3rem;       
     line-height: 1.7;
-    color: #2d2f4f;               
+    color: var(--bice-blue);               
 }
 
 /*estilo cartas servicios*/
@@ -465,7 +465,7 @@ header .navbar{
     margin-bottom: 40px;       
     font-size: 1.3rem;       
     line-height: 1.7;
-    color: #2d2f4f;  
+    color: var(--bice-blue);     
 }
 
 .se-parte {

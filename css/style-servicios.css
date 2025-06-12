@@ -283,11 +283,11 @@ header .navbar{
     margin-bottom: 30px;
 }
 .service-description {
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     line-height: 1.7;
-    color: var(--lake-blue);
-    max-width: 800px;
+    max-width: 1000px;
     margin: 0 auto 50px auto;
+    color: var(--bice-blue);     
 }
 
 .custom-carousel-wrapper {
